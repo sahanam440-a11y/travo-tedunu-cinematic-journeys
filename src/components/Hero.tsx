@@ -68,8 +68,10 @@ const Hero = () => {
             <img
               src={image}
               alt={`Beautiful destination in India - slide ${index + 1}`}
-              className="w-full h-full object-cover object-[50%_40%] md:object-center scale-105 md:scale-100"
+              className="w-full h-full object-cover object-center"
               loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+              sizes="100vw"
             />
           </div>
         ))}
