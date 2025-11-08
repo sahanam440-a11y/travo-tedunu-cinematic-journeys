@@ -38,7 +38,8 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-muted/50 to-background">
+      <section className="pt-32 pb-16 bg-gradient-to-b from-muted/50 to-background relative">
+        <div className="absolute inset-0 gradient-green-soft opacity-60 -z-10"></div>
         <div className="container mx-auto px-4 text-center space-y-6">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
             Get In Touch
@@ -50,7 +51,8 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-24 container mx-auto px-4">
+      <section className="py-24 container mx-auto px-4 relative">
+        <div className="absolute inset-0 gradient-green-mint opacity-45 -z-10"></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>

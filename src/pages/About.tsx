@@ -33,7 +33,8 @@ const About = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-muted/50 to-background">
+      <section className="pt-32 pb-16 bg-gradient-to-b from-muted/50 to-background relative">
+        <div className="absolute inset-0 gradient-green-soft opacity-60 -z-10"></div>
         <div className="container mx-auto px-4 text-center space-y-6">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
             About Travo Tedunu
@@ -45,7 +46,8 @@ const About = () => {
       </section>
 
       {/* Story */}
-      <section className="py-24 container mx-auto px-4">
+      <section className="py-24 container mx-auto px-4 relative">
+        <div className="absolute inset-0 gradient-green-mint opacity-50 -z-10"></div>
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-4xl font-serif font-bold text-foreground">Our Story</h2>
@@ -75,7 +77,8 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-muted/30 relative">
+        <div className="absolute inset-0 gradient-mint-green opacity-40 -z-10"></div>
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl font-serif font-bold text-foreground">Our Values</h2>
