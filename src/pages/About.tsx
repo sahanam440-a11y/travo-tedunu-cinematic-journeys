@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Users, Award, Heart } from "lucide-react";
 
@@ -28,7 +29,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-subtle pb-20 md:pb-0">
       <Navbar />
 
       {/* Hero */}
@@ -121,6 +122,7 @@ const About = () => {
       </section>
 
       <Footer />
+      <BottomNav />
     </div>
   );
 };

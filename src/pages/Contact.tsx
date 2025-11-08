@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -33,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-subtle pb-20 md:pb-0">
       <Navbar />
 
       {/* Hero */}
@@ -194,6 +195,7 @@ const Contact = () => {
       </section>
 
       <Footer />
+      <BottomNav />
     </div>
   );
 };

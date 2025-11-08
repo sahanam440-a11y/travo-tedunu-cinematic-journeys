@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
 import { destinations } from "@/data/destinations";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,7 +24,7 @@ const DestinationDetail = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-20 md:pb-0">
       <Navbar />
 
       {/* Hero Image */}
@@ -219,6 +220,7 @@ const DestinationDetail = () => {
       </div>
 
       <Footer />
+      <BottomNav />
     </div>
   );
 };

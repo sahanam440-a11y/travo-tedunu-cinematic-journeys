@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
 import DestinationCard from "@/components/DestinationCard";
 import { destinations } from "@/data/destinations";
 import { Input } from "@/components/ui/input";
@@ -24,7 +25,7 @@ const Destinations = () => {
   });
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-subtle pb-20 md:pb-0">
       <Navbar />
 
       {/* Hero Section */}
@@ -101,6 +102,7 @@ const Destinations = () => {
       </section>
 
       <Footer />
+      <BottomNav />
     </div>
   );
 };

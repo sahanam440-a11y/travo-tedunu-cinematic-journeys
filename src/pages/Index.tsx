@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import DestinationCard from "@/components/DestinationCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import Footer from "@/components/Footer";
+import BottomNav from "@/components/BottomNav";
 import { destinations } from "@/data/destinations";
 
 const testimonials = [
@@ -31,7 +32,7 @@ const testimonials = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-20 md:pb-0">
       <Navbar />
       <Hero />
 
@@ -86,6 +87,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <BottomNav />
     </div>
   );
 };
