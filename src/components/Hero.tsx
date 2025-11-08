@@ -43,7 +43,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video/Image */}
       <div className="absolute inset-0">
         {/* Video Background - Uncomment and add your video file */}
@@ -59,15 +59,19 @@ const Hero = () => {
         
         {/* Image Slideshow */}
         {heroImages.map((image, index) => (
-          <img
+          <div
             key={index}
-            src={image}
-            alt={`Beautiful destination in India - slide ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
+            className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
-            loading={index === 0 ? "eager" : "lazy"}
-          />
+          >
+            <img
+              src={image}
+              alt={`Beautiful destination in India - slide ${index + 1}`}
+              className="w-full h-full object-cover object-[50%_40%] md:object-center scale-105 md:scale-100"
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+          </div>
         ))}
         
         {/* Enhanced overlay for better text readability on mobile */}
