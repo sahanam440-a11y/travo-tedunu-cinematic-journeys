@@ -43,7 +43,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video/Image */}
       <div className="absolute inset-0">
         {/* Video Background - Uncomment and add your video file */}
@@ -52,7 +52,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         >
           <source src="/path-to-your-video.mp4" type="video/mp4" />
         </video> */}
@@ -63,41 +63,42 @@ const Hero = () => {
             key={index}
             src={image}
             alt={`Beautiful destination in India - slide ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
               index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
+            loading={index === 0 ? "eager" : "lazy"}
           />
         ))}
         
-        {/* Subtle overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/50" />
+        {/* Enhanced overlay for better text readability on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-32 text-center">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white text-balance leading-tight">
+      <div className="relative z-10 container mx-auto px-4 py-20 md:py-32 text-center">
+        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fade-up">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white text-balance leading-tight px-2">
             Travel, Tailored & Timeless
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto text-balance">
+          <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-2xl mx-auto text-balance px-4">
             Curated journeys across India with cinematic visuals and authentic experiences
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 pt-2 md:pt-4 px-4">
             <Button
               size="lg"
-              className="gradient-primary text-lg px-8 py-6 hover:shadow-elevated transition-all"
+              className="gradient-primary text-base md:text-lg px-6 md:px-8 py-5 md:py-6 hover:shadow-elevated transition-all w-full sm:w-auto"
               asChild
             >
               <Link to="/destinations">
                 Start Planning
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
               </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+              className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 w-full sm:w-auto"
               asChild
             >
               <Link to="/destinations">Explore Destinations</Link>
@@ -105,7 +106,7 @@ const Hero = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-8 pt-12 text-white/90 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-8 md:pt-12 text-white/95 text-xs md:text-sm px-4">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-accent animate-pulse-slow" />
               <span>Verified Local Guides</span>
