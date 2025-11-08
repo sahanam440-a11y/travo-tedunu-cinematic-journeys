@@ -1,33 +1,76 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-main.jpg";
+import { useState, useEffect } from "react";
+
+// Import all hero images
+import delhi1 from "@/assets/hero/delhi-1.jpg";
+import delhi2 from "@/assets/hero/delhi-2.jpg";
+import delhi3 from "@/assets/hero/delhi-3.jpg";
+import delhi4 from "@/assets/hero/delhi-4.jpg";
+import delhi5 from "@/assets/hero/delhi-5.jpg";
+import delhi6 from "@/assets/hero/delhi-6.jpg";
+import mathura1 from "@/assets/hero/mathura-1.jpg";
+import mathura2 from "@/assets/hero/mathura-2.jpg";
+import mathura3 from "@/assets/hero/mathura-3.jpg";
+import mathura4 from "@/assets/hero/mathura-4.jpg";
+import mathura5 from "@/assets/hero/mathura-5.jpg";
+import mathura6 from "@/assets/hero/mathura-6.jpg";
+import dehradun1 from "@/assets/hero/dehradun-1.jpg";
+import dehradun2 from "@/assets/hero/dehradun-2.jpg";
+import dehradun3 from "@/assets/hero/dehradun-3.jpg";
+import dehradun4 from "@/assets/hero/dehradun-4.jpg";
+import dehradun5 from "@/assets/hero/dehradun-5.jpg";
+import dehradun6 from "@/assets/hero/dehradun-6.jpg";
+import dehradun7 from "@/assets/hero/dehradun-7.jpg";
+import dehradun8 from "@/assets/hero/dehradun-8.jpg";
+
+const heroImages = [
+  delhi1, delhi2, delhi3, delhi4, delhi5, delhi6,
+  mathura1, mathura2, mathura3, mathura4, mathura5, mathura6,
+  dehradun1, dehradun2, dehradun3, dehradun4, dehradun5, dehradun6, dehradun7, dehradun8
+];
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video/Image */}
       <div className="absolute inset-0">
-        {/* Video Background - Add your video file here */}
+        {/* Video Background - Uncomment and add your video file */}
         {/* <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/path-to-your-video.mp4" type="video/mp4" />
         </video> */}
         
-        {/* Fallback Image */}
-        <img
-          src={heroImage}
-          alt="Stunning Indian landscape with mountains and river at golden hour"
-          className="w-full h-full object-cover"
-        />
+        {/* Image Slideshow */}
+        {heroImages.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Beautiful destination in India - slide ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
         
         {/* Subtle overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/50" />
       </div>
 
       {/* Content */}
