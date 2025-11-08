@@ -6,14 +6,28 @@ import heroImage from "@/assets/hero-main.jpg";
 const Hero = () => {
   return (
     <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video/Image */}
       <div className="absolute inset-0">
+        {/* Video Background - Add your video file here */}
+        {/* <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/path-to-your-video.mp4" type="video/mp4" />
+        </video> */}
+        
+        {/* Fallback Image */}
         <img
           src={heroImage}
           alt="Stunning Indian landscape with mountains and river at golden hour"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 gradient-hero" />
+        
+        {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
       </div>
 
       {/* Content */}
