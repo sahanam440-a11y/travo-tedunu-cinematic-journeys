@@ -21,7 +21,7 @@ interface DestinationCardProps {
 
 const DestinationCard = ({ destination }: DestinationCardProps) => {
   return (
-    <Card className="group overflow-hidden border-border/50 hover-lift bg-card">
+    <Card className="group overflow-hidden glass-card hover-lift">
       <Link to={`/destination/${destination.slug}`}>
         <div className="relative aspect-[4/3] overflow-hidden">
           <img

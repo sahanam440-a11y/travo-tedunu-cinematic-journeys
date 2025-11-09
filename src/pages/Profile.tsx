@@ -7,13 +7,14 @@ import { User, Mail, Phone, MapPin, Calendar, Heart, Clock } from "lucide-react"
 
 const Profile = () => {
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen relative">
+      <div className="fixed inset-0 gradient-mint-breeze -z-10"></div>
       <Navbar />
       
       <main className="container mx-auto px-4 pt-24 pb-32 md:pb-16">
         <div className="max-w-4xl mx-auto">
           {/* Profile Header */}
-          <Card className="p-6 mb-6 animate-fade-up">
+          <Card className="glass-card p-6 mb-6 animate-fade-up">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="w-24 h-24 rounded-full bg-gradient-primary flex items-center justify-center">
                 <User className="h-12 w-12 text-white" />
@@ -35,7 +36,7 @@ const Profile = () => {
 
           {/* Profile Info */}
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <Card className="p-6 hover-lift animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <Card className="glass-card p-6 hover-lift animate-fade-up" style={{ animationDelay: "0.1s" }}>
               <h2 className="text-xl font-serif mb-4 flex items-center gap-2">
                 <User className="h-5 w-5 text-primary" />
                 Personal Information
@@ -60,7 +61,7 @@ const Profile = () => {
               </div>
             </Card>
 
-            <Card className="p-6 hover-lift animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <Card className="glass-card p-6 hover-lift animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <h2 className="text-xl font-serif mb-4 flex items-center gap-2">
                 <Clock className="h-5 w-5 text-primary" />
                 Recent Activity
@@ -87,7 +88,7 @@ const Profile = () => {
           </div>
 
           {/* Saved Destinations */}
-          <Card className="p-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <Card className="glass-card p-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <h2 className="text-xl font-serif mb-4 flex items-center gap-2">
               <Heart className="h-5 w-5 text-primary" />
               Saved Destinations

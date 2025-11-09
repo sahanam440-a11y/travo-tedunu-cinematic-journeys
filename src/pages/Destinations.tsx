@@ -25,12 +25,13 @@ const Destinations = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-subtle pb-16 md:pb-0">
+    <div className="min-h-screen pb-16 md:pb-0 relative">
+      <div className="fixed inset-0 gradient-pearl-elegance -z-10"></div>
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-muted/50 to-background relative">
-        <div className="absolute inset-0 gradient-green-soft opacity-60 -z-10"></div>
+      <section className="pt-32 pb-16 relative">
+        <div className="absolute inset-0 gradient-champagne-glow -z-10"></div>
         <div className="container mx-auto px-4 text-center space-y-6">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
             Explore Destinations

@@ -16,7 +16,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <Card className="glass border-border/50">
+    <Card className="glass-card">
       <CardContent className="p-6 space-y-4">
         <div className="flex gap-1">
           {[...Array(5)].map((_, i) => (

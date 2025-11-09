@@ -13,7 +13,7 @@ const BottomNav = () => {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-t border-border pb-safe shadow-elevated">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-header pb-safe shadow-elevated">
       <div className="flex items-center justify-around px-2 py-2">
         {navItems.map((item) => {
           const Icon = item.icon;

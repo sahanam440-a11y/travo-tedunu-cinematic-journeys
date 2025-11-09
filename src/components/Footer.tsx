@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-muted/30 border-t border-border">
+    <footer className="glass-card border-t border-border/50">
       {/* Mobile Compact Footer */}
       <div className="md:hidden px-4 py-4">
         <Accordion type="single" collapsible className="w-full">

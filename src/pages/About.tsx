@@ -29,12 +29,13 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-subtle pb-16 md:pb-0">
+    <div className="min-h-screen pb-16 md:pb-0 relative">
+      <div className="fixed inset-0 gradient-ethereal-dream -z-10"></div>
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-muted/50 to-background relative">
-        <div className="absolute inset-0 gradient-green-soft opacity-60 -z-10"></div>
+      <section className="pt-32 pb-16 relative">
+        <div className="absolute inset-0 gradient-rose-gold-dust -z-10"></div>
         <div className="container mx-auto px-4 text-center space-y-6">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
             About Travo Tedunu
@@ -47,7 +48,7 @@ const About = () => {
 
       {/* Story */}
       <section className="py-24 container mx-auto px-4 relative">
-        <div className="absolute inset-0 gradient-green-mint opacity-50 -z-10"></div>
+        <div className="absolute inset-0 gradient-lavender-mist -z-10"></div>
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-4xl font-serif font-bold text-foreground">Our Story</h2>
@@ -77,8 +78,8 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-muted/30 relative">
-        <div className="absolute inset-0 gradient-mint-green opacity-40 -z-10"></div>
+      <section className="py-24 relative">
+        <div className="absolute inset-0 gradient-mint-breeze -z-10"></div>
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl font-serif font-bold text-foreground">Our Values</h2>
@@ -91,7 +92,7 @@ const About = () => {
             {values.map((value, index) => (
               <Card
                 key={value.title}
-                className="border-border/50 hover-lift"
+                className="glass-card hover-lift"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-6 text-center space-y-4">

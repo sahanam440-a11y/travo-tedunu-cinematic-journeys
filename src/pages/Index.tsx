@@ -38,7 +38,7 @@ const Index = () => {
 
       {/* Featured Destinations */}
       <section className="py-24 container mx-auto px-4 relative">
-        <div className="absolute inset-0 gradient-green-mint opacity-50 -z-10"></div>
+        <div className="absolute inset-0 gradient-lavender-mist -z-10"></div>
         <div className="text-center space-y-4 mb-16 animate-fade-up">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
             Featured Destinations
@@ -62,8 +62,8 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-muted/30 relative">
-        <div className="absolute inset-0 gradient-mint-green opacity-40 -z-10"></div>
+      <section className="py-24 relative">
+        <div className="absolute inset-0 gradient-ocean-serenity -z-10"></div>
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16 animate-fade-up">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">

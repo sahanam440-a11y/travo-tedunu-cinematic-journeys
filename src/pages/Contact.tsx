@@ -34,12 +34,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-subtle pb-16 md:pb-0">
+    <div className="min-h-screen pb-16 md:pb-0 relative">
+      <div className="fixed inset-0 gradient-sunset-luxe -z-10"></div>
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-muted/50 to-background relative">
-        <div className="absolute inset-0 gradient-green-soft opacity-60 -z-10"></div>
+      <section className="pt-32 pb-16 relative">
+        <div className="absolute inset-0 gradient-champagne-glow -z-10"></div>
         <div className="container mx-auto px-4 text-center space-y-6">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
             Get In Touch
@@ -52,11 +53,11 @@ const Contact = () => {
 
       {/* Contact Form & Info */}
       <section className="py-24 container mx-auto px-4 relative">
-        <div className="absolute inset-0 gradient-green-mint opacity-45 -z-10"></div>
+        <div className="absolute inset-0 gradient-ocean-serenity -z-10"></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <Card className="border-border/50">
+            <Card className="glass-card">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-serif font-bold mb-6">Send us a message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -137,7 +138,7 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
-              <Card className="border-border/50 hover-lift">
+              <Card className="glass-card hover-lift">
                 <CardContent className="p-6 flex items-start gap-4">
                   <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-primary" />
@@ -152,7 +153,7 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-border/50 hover-lift">
+              <Card className="glass-card hover-lift">
                 <CardContent className="p-6 flex items-start gap-4">
                   <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Phone className="h-6 w-6 text-primary" />
@@ -167,7 +168,7 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-border/50 hover-lift">
+              <Card className="glass-card hover-lift">
                 <CardContent className="p-6 flex items-start gap-4">
                   <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <MapPin className="h-6 w-6 text-primary" />
