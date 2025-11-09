@@ -1,130 +1,187 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles, Percent, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Badge } from "@/components/ui/badge";
 
-// Import all hero images
+// Import hero images for backgrounds
 import delhi1 from "@/assets/hero/delhi-1.jpg";
-import delhi2 from "@/assets/hero/delhi-2.jpg";
-import delhi3 from "@/assets/hero/delhi-3.jpg";
-import delhi4 from "@/assets/hero/delhi-4.jpg";
-import delhi5 from "@/assets/hero/delhi-5.jpg";
-import delhi6 from "@/assets/hero/delhi-6.jpg";
 import mathura1 from "@/assets/hero/mathura-1.jpg";
-import mathura2 from "@/assets/hero/mathura-2.jpg";
-import mathura3 from "@/assets/hero/mathura-3.jpg";
-import mathura4 from "@/assets/hero/mathura-4.jpg";
-import mathura5 from "@/assets/hero/mathura-5.jpg";
-import mathura6 from "@/assets/hero/mathura-6.jpg";
 import dehradun1 from "@/assets/hero/dehradun-1.jpg";
-import dehradun2 from "@/assets/hero/dehradun-2.jpg";
-import dehradun3 from "@/assets/hero/dehradun-3.jpg";
-import dehradun4 from "@/assets/hero/dehradun-4.jpg";
-import dehradun5 from "@/assets/hero/dehradun-5.jpg";
-import dehradun6 from "@/assets/hero/dehradun-6.jpg";
-import dehradun7 from "@/assets/hero/dehradun-7.jpg";
-import dehradun8 from "@/assets/hero/dehradun-8.jpg";
 
-const heroImages = [
-  delhi1, delhi2, delhi3, delhi4, delhi5, delhi6,
-  mathura1, mathura2, mathura3, mathura4, mathura5, mathura6,
-  dehradun1, dehradun2, dehradun3, dehradun4, dehradun5, dehradun6, dehradun7, dehradun8
+const promoOffers = [
+  {
+    id: 1,
+    badge: "Limited Time",
+    title: "Early Bird Special",
+    subtitle: "Book 30 Days in Advance",
+    discount: "40% OFF",
+    description: "On All Premium Packages",
+    cta: "Book Now",
+    bgImage: delhi1,
+    color: "from-purple-600 to-pink-600",
+  },
+  {
+    id: 2,
+    badge: "Flash Sale",
+    title: "Weekend Getaway",
+    subtitle: "Escape This Weekend",
+    discount: "₹9,999",
+    description: "Starting From - All Inclusive",
+    cta: "Explore Deals",
+    bgImage: mathura1,
+    color: "from-orange-500 to-red-600",
+  },
+  {
+    id: 3,
+    badge: "Best Value",
+    title: "Group Travel Offer",
+    subtitle: "Groups of 5+",
+    discount: "30% OFF",
+    description: "Plus Free Guide & Transport",
+    cta: "Get Started",
+    bgImage: dehradun1,
+    color: "from-cyan-500 to-blue-600",
+  },
 ];
 
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentPromoIndex, setCurrentPromoIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return;
+    
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 3000); // Change image every 3 seconds
+      setCurrentPromoIndex((prevIndex) => (prevIndex + 1) % promoOffers.length);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
+
+  const currentOffer = promoOffers[currentPromoIndex];
 
   return (
-    <section className="relative h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video/Image */}
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-0">
+      {/* Animated Background */}
       <div className="absolute inset-0">
-        {/* Video Background - Uncomment and add your video file */}
-        {/* <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        >
-          <source src="/path-to-your-video.mp4" type="video/mp4" />
-        </video> */}
-        
-        {/* Image Slideshow */}
-        {heroImages.map((image, index) => (
+        {promoOffers.map((offer, index) => (
           <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            key={offer.id}
+            className={`absolute inset-0 transition-all duration-1000 ${
+              index === currentPromoIndex ? "opacity-100 scale-100" : "opacity-0 scale-110"
             }`}
           >
             <img
-              src={image}
-              alt={`Beautiful destination in India - slide ${index + 1}`}
-              className="w-full h-full object-cover object-center"
+              src={offer.bgImage}
+              alt={offer.title}
+              className="w-full h-full object-cover"
               loading={index === 0 ? "eager" : "lazy"}
-              decoding="async"
-              sizes="100vw"
             />
+            <div className={`absolute inset-0 bg-gradient-to-br ${offer.color} opacity-80`} />
           </div>
         ))}
-        
-        {/* Enhanced overlay for better text readability on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20 md:py-32 text-center">
-        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fade-up">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white text-balance leading-tight px-2">
-            Travel, Tailored & Timeless
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-2xl mx-auto text-balance px-4">
-            Curated journeys across India with cinematic visuals and authentic experiences
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 pt-2 md:pt-4 px-4">
-            <Button
-              size="lg"
-              className="gradient-primary text-base md:text-lg px-6 md:px-8 py-5 md:py-6 hover:shadow-elevated transition-all w-full sm:w-auto"
-              asChild
-            >
-              <Link to="/destinations">
-                Start Planning
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 w-full sm:w-auto"
-              asChild
-            >
-              <Link to="/destinations">Explore Destinations</Link>
-            </Button>
+      {/* Main Promotional Banner */}
+      <div 
+        className="relative z-10 container mx-auto px-4"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Promotional Card */}
+          <div className="glass-card rounded-3xl p-6 md:p-12 space-y-6 md:space-y-8 animate-fade-up shadow-strong">
+            {/* Badge */}
+            <div className="flex justify-center">
+              <Badge 
+                className={`bg-gradient-to-r ${currentOffer.color} text-white text-xs md:text-sm px-4 py-2 animate-pulse-slow`}
+              >
+                <Sparkles className="w-3 h-3 md:w-4 md:h-4 mr-2" />
+                {currentOffer.badge}
+              </Badge>
+            </div>
+
+            {/* Main Content */}
+            <div className="text-center space-y-4 md:space-y-6">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-foreground animate-scale-in">
+                {currentOffer.title}
+              </h1>
+              
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium">
+                {currentOffer.subtitle}
+              </p>
+
+              {/* Discount Display */}
+              <div className="relative py-6 md:py-8">
+                <div className={`inline-flex items-center justify-center bg-gradient-to-r ${currentOffer.color} text-white rounded-2xl px-8 md:px-16 py-6 md:py-10 shadow-glow animate-scale-in`}>
+                  <Percent className="w-8 h-8 md:w-12 md:h-12 mr-3 md:mr-4" />
+                  <span className="text-5xl sm:text-6xl md:text-8xl font-bold">
+                    {currentOffer.discount}
+                  </span>
+                </div>
+              </div>
+
+              <p className="text-base sm:text-lg md:text-xl text-foreground font-medium">
+                {currentOffer.description}
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex justify-center pt-4">
+              <Button
+                size="lg"
+                className={`bg-gradient-to-r ${currentOffer.color} text-white text-base md:text-xl px-10 md:px-16 py-6 md:py-8 rounded-full hover:shadow-glow hover:scale-105 transition-all duration-300 animate-bounce-subtle`}
+                asChild
+              >
+                <Link to="/destinations">
+                  {currentOffer.cta}
+                  <ArrowRight className="ml-3 h-5 w-5 md:h-6 md:w-6" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Features Row */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 md:pt-8 border-t border-border/50">
+              <div className="flex items-center justify-center gap-3 p-3 rounded-xl bg-background/50">
+                <Clock className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                <div className="text-left">
+                  <p className="text-xs md:text-sm font-semibold text-foreground">Instant Booking</p>
+                  <p className="text-xs text-muted-foreground">Confirm in Minutes</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-3 rounded-xl bg-background/50">
+                <MapPin className="w-5 h-5 md:w-6 md:h-6 text-secondary" />
+                <div className="text-left">
+                  <p className="text-xs md:text-sm font-semibold text-foreground">50+ Destinations</p>
+                  <p className="text-xs text-muted-foreground">Across India</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 p-3 rounded-xl bg-background/50">
+                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-accent" />
+                <div className="text-left">
+                  <p className="text-xs md:text-sm font-semibold text-foreground">Premium Experience</p>
+                  <p className="text-xs text-muted-foreground">5-Star Rated</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-8 md:pt-12 text-white/95 text-xs md:text-sm px-4">
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-accent animate-pulse-slow" />
-              <span>Verified Local Guides</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-accent animate-pulse-slow" />
-              <span>24/7 Support</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-accent animate-pulse-slow" />
-              <span>Best-Price Guarantee</span>
-            </div>
+          {/* Promo Indicators */}
+          <div className="flex justify-center gap-2 mt-6 md:mt-8">
+            {promoOffers.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPromoIndex(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentPromoIndex
+                    ? "w-8 bg-white"
+                    : "w-2 bg-white/50 hover:bg-white/75"
+                }`}
+                aria-label={`Go to promo ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
