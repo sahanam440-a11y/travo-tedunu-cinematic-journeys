@@ -8,13 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 48 55% 90%;
+    --background: 45 65% 92%;
     --foreground: 220 20% 12%;
 
-    --card: 48 50% 92%;
+    --card: 45 60% 94%;
     --card-foreground: 220 20% 12%;
 
-    --popover: 48 50% 92%;
+    --popover: 45 60% 94%;
     --popover-foreground: 220 20% 12%;
 
     --primary: 14 100% 63%;
@@ -23,7 +23,7 @@ All colors MUST be HSL.
     --secondary: 217 91% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 48 45% 87%;
+    --muted: 45 55% 89%;
     --muted-foreground: 220 15% 40%;
 
     --accent: 158 64% 52%;
@@ -32,8 +32,8 @@ All colors MUST be HSL.
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 48 40% 82%;
-    --input: 48 45% 87%;
+    --border: 45 50% 85%;
+    --input: 45 55% 89%;
     --ring: 14 100% 63%;
 
     --radius: 0.75rem;
@@ -45,11 +45,11 @@ All colors MUST be HSL.
     --gradient-sunset: linear-gradient(135deg, hsl(14 100% 63%) 0%, hsl(340 82% 62%) 50%, hsl(280 70% 60%) 100%);
     --gradient-ocean: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(195 100% 50%) 50%, hsl(158 64% 52%) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(43 100% 68%) 50%, hsl(45 100% 72%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(48 55% 90%) 0%, hsl(48 50% 87%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(45 65% 92%) 0%, hsl(45 60% 89%) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(14 100% 63% / 0.95) 0%, hsl(18 100% 67% / 0.9) 50%, hsl(24 100% 70% / 0.85) 100%);
-    --gradient-green-mint: linear-gradient(135deg, hsl(48 55% 90%) 0%, hsl(45 60% 88%) 100%);
-    --gradient-mint-green: linear-gradient(180deg, hsl(45 60% 88%) 0%, hsl(48 55% 90%) 100%);
-    --gradient-green-soft: linear-gradient(135deg, hsl(48 50% 92%) 0%, hsl(45 55% 89%) 50%, hsl(42 60% 90%) 100%);
+    --gradient-green-mint: linear-gradient(135deg, hsl(45 65% 92%) 0%, hsl(42 70% 90%) 100%);
+    --gradient-mint-green: linear-gradient(180deg, hsl(42 70% 90%) 0%, hsl(45 65% 92%) 100%);
+    --gradient-green-soft: linear-gradient(135deg, hsl(45 60% 94%) 0%, hsl(42 65% 91%) 50%, hsl(40 70% 92%) 100%);
 
     /* Shadows with color tint */
     --shadow-soft: 0 4px 12px hsl(14 100% 63% / 0.08);
