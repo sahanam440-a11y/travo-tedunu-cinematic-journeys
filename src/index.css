@@ -400,41 +400,6 @@ All colors MUST be HSL.
     --random-drift: 0.5;
   }
 
-  /* Hogwarts Express Style Train */
-  .vintage-train-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    z-index: 51;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  @media (max-width: 768px) {
-    .vintage-train-container {
-      bottom: 58px;
-    }
-  }
-
-  /* Lottie Train Animation */
-  .lottie-train-wrapper {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-  }
-
-  .train-lottie {
-    width: auto;
-    height: 100%;
-    max-height: 80px;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-  }
-
   /* Krishna Background */
   .krishna-background-container {
     position: fixed;

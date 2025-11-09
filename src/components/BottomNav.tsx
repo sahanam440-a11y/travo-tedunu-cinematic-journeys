@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { Home, MapPin, Info, Mail, User } from "lucide-react";
-import VintageTrain from "./VintageTrain";
 
 const BottomNav = () => {
   const location = useLocation();
@@ -14,9 +13,7 @@ const BottomNav = () => {
   ];
 
   return (
-    <>
-      <VintageTrain />
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-header pb-safe shadow-elevated">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-header pb-safe shadow-elevated">
         <div className="flex items-center justify-around px-2 py-2">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -38,8 +35,7 @@ const BottomNav = () => {
             );
           })}
         </div>
-      </nav>
-    </>
+    </nav>
   );
 };
 
