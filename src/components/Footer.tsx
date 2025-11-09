@@ -2,11 +2,60 @@ import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, Facebook, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Footer = () => {
   return (
-    <footer className="hidden md:block bg-muted/30 border-t border-border">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-muted/30 border-t border-border">
+      {/* Mobile Compact Footer */}
+      <div className="md:hidden px-4 py-4">
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="links" className="border-b-0">
+            <AccordionTrigger className="text-sm font-semibold hover:no-underline py-2">
+              Quick Links
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="grid grid-cols-2 gap-2 pb-2">
+                <Link to="/" className="text-sm text-muted-foreground hover:text-primary">
+                  Home
+                </Link>
+                <Link to="/destinations" className="text-sm text-muted-foreground hover:text-primary">
+                  Destinations
+                </Link>
+                <Link to="/about" className="text-sm text-muted-foreground hover:text-primary">
+                  About
+                </Link>
+                <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary">
+                  Contact
+                </Link>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        
+        <div className="flex items-center justify-between pt-3 border-t border-border/50">
+          <div className="flex gap-2">
+            <Button size="icon" variant="ghost" className="h-7 w-7">
+              <Facebook className="h-3.5 w-3.5" />
+            </Button>
+            <Button size="icon" variant="ghost" className="h-7 w-7">
+              <Instagram className="h-3.5 w-3.5" />
+            </Button>
+            <Button size="icon" variant="ghost" className="h-7 w-7">
+              <Youtube className="h-3.5 w-3.5" />
+            </Button>
+          </div>
+          <p className="text-xs text-muted-foreground">© 2025 Travo Tedunu</p>
+        </div>
+      </div>
+
+      {/* Desktop Full Footer */}
+      <div className="hidden md:block container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
