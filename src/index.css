@@ -412,133 +412,21 @@ All colors MUST be HSL.
     overflow: hidden;
   }
 
-  .hogwarts-train {
+  /* Lottie Train Animation */
+  .lottie-train-wrapper {
     position: absolute;
-    height: 140px;
-    width: 560px;
-    animation: train-journey 26s linear infinite;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-  }
-
-  .train-svg {
-    width: 100%;
     height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
   }
 
-  /* Realistic Wheel Animations */
-  .drive-wheel {
-    animation: wheel-rotate 0.5s linear infinite;
-  }
-
-  .front-wheel {
-    animation: wheel-rotate 0.5s linear infinite;
-  }
-
-  .tender-wheel, .coach-wheel {
-    animation: wheel-rotate 0.6s linear infinite;
-  }
-
-  @keyframes wheel-rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Connecting Rod Motion */
-  .connecting-rod {
-    animation: rod-oscillate 0.5s linear infinite;
-    transform-origin: left center;
-  }
-
-  @keyframes rod-oscillate {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-3px);
-    }
-  }
-
-  /* Realistic Steam Clouds */
-  .steam-cloud {
-    position: absolute;
-    background: radial-gradient(circle, 
-      rgba(255, 255, 255, 0.9) 0%, 
-      rgba(240, 240, 240, 0.6) 40%, 
-      rgba(220, 220, 220, 0.3) 70%,
-      transparent 100%);
-    border-radius: 50%;
-    top: 8px;
-    left: 445px;
-  }
-
-  .cloud-1 {
-    width: 25px;
-    height: 25px;
-    animation: steam-billow 4s ease-out infinite;
-    animation-delay: 0s;
-  }
-
-  .cloud-2 {
-    width: 22px;
-    height: 22px;
-    animation: steam-billow 4s ease-out infinite;
-    animation-delay: 0.8s;
-  }
-
-  .cloud-3 {
-    width: 28px;
-    height: 28px;
-    animation: steam-billow 4s ease-out infinite;
-    animation-delay: 1.6s;
-  }
-
-  .cloud-4 {
-    width: 20px;
-    height: 20px;
-    animation: steam-billow 4s ease-out infinite;
-    animation-delay: 2.4s;
-  }
-
-  .cloud-5 {
-    width: 24px;
-    height: 24px;
-    animation: steam-billow 4s ease-out infinite;
-    animation-delay: 3.2s;
-  }
-
-  @keyframes steam-billow {
-    0% {
-      transform: translate(0, 0) scale(0.3);
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.95;
-    }
-    40% {
-      transform: translate(-15px, -35px) scale(1.4);
-      opacity: 0.7;
-    }
-    70% {
-      transform: translate(-35px, -65px) scale(2.2);
-      opacity: 0.3;
-    }
-    100% {
-      transform: translate(-55px, -95px) scale(3);
-      opacity: 0;
-    }
-  }
-
-  @keyframes train-journey {
-    0% {
-      left: -600px;
-    }
-    100% {
-      left: calc(100% + 20px);
-    }
+  .train-lottie {
+    width: auto;
+    height: 100%;
+    max-height: 80px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   }
 
   /* Krishna Background */
