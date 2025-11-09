@@ -403,13 +403,19 @@ All colors MUST be HSL.
   /* Hogwarts Express Style Train */
   .vintage-train-container {
     position: fixed;
-    bottom: 58px;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 80px;
     z-index: 51;
     pointer-events: none;
     overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .vintage-train-container {
+      bottom: 58px;
+    }
   }
 
   /* Lottie Train Animation */

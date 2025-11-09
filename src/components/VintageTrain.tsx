@@ -3,7 +3,7 @@ import trainAnimation from "@/assets/train-animation.json";
 
 const VintageTrain = () => {
   return (
-    <div className="vintage-train-container md:hidden">
+    <div className="vintage-train-container">
       <div className="lottie-train-wrapper">
         <Lottie
           animationData={trainAnimation}
