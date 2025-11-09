@@ -34,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-subtle pb-14 md:pb-0">
+    <div className="min-h-screen bg-gradient-subtle pb-0 md:pb-0">
       <Navbar />
 
       {/* Hero */}
