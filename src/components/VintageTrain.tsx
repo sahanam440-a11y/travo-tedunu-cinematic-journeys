@@ -10,133 +10,137 @@ const VintageTrain = () => {
         <div className="steam-cloud cloud-5"></div>
         
         {/* Hogwarts Express SVG */}
-        <svg viewBox="0 0 340 120" className="train-svg" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="redBody" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#CC0000" />
-              <stop offset="50%" stopColor="#990000" />
-              <stop offset="100%" stopColor="#660000" />
-            </linearGradient>
-            <linearGradient id="brass" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#F4C430" />
-              <stop offset="50%" stopColor="#DAA520" />
-              <stop offset="100%" stopColor="#B8860B" />
-            </linearGradient>
-            <linearGradient id="blackMetal" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#3A3A3A" />
-              <stop offset="50%" stopColor="#1A1A1A" />
-              <stop offset="100%" stopColor="#0A0A0A" />
-            </linearGradient>
-            <radialGradient id="window" cx="50%" cy="50%">
-              <stop offset="0%" stopColor="#87CEEB" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#4682B4" stopOpacity="0.7" />
-            </radialGradient>
-          </defs>
-          
-          {/* Railway Track */}
-          <rect x="0" y="104" width="340" height="2" fill="#4A4A4A" opacity="0.6"/>
-          <rect x="0" y="108" width="340" height="2" fill="#4A4A4A" opacity="0.6"/>
-          
-          {/* === LOCOMOTIVE === */}
-          
-          {/* Main Boiler - cylindrical body */}
-          <ellipse cx="240" cy="65" rx="42" ry="30" fill="url(#redBody)" stroke="#660000" strokeWidth="1.5"/>
-          <rect x="198" y="40" width="84" height="50" fill="url(#redBody)" stroke="#660000" strokeWidth="1.5"/>
-          
-          {/* Firebox */}
-          <rect x="272" y="48" width="28" height="34" fill="url(#redBody)" rx="3" stroke="#660000" strokeWidth="1.5"/>
-          
-          {/* Cabin/Cab */}
-          <rect x="275" y="35" width="25" height="25" fill="#8B0000" rx="2" stroke="#660000" strokeWidth="1"/>
-          
-          {/* Cabin Windows */}
-          <rect x="278" y="38" width="8" height="10" fill="url(#window)" rx="1" stroke="#2C3E50" strokeWidth="0.5"/>
-          <rect x="289" y="38" width="8" height="10" fill="url(#window)" rx="1" stroke="#2C3E50" strokeWidth="0.5"/>
-          <rect x="283" y="50" width="12" height="8" fill="url(#window)" rx="1" stroke="#2C3E50" strokeWidth="0.5"/>
-          
-          {/* Smokestack - Victorian style */}
-          <ellipse cx="255" cy="30" rx="6" ry="3" fill="url(#blackMetal)"/>
-          <rect x="249" y="12" width="12" height="18" fill="url(#blackMetal)" rx="1"/>
-          <ellipse cx="255" cy="12" rx="8" ry="4" fill="#4A4A4A"/>
-          <rect x="247" y="8" width="16" height="6" fill="url(#brass)" rx="2"/>
-          
-          {/* Steam Dome */}
-          <ellipse cx="230" cy="38" rx="10" ry="6" fill="url(#brass)"/>
-          <rect x="220" y="32" width="20" height="6" fill="url(#brass)" rx="2"/>
-          
-          {/* Brass Bands */}
-          <rect x="210" y="40" width="4" height="50" fill="url(#brass)" opacity="0.8"/>
-          <rect x="260" y="40" width="4" height="50" fill="url(#brass)" opacity="0.8"/>
-          
-          {/* Front Lamp */}
-          <circle cx="195" cy="55" r="6" fill="url(#brass)" stroke="#8B4513" strokeWidth="1"/>
-          <circle cx="195" cy="55" r="4" fill="#FFD700" opacity="0.8"/>
-          
-          {/* Cowcatcher */}
-          <polygon points="185,80 195,70 195,85" fill="#2C2C2C" stroke="#1A1A1A" strokeWidth="1"/>
-          
-          {/* === TENDER (Coal Car) === */}
-          <rect x="110" y="50" width="80" height="38" fill="#2C1810" rx="3" stroke="#1A1A1A" strokeWidth="1.5"/>
-          <rect x="115" y="54" width="70" height="30" fill="#0A0A0A"/>
-          
-          {/* Coal pile */}
-          <ellipse cx="150" cy="58" rx="25" ry="8" fill="#1A1A1A"/>
-          <ellipse cx="145" cy="62" rx="20" ry="6" fill="#2C2C2C"/>
-          <ellipse cx="155" cy="64" rx="18" ry="5" fill="#1A1A1A"/>
-          
-          {/* Connector */}
-          <rect x="190" y="67" width="8" height="6" fill="#4A4A4A" rx="2"/>
-          <circle cx="193" cy="70" r="3" fill="#2C2C2C" stroke="url(#brass)" strokeWidth="1.5"/>
-          
-          {/* === WHEELS === */}
-          
-          {/* Large Driving Wheels (Locomotive) */}
-          <g className="drive-wheel" style={{transformOrigin: "220px 98px"}}>
-            <circle cx="220" cy="98" r="20" fill="url(#blackMetal)" stroke="url(#brass)" strokeWidth="3"/>
-            <circle cx="220" cy="98" r="14" fill="#1A1A1A"/>
-            <circle cx="220" cy="98" r="6" fill="url(#brass)"/>
-            <line x1="220" y1="84" x2="220" y2="112" stroke="url(#brass)" strokeWidth="2.5"/>
-            <line x1="206" y1="98" x2="234" y2="98" stroke="url(#brass)" strokeWidth="2.5"/>
-            <line x1="210" y1="88" x2="230" y2="108" stroke="url(#brass)" strokeWidth="2"/>
-            <line x1="210" y1="108" x2="230" y2="88" stroke="url(#brass)" strokeWidth="2"/>
-          </g>
-          
-          <g className="drive-wheel" style={{transformOrigin: "265px 98px"}}>
-            <circle cx="265" cy="98" r="20" fill="url(#blackMetal)" stroke="url(#brass)" strokeWidth="3"/>
-            <circle cx="265" cy="98" r="14" fill="#1A1A1A"/>
-            <circle cx="265" cy="98" r="6" fill="url(#brass)"/>
-            <line x1="265" y1="84" x2="265" y2="112" stroke="url(#brass)" strokeWidth="2.5"/>
-            <line x1="251" y1="98" x2="279" y2="98" stroke="url(#brass)" strokeWidth="2.5"/>
-            <line x1="255" y1="88" x2="275" y2="108" stroke="url(#brass)" strokeWidth="2"/>
-            <line x1="255" y1="108" x2="275" y2="88" stroke="url(#brass)" strokeWidth="2"/>
-          </g>
-          
-          {/* Front Wheels (smaller) */}
-          <g className="front-wheel" style={{transformOrigin: "195px 100px"}}>
-            <circle cx="195" cy="100" r="14" fill="url(#blackMetal)" stroke="url(#brass)" strokeWidth="2"/>
-            <circle cx="195" cy="100" r="9" fill="#1A1A1A"/>
-            <circle cx="195" cy="100" r="4" fill="url(#brass)"/>
-          </g>
-          
-          {/* Tender Wheels */}
-          <g className="tender-wheel" style={{transformOrigin: "130px 100px"}}>
-            <circle cx="130" cy="100" r="12" fill="#1A1A1A" stroke="#4A4A4A" strokeWidth="2"/>
-            <circle cx="130" cy="100" r="4" fill="#666"/>
-          </g>
-          
-          <g className="tender-wheel" style={{transformOrigin: "170px 100px"}}>
-            <circle cx="170" cy="100" r="12" fill="#1A1A1A" stroke="#4A4A4A" strokeWidth="2"/>
-            <circle cx="170" cy="100" r="4" fill="#666"/>
-          </g>
-          
-          {/* Connecting Rod */}
-          <rect x="210" y="96" width="65" height="4" fill="#2C2C2C" className="connecting-rod" rx="2"/>
-          <circle cx="215" cy="98" r="3" fill="url(#brass)"/>
-          <circle cx="270" cy="98" r="3" fill="url(#brass)"/>
-          
-          {/* Side Rods */}
-          <rect x="195" y="98" width="80" height="3" fill="#4A4A4A" opacity="0.7" rx="1"/>
-        </svg>
+          <svg viewBox="0 0 560 160" className="train-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated scarlet steam train">
+            <defs>
+              {/* Scarlet body with depth */}
+              <linearGradient id="scarlet" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#d51e24" />
+                <stop offset="60%" stopColor="#a11116" />
+                <stop offset="100%" stopColor="#790d10" />
+              </linearGradient>
+              {/* Brass trim */}
+              <linearGradient id="brass" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#f6cf56" />
+                <stop offset="60%" stopColor="#d2a73a" />
+                <stop offset="100%" stopColor="#a77f21" />
+              </linearGradient>
+              {/* Dark metal */}
+              <linearGradient id="metal" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3a3a3a" />
+                <stop offset="60%" stopColor="#1f1f1f" />
+                <stop offset="100%" stopColor="#0a0a0a" />
+              </linearGradient>
+              <radialGradient id="windowBlue" cx="50%" cy="50%">
+                <stop offset="0%" stopColor="#b3e5ff" stopOpacity="0.95" />
+                <stop offset="100%" stopColor="#6aa3c2" stopOpacity="0.8" />
+              </radialGradient>
+              <linearGradient id="coachRed" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#cf1a1f" />
+                <stop offset="100%" stopColor="#8f1115" />
+              </linearGradient>
+              <linearGradient id="roofGrey" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#b9bcc2" />
+                <stop offset="100%" stopColor="#8b9098" />
+              </linearGradient>
+            </defs>
+
+            {/* Track */}
+            <rect x="-10" y="130" width="600" height="3" fill="#4A4A4A" opacity="0.6"/>
+            <rect x="-10" y="136" width="600" height="3" fill="#4A4A4A" opacity="0.6"/>
+
+            {/* ===== LOCOMOTIVE ===== */}
+            {/* Boiler */}
+            <ellipse cx="430" cy="78" rx="50" ry="34" fill="url(#scarlet)" stroke="#6e0c0f" strokeWidth="1.6"/>
+            <rect x="380" y="48" width="100" height="60" fill="url(#scarlet)" stroke="#6e0c0f" strokeWidth="1.6"/>
+
+            {/* Firebox + Cab */}
+            <rect x="470" y="56" width="36" height="40" rx="3" fill="url(#scarlet)" stroke="#6e0c0f" strokeWidth="1.4"/>
+            <rect x="482" y="40" width="40" height="32" rx="2" fill="#8b0000" stroke="#6e0c0f" strokeWidth="1"/>
+            <rect x="487" y="44" width="12" height="14" rx="1" fill="url(#windowBlue)" stroke="#2c3e50" strokeWidth="0.6"/>
+            <rect x="502" y="44" width="12" height="14" rx="1" fill="url(#windowBlue)" stroke="#2c3e50" strokeWidth="0.6"/>
+
+            {/* Smokestack */}
+            <ellipse cx="455" cy="28" rx="8" ry="4" fill="url(#metal)"/>
+            <rect x="447" y="12" width="16" height="18" rx="1" fill="url(#metal)"/>
+            <ellipse cx="455" cy="12" rx="11" ry="5" fill="#4A4A4A"/>
+            <rect x="444" y="6" width="22" height="7" rx="2" fill="url(#brass)"/>
+
+            {/* Brass bands on boiler */}
+            <rect x="402" y="48" width="5" height="60" fill="url(#brass)" opacity="0.9"/>
+            <rect x="432" y="48" width="5" height="60" fill="url(#brass)" opacity="0.9"/>
+            <rect x="462" y="48" width="5" height="60" fill="url(#brass)" opacity="0.9"/>
+
+            {/* Headlamp */}
+            <circle cx="385" cy="64" r="8" fill="url(#brass)" stroke="#8b4513" strokeWidth="1.2"/>
+            <circle cx="385" cy="64" r="5.5" fill="#ffd75a" opacity="0.85"/>
+
+            {/* Pilot / cowcatcher */}
+            <polygon points="372,100 385,86 385,108" fill="#2c2c2c" stroke="#1a1a1a" strokeWidth="1"/>
+
+            {/* Tender */}
+            <rect x="300" y="62" width="90" height="40" rx="3" fill="#2c1810" stroke="#1a1a1a" strokeWidth="1.4"/>
+            <rect x="305" y="66" width="80" height="32" fill="#0a0a0a"/>
+            <ellipse cx="345" cy="66" rx="28" ry="9" fill="#1a1a1a"/>
+            <ellipse cx="338" cy="70" rx="22" ry="7" fill="#2c2c2c"/>
+            <ellipse cx="352" cy="72" rx="20" ry="6" fill="#1a1a1a"/>
+
+            {/* ===== CARRIAGES ===== */}
+            {/* Coach 1 */}
+            <g>
+              <rect x="150" y="68" width="120" height="42" rx="3" fill="url(#coachRed)" stroke="#590c0f" strokeWidth="1.2"/>
+              <rect x="150" y="60" width="120" height="12" rx="2" fill="url(#roofGrey)"/>
+              {Array.from({ length: 7 }).map((_, i) => (
+                <rect key={`w1-${i}`} x={160 + i * 14} y={78} width="10" height="14" rx="1" fill="url(#windowBlue)" stroke="#2c3e50" strokeWidth="0.4" />
+              ))}
+            </g>
+            {/* Coach 2 */}
+            <g>
+              <rect x="15" y="68" width="120" height="42" rx="3" fill="url(#coachRed)" stroke="#590c0f" strokeWidth="1.2"/>
+              <rect x="15" y="60" width="120" height="12" rx="2" fill="url(#roofGrey)"/>
+              {Array.from({ length: 7 }).map((_, i) => (
+                <rect key={`w2-${i}`} x={25 + i * 14} y={78} width="10" height="14" rx="1" fill="url(#windowBlue)" stroke="#2c3e50" strokeWidth="0.4" />
+              ))}
+            </g>
+
+            {/* ===== WHEELS ===== */}
+            {/* Loco driving wheels */}
+            <g className="drive-wheel" style={{ transformOrigin: "410px 118px" }}>
+              <circle cx="410" cy="118" r="22" fill="url(#metal)" stroke="url(#brass)" strokeWidth="3"/>
+              <circle cx="410" cy="118" r="15" fill="#1a1a1a"/>
+              <circle cx="410" cy="118" r="6" fill="url(#brass)"/>
+            </g>
+            <g className="drive-wheel" style={{ transformOrigin: "445px 118px" }}>
+              <circle cx="445" cy="118" r="22" fill="url(#metal)" stroke="url(#brass)" strokeWidth="3"/>
+              <circle cx="445" cy="118" r="15" fill="#1a1a1a"/>
+              <circle cx="445" cy="118" r="6" fill="url(#brass)"/>
+            </g>
+            {/* Front bogie */}
+            <g className="front-wheel" style={{ transformOrigin: "388px 120px" }}>
+              <circle cx="388" cy="120" r="14" fill="url(#metal)" stroke="url(#brass)" strokeWidth="2"/>
+              <circle cx="388" cy="120" r="9" fill="#1a1a1a"/>
+            </g>
+            {/* Tender wheels */}
+            <g className="tender-wheel" style={{ transformOrigin: "320px 120px" }}>
+              <circle cx="320" cy="120" r="12" fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2"/>
+            </g>
+            <g className="tender-wheel" style={{ transformOrigin: "360px 120px" }}>
+              <circle cx="360" cy="120" r="12" fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2"/>
+            </g>
+            {/* Coach wheels */}
+            {[55, 95, 190, 230].map((x, i) => (
+              <g key={`cw-${i}`} className="coach-wheel" style={{ transformOrigin: `${x}px 122px` }}>
+                <circle cx={x} cy={122} r={11} fill="#1a1a1a" stroke="#4a4a4a" strokeWidth="2"/>
+              </g>
+            ))}
+
+            {/* Connecting rod between driving wheels */}
+            <rect x="403" y="116" width="50" height="4" rx="2" fill="#2c2c2c" className="connecting-rod"/>
+            <circle cx="408" cy="118" r="3" fill="url(#brass)"/>
+            <circle cx="448" cy="118" r="3" fill="url(#brass)"/>
+
+            {/* Side rod */}
+            <rect x="388" y="118" width="75" height="3" rx="1" fill="#4a4a4a" opacity="0.7"/>
+          </svg>
       </div>
     </div>
   );
