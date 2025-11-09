@@ -8,8 +8,8 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Glass-Morphism Premium Light Mode */
-    --background: 220 25% 98%;
+    /* Glass-Morphism Premium Light Mode - Transparent */
+    --background: 220 25% 98% / 0.3;
     --foreground: 230 20% 12%;
 
     --card: 0 0% 100% / 0.7;
@@ -77,8 +77,8 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Glass-Morphism Premium Dark Mode */
-    --background: 235 30% 8%;
+    /* Glass-Morphism Premium Dark Mode - Transparent */
+    --background: 235 30% 8% / 0.3;
     --foreground: 220 20% 98%;
 
     --card: 235 25% 14% / 0.6;
@@ -133,8 +133,25 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
     font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, 
+      hsl(220 60% 95%) 0%, 
+      hsl(200 70% 92%) 25%, 
+      hsl(240 65% 94%) 50%, 
+      hsl(180 70% 90%) 75%, 
+      hsl(220 60% 95%) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background: linear-gradient(135deg, 
+      hsl(235 50% 8%) 0%, 
+      hsl(250 45% 12%) 25%, 
+      hsl(220 50% 10%) 50%, 
+      hsl(200 45% 9%) 75%, 
+      hsl(235 50% 8%) 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -333,6 +350,59 @@ All colors MUST be HSL.
   .dark .glass-header {
     background: rgba(20, 20, 40, 0.7);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Animated Wave Background */
+  .wave-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    opacity: 0.15;
+  }
+
+  .wave:nth-child(1) {
+    animation: wave 25s linear infinite;
+    opacity: 0.1;
+  }
+
+  .wave:nth-child(2) {
+    animation: wave 20s linear infinite reverse;
+    opacity: 0.12;
+    animation-delay: -5s;
+  }
+
+  .wave:nth-child(3) {
+    animation: wave 30s linear infinite;
+    opacity: 0.08;
+    animation-delay: -10s;
+  }
+
+  .wave:nth-child(4) {
+    animation: wave 35s linear infinite reverse;
+    opacity: 0.1;
+    animation-delay: -15s;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
   }
 }
 
