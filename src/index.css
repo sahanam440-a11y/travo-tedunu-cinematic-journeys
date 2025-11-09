@@ -8,92 +8,97 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 45 65% 92%;
-    --foreground: 220 20% 12%;
+    /* Premium Light Mode - Inspired by luxury brands */
+    --background: 220 20% 97%;
+    --foreground: 230 15% 15%;
 
-    --card: 45 60% 94%;
-    --card-foreground: 220 20% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 15% 15%;
 
-    --popover: 45 60% 94%;
-    --popover-foreground: 220 20% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 15% 15%;
 
-    --primary: 14 100% 63%;
+    --primary: 250 70% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 91% 60%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 340 60% 72%;
+    --secondary-foreground: 230 15% 15%;
 
-    --muted: 45 55% 89%;
-    --muted-foreground: 220 15% 40%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 230 10% 45%;
 
-    --accent: 158 64% 52%;
+    --accent: 180 65% 58%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 75% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 50% 85%;
-    --input: 45 55% 89%;
-    --ring: 14 100% 63%;
+    --border: 220 15% 90%;
+    --input: 220 15% 94%;
+    --ring: 250 70% 60%;
 
     --radius: 0.75rem;
 
-    /* Premium Brand Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(14 100% 63%) 0%, hsl(18 100% 67%) 50%, hsl(24 100% 70%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(210 100% 65%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(158 64% 52%) 0%, hsl(165 70% 48%) 100%);
-    --gradient-sunset: linear-gradient(135deg, hsl(14 100% 63%) 0%, hsl(340 82% 62%) 50%, hsl(280 70% 60%) 100%);
-    --gradient-ocean: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(195 100% 50%) 50%, hsl(158 64% 52%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(43 100% 68%) 50%, hsl(45 100% 72%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(45 65% 92%) 0%, hsl(45 60% 89%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(14 100% 63% / 0.95) 0%, hsl(18 100% 67% / 0.9) 50%, hsl(24 100% 70% / 0.85) 100%);
-    --gradient-green-mint: linear-gradient(135deg, hsl(45 65% 92%) 0%, hsl(42 70% 90%) 100%);
-    --gradient-mint-green: linear-gradient(180deg, hsl(42 70% 90%) 0%, hsl(45 65% 92%) 100%);
-    --gradient-green-soft: linear-gradient(135deg, hsl(45 60% 94%) 0%, hsl(42 65% 91%) 50%, hsl(40 70% 92%) 100%);
+    /* Ultra-Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(260 75% 65%) 0%, hsl(240 80% 62%) 50%, hsl(200 70% 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(340 60% 72%) 0%, hsl(25 80% 68%) 50%, hsl(40 85% 70%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(180 65% 58%) 0%, hsl(170 70% 55%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(320 70% 65%) 0%, hsl(280 75% 60%) 50%, hsl(240 80% 62%) 100%);
+    --gradient-ocean: linear-gradient(135deg, hsl(240 75% 62%) 0%, hsl(200 70% 60%) 50%, hsl(180 65% 58%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 85% 65%) 0%, hsl(35 90% 70%) 50%, hsl(25 85% 72%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(220 20% 97%) 0%, hsl(220 18% 95%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(260 75% 65% / 0.95) 0%, hsl(240 80% 62% / 0.9) 50%, hsl(200 70% 60% / 0.85) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(250 70% 60%) 0%, hsl(280 65% 55%) 50%, hsl(300 60% 58%) 100%);
+    --gradient-elegant: linear-gradient(135deg, hsl(220 20% 97%) 0%, hsl(240 25% 94%) 50%, hsl(260 30% 96%) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(340 60% 72%) 0%, hsl(320 65% 70%) 50%, hsl(280 70% 68%) 100%);
 
-    /* Shadows with color tint */
-    --shadow-soft: 0 4px 12px hsl(14 100% 63% / 0.08);
-    --shadow-elevated: 0 8px 24px hsl(14 100% 63% / 0.12);
-    --shadow-strong: 0 16px 32px hsl(14 100% 63% / 0.16);
-    --shadow-glow: 0 0 40px hsl(14 100% 63% / 0.2);
+    /* Sophisticated Shadows */
+    --shadow-soft: 0 4px 16px hsl(250 70% 60% / 0.08);
+    --shadow-elevated: 0 8px 32px hsl(250 70% 60% / 0.12);
+    --shadow-strong: 0 16px 48px hsl(250 70% 60% / 0.16);
+    --shadow-glow: 0 0 48px hsl(250 70% 60% / 0.24);
+    --shadow-premium: 0 12px 40px hsl(250 70% 60% / 0.15);
 
     /* Animations */
     --transition-smooth: cubic-bezier(0.22, 0.9, 0.31, 1);
   }
 
   .dark {
-    --background: 220 25% 8%;
-    --foreground: 210 40% 98%;
+    /* Premium Dark Mode - Rich and elegant */
+    --background: 235 25% 10%;
+    --foreground: 220 15% 96%;
 
-    --card: 220 25% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 235 22% 13%;
+    --card-foreground: 220 15% 96%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 235 22% 13%;
+    --popover-foreground: 220 15% 96%;
 
-    --primary: 14 100% 63%;
+    --primary: 250 75% 68%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 91% 60%;
+    --secondary: 340 55% 65%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 30% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 235 20% 18%;
+    --muted-foreground: 220 12% 70%;
 
-    --accent: 158 64% 52%;
+    --accent: 180 60% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 70% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 30% 18%;
-    --input: 220 30% 18%;
-    --ring: 14 100% 63%;
+    --border: 235 20% 20%;
+    --input: 235 20% 18%;
+    --ring: 250 75% 68%;
 
-    --shadow-soft: 0 4px 12px hsl(14 100% 63% / 0.15);
-    --shadow-elevated: 0 8px 24px hsl(14 100% 63% / 0.25);
-    --shadow-strong: 0 16px 32px hsl(14 100% 63% / 0.35);
-    --shadow-glow: 0 0 40px hsl(14 100% 63% / 0.3);
+    /* Dark Mode Premium Shadows */
+    --shadow-soft: 0 4px 16px hsl(250 75% 68% / 0.15);
+    --shadow-elevated: 0 8px 32px hsl(250 75% 68% / 0.22);
+    --shadow-strong: 0 16px 48px hsl(250 75% 68% / 0.28);
+    --shadow-glow: 0 0 48px hsl(250 75% 68% / 0.32);
+    --shadow-premium: 0 12px 40px hsl(250 75% 68% / 0.25);
   }
 }
 
@@ -154,6 +159,18 @@ All colors MUST be HSL.
 
   .gradient-green-soft {
     background: var(--gradient-green-soft);
+  }
+
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .gradient-elegant {
+    background: var(--gradient-elegant);
+  }
+
+  .gradient-luxury {
+    background: var(--gradient-luxury);
   }
 
   .text-balance {
