@@ -400,13 +400,13 @@ All colors MUST be HSL.
     --random-drift: 0.5;
   }
 
-  /* Vintage Train Animation */
+  /* Beautiful Vintage Train Animation */
   .vintage-train-container {
     position: fixed;
-    bottom: 56px;
+    bottom: 58px;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 60px;
     z-index: 51;
     pointer-events: none;
     overflow: hidden;
@@ -414,10 +414,10 @@ All colors MUST be HSL.
 
   .vintage-train {
     position: absolute;
-    height: 80px;
-    width: 200px;
-    animation: train-move 20s linear infinite;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+    height: 100px;
+    width: 280px;
+    animation: train-move-smooth 25s linear infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
   }
 
   .train-svg {
@@ -426,12 +426,19 @@ All colors MUST be HSL.
   }
 
   /* Animated Wheels */
-  .wheel-group {
-    animation: wheel-spin 0.8s linear infinite;
-    transform-origin: center;
+  .big-wheel {
+    animation: wheel-spin-big 0.6s linear infinite;
   }
 
-  @keyframes wheel-spin {
+  .medium-wheel {
+    animation: wheel-spin-big 0.7s linear infinite;
+  }
+
+  .small-wheel {
+    animation: wheel-spin-big 0.8s linear infinite;
+  }
+
+  @keyframes wheel-spin-big {
     from {
       transform: rotate(0deg);
     }
@@ -440,53 +447,76 @@ All colors MUST be HSL.
     }
   }
 
-  /* Smoke Animation */
-  .smoke {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: rgba(200, 200, 200, 0.6);
-    border-radius: 50%;
-    top: -10px;
-    left: 155px;
-    animation: smoke-rise 2s ease-out infinite;
+  /* Coupling Rod Animation */
+  .coupling-rod {
+    animation: rod-move 0.6s linear infinite;
+    transform-origin: center;
   }
 
-  .smoke-1 {
+  @keyframes rod-move {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Beautiful Steam Puffs */
+  .steam-puff {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(220, 220, 220, 0.4) 50%, transparent 100%);
+    border-radius: 50%;
+    top: 5px;
+    left: 220px;
+  }
+
+  .puff-1 {
+    animation: steam-rise 3s ease-out infinite;
     animation-delay: 0s;
   }
 
-  .smoke-2 {
-    animation-delay: 0.7s;
-    opacity: 0.7;
+  .puff-2 {
+    animation: steam-rise 3s ease-out infinite;
+    animation-delay: 0.75s;
   }
 
-  .smoke-3 {
-    animation-delay: 1.4s;
-    opacity: 0.5;
+  .puff-3 {
+    animation: steam-rise 3s ease-out infinite;
+    animation-delay: 1.5s;
   }
 
-  @keyframes smoke-rise {
+  .puff-4 {
+    animation: steam-rise 3s ease-out infinite;
+    animation-delay: 2.25s;
+  }
+
+  @keyframes steam-rise {
     0% {
-      transform: translateY(0) scale(0.8);
-      opacity: 0.8;
+      transform: translateY(0) translateX(0) scale(0.5);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.9;
     }
     50% {
-      transform: translateY(-20px) scale(1.2);
-      opacity: 0.4;
+      transform: translateY(-30px) translateX(-10px) scale(1.5);
+      opacity: 0.6;
     }
     100% {
-      transform: translateY(-40px) scale(1.5);
+      transform: translateY(-60px) translateX(-20px) scale(2.5);
       opacity: 0;
     }
   }
 
-  @keyframes train-move {
+  @keyframes train-move-smooth {
     0% {
-      left: -220px;
+      left: -300px;
     }
     100% {
-      left: 100%;
+      left: calc(100% + 20px);
     }
   }
 
