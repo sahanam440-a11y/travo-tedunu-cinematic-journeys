@@ -1,30 +1,31 @@
 const FloatingElements = () => {
-  // Generate 25 mixed floating elements
-  const elements = Array.from({ length: 25 }, (_, i) => ({
+  // Generate 15 butterflies with random properties
+  const butterflies = Array.from({ length: 15 }, (_, i) => ({
     id: i,
-    type: i % 5 === 0 ? 'feather' : i % 4 === 0 ? 'firefly' : i % 3 === 0 ? 'petal' : 'snowflake',
-    size: Math.random() * 30 + 15, // 15-45px
+    size: Math.random() * 25 + 20, // 20-45px
     left: Math.random() * 100, // 0-100%
-    duration: Math.random() * 15 + 20, // 20-35s
-    delay: Math.random() * 8, // 0-8s
-    opacity: Math.random() * 0.4 + 0.3, // 0.3-0.7
+    duration: Math.random() * 15 + 25, // 25-40s
+    delay: Math.random() * 10, // 0-10s
+    color: i % 3 === 0 ? 'orange' : i % 3 === 1 ? 'purple' : 'blue',
   }));
 
   return (
     <div className="floating-elements-container">
-      {elements.map((element) => (
+      {butterflies.map((butterfly) => (
         <div
-          key={element.id}
-          className={`floating-element ${element.type}`}
+          key={butterfly.id}
+          className={`butterfly ${butterfly.color}`}
           style={{
-            width: `${element.size}px`,
-            height: `${element.size}px`,
-            left: `${element.left}%`,
-            animationDuration: `${element.duration}s`,
-            animationDelay: `${element.delay}s`,
-            opacity: element.opacity,
+            width: `${butterfly.size}px`,
+            height: `${butterfly.size}px`,
+            left: `${butterfly.left}%`,
+            animationDuration: `${butterfly.duration}s`,
+            animationDelay: `${butterfly.delay}s`,
           }}
-        />
+        >
+          <div className="butterfly-wing left-wing"></div>
+          <div className="butterfly-wing right-wing"></div>
+        </div>
       ))}
     </div>
   );

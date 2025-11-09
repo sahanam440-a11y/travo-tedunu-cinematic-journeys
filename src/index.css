@@ -396,103 +396,107 @@ All colors MUST be HSL.
     }
   }
 
-  /* Floating Natural Elements */
+  /* Floating Butterflies */
   .floating-elements-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
     overflow: hidden;
     pointer-events: none;
   }
 
-  .floating-element {
+  .butterfly {
     position: absolute;
-    bottom: -100px;
-    animation: float-natural linear infinite;
+    bottom: -50px;
+    animation: butterfly-fly linear infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   }
 
-  /* Snowflake */
-  .floating-element.snowflake {
-    background: radial-gradient(circle, 
-      rgba(255, 255, 255, 0.9) 0%, 
-      rgba(230, 240, 255, 0.6) 50%,
-      rgba(200, 220, 255, 0.3) 100%);
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-  }
-
-  /* Flower Petal */
-  .floating-element.petal {
-    background: linear-gradient(135deg, 
-      rgba(255, 180, 200, 0.7) 0%, 
-      rgba(255, 200, 220, 0.5) 50%,
-      rgba(255, 220, 240, 0.3) 100%);
+  .butterfly-wing {
+    position: absolute;
+    width: 50%;
+    height: 100%;
     border-radius: 50% 0 50% 0;
-    transform: rotate(45deg);
+    transform-origin: right center;
   }
 
-  /* Peacock Feather */
-  .floating-element.feather {
-    background: linear-gradient(180deg, 
-      rgba(0, 150, 200, 0.6) 0%, 
-      rgba(100, 200, 150, 0.5) 40%,
-      rgba(150, 180, 255, 0.4) 70%,
-      rgba(200, 150, 255, 0.3) 100%);
-    border-radius: 50% 50% 5% 5%;
-    box-shadow: 0 0 10px rgba(100, 200, 255, 0.3);
+  .butterfly-wing.left-wing {
+    left: 0;
+    animation: wing-flap 0.3s ease-in-out infinite;
   }
 
-  /* Firefly */
-  .floating-element.firefly {
-    background: radial-gradient(circle, 
-      rgba(255, 230, 100, 0.9) 0%, 
-      rgba(255, 200, 80, 0.6) 30%,
-      rgba(255, 180, 50, 0.3) 60%,
-      transparent 100%);
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255, 220, 100, 0.8);
-    animation: float-natural linear infinite, glow 2s ease-in-out infinite;
+  .butterfly-wing.right-wing {
+    right: 0;
+    transform: scaleX(-1);
+    animation: wing-flap 0.3s ease-in-out infinite reverse;
   }
 
-  @keyframes float-natural {
+  /* Butterfly Colors */
+  .butterfly.orange .butterfly-wing {
+    background: linear-gradient(135deg, 
+      rgba(255, 150, 50, 0.9) 0%, 
+      rgba(255, 100, 20, 0.8) 50%,
+      rgba(255, 180, 80, 0.7) 100%);
+  }
+
+  .butterfly.purple .butterfly-wing {
+    background: linear-gradient(135deg, 
+      rgba(200, 100, 255, 0.9) 0%, 
+      rgba(150, 50, 200, 0.8) 50%,
+      rgba(220, 150, 255, 0.7) 100%);
+  }
+
+  .butterfly.blue .butterfly-wing {
+    background: linear-gradient(135deg, 
+      rgba(100, 200, 255, 0.9) 0%, 
+      rgba(50, 150, 255, 0.8) 50%,
+      rgba(150, 220, 255, 0.7) 100%);
+  }
+
+  @keyframes butterfly-fly {
     0% {
-      transform: translateY(0) translateX(0) rotate(0deg);
+      transform: translate(0, 0) rotate(0deg);
       opacity: 0;
     }
     5% {
       opacity: 1;
     }
+    25% {
+      transform: translate(100px, -25vh) rotate(15deg);
+    }
+    50% {
+      transform: translate(-50px, -50vh) rotate(-10deg);
+    }
+    75% {
+      transform: translate(80px, -75vh) rotate(12deg);
+    }
     95% {
       opacity: 1;
     }
     100% {
-      transform: translateY(-110vh) translateX(calc((var(--random-drift, 0.5) - 0.5) * 200px)) rotate(360deg);
+      transform: translate(-30px, -110vh) rotate(-8deg);
       opacity: 0;
     }
   }
 
-  @keyframes glow {
+  @keyframes wing-flap {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(255, 220, 100, 0.8);
+      transform: rotateY(0deg);
     }
     50% {
-      box-shadow: 0 0 40px rgba(255, 220, 100, 1);
+      transform: rotateY(70deg);
     }
   }
 
-  .floating-element:nth-child(odd) {
-    --random-drift: 0.7;
+  .butterfly:nth-child(odd) {
+    animation-timing-function: ease-in-out;
   }
 
-  .floating-element:nth-child(even) {
-    --random-drift: 0.3;
-  }
-
-  .floating-element:nth-child(3n) {
-    --random-drift: 0.5;
+  .butterfly:nth-child(even) {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Krishna Background */
