@@ -1,122 +1,143 @@
 import { useEffect, useState } from "react";
 
-interface Heritage {
+interface LightElement {
   id: number;
   left: number;
+  top?: number;
   animationDuration: number;
   size: number;
   delay: number;
-  type: 'particle' | 'dome';
+  type: 'ray' | 'sparkle';
+  intensity: number;
 }
 
 export const DelhiHeritage = () => {
-  const [elements, setElements] = useState<Heritage[]>([]);
+  const [elements, setElements] = useState<LightElement[]>([]);
 
   useEffect(() => {
-    const elementArray: Heritage[] = [];
+    const elementArray: LightElement[] = [];
     
-    // More particles, fewer domes for subtle effect
-    for (let i = 0; i < 25; i++) {
+    // Create light rays from top
+    for (let i = 0; i < 8; i++) {
+      elementArray.push({
+        id: i,
+        left: (i * 12) + Math.random() * 10,
+        animationDuration: 8 + Math.random() * 6,
+        size: 80 + Math.random() * 120,
+        delay: Math.random() * 8,
+        type: 'ray',
+        intensity: 0.05 + Math.random() * 0.1,
+      });
+    }
+    
+    // Create floating sparkles
+    for (let i = 8; i < 35; i++) {
       elementArray.push({
         id: i,
         left: Math.random() * 100,
-        animationDuration: 15 + Math.random() * 10,
-        size: i < 20 ? 8 + Math.random() * 8 : 20 + Math.random() * 15, // Smaller particles, occasional larger dome
-        delay: Math.random() * 15,
-        type: i < 20 ? 'particle' : 'dome',
+        top: Math.random() * 100,
+        animationDuration: 4 + Math.random() * 6,
+        size: 2 + Math.random() * 4,
+        delay: Math.random() * 10,
+        type: 'sparkle',
+        intensity: 0.3 + Math.random() * 0.7,
       });
     }
+    
     setElements(elementArray);
   }, []);
 
-  const renderElement = (element: Heritage) => {
-    if (element.type === 'dome') {
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="drop-shadow-md"
-        >
-          {/* Architectural dome silhouette */}
-          <path
-            d="M12 4C8 4 4 6 4 10C4 12 5 14 7 15L7 20L17 20L17 15C19 14 20 12 20 10C20 6 16 4 12 4Z"
-            fill="hsl(var(--primary))"
-            opacity="0.15"
-          />
-          <ellipse
-            cx="12"
-            cy="10"
-            rx="7"
-            ry="5"
-            fill="hsl(var(--accent))"
-            opacity="0.1"
-          />
-          <path
-            d="M11 4L11 2M13 4L13 2M12 1L12 3"
-            stroke="hsl(var(--primary))"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
-        </svg>
-      );
-    } else {
-      // Golden particle
-      return (
-        <div
-          className="rounded-full blur-[1px]"
-          style={{
-            background: `radial-gradient(circle, rgba(255, 215, 120, 0.6) 0%, rgba(255, 200, 100, 0.3) 50%, transparent 100%)`,
-            width: '100%',
-            height: '100%',
-          }}
-        />
-      );
-    }
-  };
-
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-      {elements.map((element) => (
-        <div
-          key={element.id}
-          className="absolute animate-heritage-float"
-          style={{
-            left: `${element.left}%`,
-            width: `${element.size}px`,
-            height: `${element.size}px`,
-            animationDuration: `${element.animationDuration}s`,
-            animationDelay: `${element.delay}s`,
-          }}
-        >
-          {renderElement(element)}
-        </div>
-      ))}
+      {/* Warm golden gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-amber-400/5 via-transparent to-transparent" />
+      
+      {elements.map((element) => {
+        if (element.type === 'ray') {
+          return (
+            <div
+              key={element.id}
+              className="absolute top-0 animate-light-ray"
+              style={{
+                left: `${element.left}%`,
+                width: `${element.size}px`,
+                height: '100%',
+                background: `linear-gradient(180deg, 
+                  rgba(255, 215, 120, ${element.intensity}) 0%, 
+                  rgba(255, 200, 100, ${element.intensity * 0.6}) 30%,
+                  transparent 70%)`,
+                transformOrigin: 'top center',
+                animationDuration: `${element.animationDuration}s`,
+                animationDelay: `${element.delay}s`,
+              }}
+            />
+          );
+        } else {
+          return (
+            <div
+              key={element.id}
+              className="absolute animate-sparkle-float"
+              style={{
+                left: `${element.left}%`,
+                top: `${element.top}%`,
+                width: `${element.size}px`,
+                height: `${element.size}px`,
+                animationDuration: `${element.animationDuration}s`,
+                animationDelay: `${element.delay}s`,
+              }}
+            >
+              <div
+                className="w-full h-full rounded-full"
+                style={{
+                  background: `radial-gradient(circle, rgba(255, 220, 130, ${element.intensity}) 0%, transparent 70%)`,
+                  boxShadow: `0 0 ${element.size * 2}px rgba(255, 215, 120, ${element.intensity * 0.5})`,
+                }}
+              />
+            </div>
+          );
+        }
+      })}
       
       <style>{`
-        @keyframes heritage-float {
-          0% {
-            top: 110%;
+        @keyframes light-ray {
+          0%, 100% {
+            opacity: 0.3;
+            transform: scaleY(1) rotate(0deg);
+          }
+          50% {
+            opacity: 0.6;
+            transform: scaleY(1.1) rotate(1deg);
+          }
+        }
+        
+        @keyframes sparkle-float {
+          0%, 100% {
             opacity: 0;
-            transform: translateX(0) scale(0.8);
+            transform: translateY(0) scale(0);
           }
           10% {
             opacity: 1;
+            transform: translateY(-10px) scale(1);
           }
           50% {
-            transform: translateX(10px) scale(1);
+            opacity: 1;
+            transform: translateY(-50vh) scale(1.2);
           }
           90% {
             opacity: 0.8;
           }
           100% {
-            top: -10%;
             opacity: 0;
-            transform: translateX(-10px) scale(0.9);
+            transform: translateY(-100vh) scale(0.8);
           }
         }
-        .animate-heritage-float {
-          animation: heritage-float linear infinite;
+        
+        .animate-light-ray {
+          animation: light-ray ease-in-out infinite;
+        }
+        
+        .animate-sparkle-float {
+          animation: sparkle-float linear infinite;
         }
       `}</style>
     </div>
