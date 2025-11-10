@@ -29,13 +29,28 @@ const Confirmation = () => {
 
   const fetchBooking = async () => {
     try {
+      // Check authentication
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        toast.error("Please login to view your booking confirmation.");
+        navigate("/auth");
+        return;
+      }
+
       const { data, error } = await supabase
         .from("bookings")
         .select("*")
         .eq("id", bookingId)
-        .single();
+        .eq("user_id", user.id)
+        .maybeSingle();
 
       if (error) throw error;
+
+      if (!data) {
+        toast.error("Booking not found or unauthorized.");
+        navigate("/");
+        return;
+      }
 
       if (data.payment_status !== "completed") {
         navigate(`/checkout?bookingId=${bookingId}`);

@@ -161,12 +161,26 @@ export function BookingForm({ destinations, preSelectedDestination }: BookingFor
 
   const onSubmit = async (data: BookingFormValues) => {
     try {
+      // Check if user is authenticated
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        toast({
+          title: "Authentication required",
+          description: "Please login to make a booking.",
+          variant: "destructive",
+        });
+        window.location.href = "/auth";
+        return;
+      }
+
       const destination = destinations.find((d) => d.id === data.destination);
       
       // Save booking to database
       const { data: bookingData, error } = await supabase
         .from("bookings")
         .insert({
+          user_id: user.id,
           user_email: data.email,
           user_name: data.name,
           user_phone: data.phone,

@@ -20,7 +20,38 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Verify authentication
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    const supabaseAuth = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_ANON_KEY") ?? "",
+      { global: { headers: { Authorization: authHeader } } }
+    );
+
+    const { data: { user }, error: authError } = await supabaseAuth.auth.getUser();
+    if (authError || !user) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature, bookingId }: VerifyPaymentRequest = await req.json();
+
+    // Input validation
+    if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature || !bookingId) {
+      return new Response(
+        JSON.stringify({ error: "Missing required payment information" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
     const razorpayKeySecret = Deno.env.get("RAZORPAY_KEY_SECRET");
     if (!razorpayKeySecret) {
@@ -58,33 +89,38 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Payment signature verified successfully");
 
-    // Update booking status
-    const supabaseClient = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
-    );
-
-    const { data: booking, error: fetchError } = await supabaseClient
+    // Verify booking ownership before updating
+    const { data: booking, error: fetchError } = await supabaseAuth
       .from("bookings")
       .select("*")
       .eq("id", bookingId)
-      .single();
+      .eq("user_id", user.id)
+      .maybeSingle();
 
-    if (fetchError || !booking) {
-      console.error("Error fetching booking:", fetchError);
-      return new Response(
-        JSON.stringify({ error: "Booking not found" }),
-        { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
+      if (fetchError || !booking) {
+        console.error("Error fetching booking:", fetchError);
+        return new Response(
+          JSON.stringify({ error: "Booking not found or unauthorized" }),
+          { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
 
-    const { error: updateError } = await supabaseClient
-      .from("bookings")
-      .update({
-        payment_status: "completed",
-        razorpay_payment_id: razorpay_payment_id,
-      })
-      .eq("id", bookingId);
+      // Check if already paid to prevent duplicate payments
+      if (booking.payment_status === "completed") {
+        return new Response(
+          JSON.stringify({ error: "Booking already paid" }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+
+      const { error: updateError } = await supabaseAuth
+        .from("bookings")
+        .update({
+          payment_status: "completed",
+          razorpay_payment_id: razorpay_payment_id,
+        })
+        .eq("id", bookingId)
+        .eq("user_id", user.id);
 
     if (updateError) {
       console.error("Error updating booking:", updateError);
