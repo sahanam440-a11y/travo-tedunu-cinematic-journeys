@@ -51,14 +51,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 shadow-elevated border-b border-pink-200/40 backdrop-blur-md rounded-b-xl transition-transform duration-300 ${
+    <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 shadow-elevated border-b border-amber-200/40 backdrop-blur-md rounded-b-xl transition-transform duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`} style={{ background: '#fce7f3' }}>
+    }`} style={{ background: '#fef3c7' }}>
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1.5 text-base md:text-2xl font-serif font-bold hover:scale-105 transition-transform duration-300">
-            <MapPin className="h-4 w-4 md:h-7 md:w-7 text-pink-600 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)] animate-bounce-subtle" />
-            <span className="text-pink-900 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]">
+            <MapPin className="h-4 w-4 md:h-7 md:w-7 text-amber-600 drop-shadow-[0_0_8px_rgba(217,119,6,0.6)] animate-bounce-subtle" />
+            <span className="text-amber-900 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]">
               Travo Tedunu
             </span>
           </Link>
@@ -69,24 +69,24 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-pink-800/90 hover:text-pink-900 transition-all duration-300 font-semibold text-base relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pink-700 after:transition-all after:duration-300 hover:after:w-full"
+                className="text-amber-800/90 hover:text-amber-900 transition-all duration-300 font-semibold text-base relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-amber-700 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.name}
               </Link>
             ))}
             {user ? (
-              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-pink-100/50 border-pink-300/60 text-pink-900 hover:bg-pink-100/70" asChild>
+              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-amber-100/50 border-amber-300/60 text-amber-900 hover:bg-amber-100/70" asChild>
                 <Link to="/profile">
                   <User className="h-4 w-4 mr-2" />
                   Profile
                 </Link>
               </Button>
             ) : (
-              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-pink-100/50 border-pink-300/60 text-pink-900 hover:bg-pink-100/70" asChild>
+              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-amber-100/50 border-amber-300/60 text-amber-900 hover:bg-amber-100/70" asChild>
                 <Link to="/auth">Login</Link>
               </Button>
             )}
-            <Button size="sm" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold text-white" style={{ background: '#ec4899' }} asChild>
+            <Button size="sm" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold text-white" style={{ background: '#d97706' }} asChild>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>
@@ -126,7 +126,7 @@ const Navbar = () => {
                 <Link to="/auth">Login</Link>
               </Button>
             )}
-            <Button size="sm" className="w-full text-sm h-8 text-white" style={{ background: '#ec4899' }} asChild onClick={() => setIsOpen(false)}>
+            <Button size="sm" className="w-full text-sm h-8 text-white" style={{ background: '#d97706' }} asChild onClick={() => setIsOpen(false)}>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>

@@ -13,8 +13,8 @@ const BottomNav = () => {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe shadow-elevated backdrop-blur-md border-t border-pink-200/40 rounded-t-xl" style={{
-      background: '#fce7f3'
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe shadow-elevated backdrop-blur-md border-t border-amber-200/40 rounded-t-xl" style={{
+      background: '#fef3c7'
     }}>
         <div className="flex items-center justify-around px-2 py-2">
           {navItems.map((item) => {
@@ -27,8 +27,8 @@ const BottomNav = () => {
                 to={item.path}
                 className={`flex flex-col items-center gap-0.5 min-w-[50px] transition-all ${
                   isActive
-                    ? "text-pink-900 font-semibold scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
-                    : "text-pink-800/80 hover:text-pink-900 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]"
+                    ? "text-amber-900 font-semibold scale-110 drop-shadow-[0_0_8px_rgba(217,119,6,0.6)]"
+                    : "text-amber-800/80 hover:text-amber-900 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]"
                 }`}
               >
                 <Icon className={`h-4 w-4 ${isActive ? "stroke-[2.5]" : ""}`} />

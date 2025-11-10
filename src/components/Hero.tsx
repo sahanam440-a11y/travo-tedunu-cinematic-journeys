@@ -87,7 +87,7 @@ const Hero = () => {
             <Button
               size="lg"
               className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:shadow-glow hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold shadow-elevated text-white"
-              style={{ background: '#ec4899' }}
+              style={{ background: '#d97706' }}
               asChild
             >
               <Link to="/booking">
