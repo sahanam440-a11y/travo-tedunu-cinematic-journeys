@@ -9,13 +9,13 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Travel-Inspired Premium Light Mode - Vibrant & Inviting */
-    --background: 210 40% 98% / 0.4;
+    --background: 210 40% 98%;
     --foreground: 220 25% 10%;
 
-    --card: 0 0% 100% / 0.75;
+    --card: 0 0% 100% / 0.95;
     --card-foreground: 220 25% 10%;
 
-    --popover: 0 0% 100% / 0.95;
+    --popover: 0 0% 100%;
     --popover-foreground: 220 25% 10%;
 
     --primary: 202 92% 45%;
@@ -24,8 +24,8 @@ All colors MUST be HSL.
     --secondary: 28 90% 58%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 30% 96% / 0.6;
-    --muted-foreground: 220 20% 42%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 220 20% 35%;
 
     --accent: 165 78% 48%;
     --accent-foreground: 0 0% 100%;
@@ -33,8 +33,8 @@ All colors MUST be HSL.
     --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 25% 90% / 0.4;
-    --input: 210 25% 94% / 0.6;
+    --border: 210 25% 90%;
+    --input: 210 25% 94%;
     --ring: 202 92% 45%;
 
     --radius: 1rem;
@@ -78,13 +78,13 @@ All colors MUST be HSL.
 
   .dark {
     /* Travel-Inspired Premium Dark Mode - Rich & Atmospheric */
-    --background: 220 35% 8% / 0.35;
+    --background: 220 35% 8%;
     --foreground: 210 30% 98%;
 
-    --card: 220 30% 12% / 0.65;
+    --card: 220 30% 12% / 0.90;
     --card-foreground: 210 30% 98%;
 
-    --popover: 220 30% 12% / 0.95;
+    --popover: 220 30% 12%;
     --popover-foreground: 210 30% 98%;
 
     --primary: 202 95% 55%;
@@ -93,8 +93,8 @@ All colors MUST be HSL.
     --secondary: 28 92% 62%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 30% 16% / 0.55;
-    --muted-foreground: 210 20% 78%;
+    --muted: 220 30% 16%;
+    --muted-foreground: 210 20% 70%;
 
     --accent: 165 80% 52%;
     --accent-foreground: 0 0% 100%;
@@ -102,8 +102,8 @@ All colors MUST be HSL.
     --destructive: 0 82% 62%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 28% 22% / 0.35;
-    --input: 220 28% 16% / 0.55;
+    --border: 220 28% 22%;
+    --input: 220 28% 16%;
     --ring: 202 95% 55%;
 
     /* Dark Mode Travel-Themed Cinematic Backgrounds */
@@ -345,43 +345,45 @@ All colors MUST be HSL.
 
   /* Glass-Morphism Effects */
   .glass {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
   .dark .glass {
-    background: rgba(20, 20, 40, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(20, 20, 40, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   }
 
   .dark .glass-card {
-    background: rgba(30, 30, 60, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    background: rgba(30, 30, 60, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
 
   .glass-header {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(28px) saturate(200%);
     -webkit-backdrop-filter: blur(28px) saturate(200%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
 
   .dark .glass-header {
-    background: rgba(20, 20, 40, 0.85);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    background: rgba(20, 20, 40, 0.92);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   }
 
   /* Animated Wave Background */

@@ -29,7 +29,7 @@ const DestinationCard = ({ destination }: DestinationCardProps) => {
             alt={`${destination.name} - ${destination.tagline}`}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           {/* Price Badge */}

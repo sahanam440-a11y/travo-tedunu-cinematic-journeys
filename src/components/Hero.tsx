@@ -72,14 +72,14 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-32 text-center">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="animate-fade-up space-y-4">
-            <div className="inline-block px-6 py-2 rounded-full glass text-white text-sm font-medium mb-4 animate-bounce-subtle">
+            <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-4 animate-bounce-subtle shadow-lg">
               ✨ Discover Your Next Adventure
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               Travel, Tailored & Timeless
             </h1>
           </div>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-3xl mx-auto text-balance px-4 font-medium drop-shadow-lg animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto text-balance px-4 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] animate-fade-up" style={{ animationDelay: '0.2s' }}>
             Curated journeys across India with cinematic visuals and authentic experiences
           </p>
           
@@ -105,18 +105,18 @@ const Hero = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 pt-10 md:pt-14 text-white text-sm md:text-base px-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
-            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 pt-10 md:pt-14 text-sm md:text-base px-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow shadow-lg">
               <div className="h-2.5 w-2.5 rounded-full bg-accent animate-pulse-slow shadow-glow" />
-              <span className="font-medium">Verified Local Guides</span>
+              <span className="font-semibold text-foreground">Verified Local Guides</span>
             </div>
-            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow">
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow shadow-lg">
               <div className="h-2.5 w-2.5 rounded-full bg-secondary animate-pulse-slow shadow-glow" />
-              <span className="font-medium">24/7 Support</span>
+              <span className="font-semibold text-foreground">24/7 Support</span>
             </div>
-            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow">
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow shadow-lg">
               <div className="h-2.5 w-2.5 rounded-full bg-primary animate-pulse-slow shadow-glow" />
-              <span className="font-medium">Best-Price Guarantee</span>
+              <span className="font-semibold text-foreground">Best-Price Guarantee</span>
             </div>
           </div>
         </div>
