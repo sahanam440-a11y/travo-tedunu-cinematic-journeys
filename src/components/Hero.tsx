@@ -97,7 +97,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 glass border-white/40 !text-white hover:bg-white/25 hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold"
+              className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 glass border-white/40 !text-foreground hover:!text-foreground hover:bg-white/25 hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold"
               asChild
             >
               <Link to="/destinations">Explore Destinations</Link>
