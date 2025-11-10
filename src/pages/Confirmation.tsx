@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -93,7 +94,15 @@ const Confirmation = () => {
       <Navbar />
 
       <section className="pt-24 pb-16 gradient-ocean-serenity">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 space-y-6">
+          <PageBreadcrumb 
+            items={[
+              { label: "Book Your Trip", href: "/booking" },
+              { label: "Checkout", href: `/checkout?bookingId=${bookingId}` },
+              { label: "Confirmation" }
+            ]}
+            className="animate-fade-up"
+          />
           <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-up">
             <div className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-success/10 mb-4">
               <CheckCircle2 className="h-10 w-10 text-success" />

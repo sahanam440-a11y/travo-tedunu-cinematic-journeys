@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -80,13 +81,19 @@ const Contact = () => {
 
       {/* Hero */}
       <section className="pt-28 pb-12 relative">
-        <div className="container mx-auto px-4 text-center space-y-3">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground animate-fade-up">
-            Get In Touch
-          </h1>
-          <p className="text-base text-muted-foreground max-w-xl mx-auto animate-fade-up">
-            We're here to help plan your perfect journey
-          </p>
+        <div className="container mx-auto px-4 space-y-3">
+          <PageBreadcrumb 
+            items={[{ label: "Contact" }]}
+            className="animate-fade-up mb-3"
+          />
+          <div className="text-center space-y-3">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground animate-fade-up">
+              Get In Touch
+            </h1>
+            <p className="text-base text-muted-foreground max-w-xl mx-auto animate-fade-up">
+              We're here to help plan your perfect journey
+            </p>
+          </div>
         </div>
       </section>
 

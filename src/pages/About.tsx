@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Users, Award, Heart } from "lucide-react";
 import { organizationSchema, breadcrumbSchema } from "@/lib/schema";
@@ -51,13 +52,19 @@ const About = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 relative">
         <div className="absolute inset-0 gradient-rose-gold-dust -z-10"></div>
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
-            About Travo Tedunu
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-up">
-            Travel, Tailored & Timeless — We craft journeys that become cherished memories
-          </p>
+        <div className="container mx-auto px-4 space-y-6">
+          <PageBreadcrumb 
+            items={[{ label: "About Us" }]}
+            className="animate-fade-up"
+          />
+          <div className="text-center space-y-6">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
+              About Travo Tedunu
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-up">
+              Travel, Tailored & Timeless — We craft journeys that become cherished memories
+            </p>
+          </div>
         </div>
       </section>
 

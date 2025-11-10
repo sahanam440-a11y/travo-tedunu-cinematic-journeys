@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { BookingForm } from "@/components/BookingForm";
 import { destinations } from "@/data/destinations";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -41,7 +42,11 @@ const Booking = () => {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] bg-repeat"></div>
         </div>
         
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-4 relative space-y-4">
+          <PageBreadcrumb 
+            items={[{ label: "Book Your Trip" }]}
+            className="animate-fade-up"
+          />
           <div className="max-w-3xl mx-auto text-center space-y-4 animate-fade-up">
             <div className="inline-block px-6 py-2 rounded-full glass text-foreground text-sm font-medium mb-4">
               ✨ Custom Booking Experience

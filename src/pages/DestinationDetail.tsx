@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { destinations } from "@/data/destinations";
 import { destinationSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { Button } from "@/components/ui/button";
@@ -64,6 +65,13 @@ const DestinationDetail = () => {
       {/* Hero Gallery */}
       <section className="relative">
         <div className="container mx-auto px-4 pt-24 pb-8">
+          <PageBreadcrumb 
+            items={[
+              { label: "Destinations", href: "/destinations" },
+              { label: destination.name }
+            ]}
+            className="mb-4 animate-fade-up"
+          />
           <DestinationGallery images={destination.gallery} title={destination.name} />
           
           {/* Overlay Info */}

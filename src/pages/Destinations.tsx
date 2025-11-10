@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import DestinationCard from "@/components/DestinationCard";
 import { destinations } from "@/data/destinations";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -47,13 +48,19 @@ const Destinations = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 relative">
         <div className="absolute inset-0 gradient-champagne-glow -z-10"></div>
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
-            Explore Destinations
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up">
-            Discover the beauty of India, one journey at a time
-          </p>
+        <div className="container mx-auto px-4 space-y-6">
+          <PageBreadcrumb 
+            items={[{ label: "Destinations" }]}
+            className="animate-fade-up"
+          />
+          <div className="text-center space-y-6">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground animate-fade-up">
+              Explore Destinations
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-up">
+              Discover the beauty of India, one journey at a time
+            </p>
+          </div>
         </div>
       </section>
 

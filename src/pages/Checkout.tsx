@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -185,7 +186,14 @@ const Checkout = () => {
       <Navbar />
 
       <section className="pt-24 pb-16 gradient-ocean-serenity">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 space-y-4">
+          <PageBreadcrumb 
+            items={[
+              { label: "Book Your Trip", href: "/booking" },
+              { label: "Checkout" }
+            ]}
+            className="animate-fade-up"
+          />
           <div className="max-w-4xl mx-auto text-center space-y-4 animate-fade-up">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
               Complete Your Booking

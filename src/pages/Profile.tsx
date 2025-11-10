@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -141,6 +142,10 @@ const Profile = () => {
       
       <main className="container mx-auto px-4 pt-24 pb-32 md:pb-16">
         <div className="max-w-6xl mx-auto">
+          <PageBreadcrumb 
+            items={[{ label: "Profile" }]}
+            className="mb-6 animate-fade-up"
+          />
           {/* Profile Header */}
           <Card className="glass-card p-6 mb-6 animate-fade-up">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
