@@ -41,7 +41,7 @@ const DestinationDetail = () => {
           <DestinationGallery images={destination.gallery} title={destination.name} />
           
           {/* Overlay Info */}
-          <div className="mt-6 space-y-4">
+          <div className="mt-6 space-y-4 bg-background/90 backdrop-blur-sm p-6 rounded-lg">
             <div className="flex flex-wrap gap-2">
               {destination.tags.map((tag) => (
                 <Badge key={tag} variant="secondary">
@@ -49,11 +49,11 @@ const DestinationDetail = () => {
                 </Badge>
               ))}
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold text-foreground">
               {destination.name}
             </h1>
-            <p className="text-xl text-muted-foreground">{destination.tagline}</p>
-            <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
+            <p className="text-xl text-foreground/80">{destination.tagline}</p>
+            <div className="flex flex-wrap items-center gap-6 text-foreground/80">
               <div className="flex items-center gap-2">
                 <IndianRupee className="h-5 w-5" />
                 <span className="text-lg font-semibold">
@@ -75,21 +75,21 @@ const DestinationDetail = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
             {/* Overview */}
-            <section>
-              <h2 className="text-3xl font-serif font-bold mb-4">Overview</h2>
-              <p className="text-muted-foreground leading-relaxed">
+            <section className="bg-background/90 backdrop-blur-sm p-6 rounded-lg">
+              <h2 className="text-3xl font-serif font-bold mb-4 text-foreground">Overview</h2>
+              <p className="text-foreground/90 leading-relaxed">
                 {destination.overview}
               </p>
             </section>
 
             {/* Highlights */}
-            <section>
-              <h2 className="text-3xl font-serif font-bold mb-6">Highlights</h2>
+            <section className="bg-background/90 backdrop-blur-sm p-6 rounded-lg">
+              <h2 className="text-3xl font-serif font-bold mb-6 text-foreground">Highlights</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {destination.highlights.map((highlight, index) => (
-                  <Card key={index} className="border-border/50">
+                  <Card key={index} className="border-border/50 bg-card">
                     <CardContent className="p-4 flex items-start gap-3">
-                      <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="h-4 w-4 text-primary" />
                       </div>
                       <p className="text-foreground">{highlight}</p>
@@ -100,17 +100,17 @@ const DestinationDetail = () => {
             </section>
 
             {/* Itinerary */}
-            <section>
-              <h2 className="text-3xl font-serif font-bold mb-6">Itinerary</h2>
+            <section className="bg-background/90 backdrop-blur-sm p-6 rounded-lg">
+              <h2 className="text-3xl font-serif font-bold mb-6 text-foreground">Itinerary</h2>
               <Accordion type="single" collapsible className="space-y-4">
                 {destination.itinerary.map((day) => (
                   <AccordionItem key={day.day} value={`day-${day.day}`}>
-                    <AccordionTrigger className="text-left hover:text-primary">
+                    <AccordionTrigger className="text-left hover:text-primary text-foreground">
                       <span className="font-semibold">
                         Day {day.day}: {day.title}
                       </span>
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
+                    <AccordionContent className="text-foreground/80">
                       {day.description}
                     </AccordionContent>
                   </AccordionItem>
@@ -119,7 +119,7 @@ const DestinationDetail = () => {
             </section>
 
             {/* Included/Excluded */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-background/90 backdrop-blur-sm p-6 rounded-lg">
               <div>
                 <h3 className="text-2xl font-serif font-bold mb-4 text-accent">
                   What's Included
@@ -128,7 +128,7 @@ const DestinationDetail = () => {
                   {destination.included.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{item}</span>
+                      <span className="text-foreground/80">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -141,7 +141,7 @@ const DestinationDetail = () => {
                   {destination.excluded.map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <X className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{item}</span>
+                      <span className="text-foreground/80">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -149,17 +149,17 @@ const DestinationDetail = () => {
             </section>
 
             {/* FAQs */}
-            <section>
-              <h2 className="text-3xl font-serif font-bold mb-6">
+            <section className="bg-background/90 backdrop-blur-sm p-6 rounded-lg">
+              <h2 className="text-3xl font-serif font-bold mb-6 text-foreground">
                 Frequently Asked Questions
               </h2>
               <Accordion type="single" collapsible className="space-y-4">
                 {destination.faqs.map((faq, index) => (
                   <AccordionItem key={index} value={`faq-${index}`}>
-                    <AccordionTrigger className="text-left hover:text-primary">
+                    <AccordionTrigger className="text-left hover:text-primary text-foreground">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
+                    <AccordionContent className="text-foreground/80">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
