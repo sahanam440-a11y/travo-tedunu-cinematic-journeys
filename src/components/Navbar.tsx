@@ -7,6 +7,8 @@ import { supabase } from "@/integrations/supabase/client";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -20,6 +22,27 @@ const Navbar = () => {
     return () => subscription.unsubscribe();
   }, []);
 
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (window.innerWidth < 768) { // Only on mobile
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
+          // Scrolling down & past threshold
+          setIsVisible(false);
+        } else {
+          // Scrolling up
+          setIsVisible(true);
+        }
+        
+        setLastScrollY(currentScrollY);
+      }
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+    return () => window.removeEventListener('scroll', controlNavbar);
+  }, [lastScrollY]);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Destinations", path: "/destinations" },
@@ -28,7 +51,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 gradient-primary shadow-elevated border-b border-white/20 backdrop-blur-md rounded-b-xl">
+    <nav className={`fixed top-0 left-0 right-0 z-50 gradient-primary shadow-elevated border-b border-white/20 backdrop-blur-md rounded-b-xl transition-transform duration-300 ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    }`}>
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1.5 text-base md:text-2xl font-serif font-bold hover:scale-105 transition-transform duration-300">
