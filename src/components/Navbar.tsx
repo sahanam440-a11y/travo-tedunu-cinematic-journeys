@@ -28,12 +28,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 gradient-primary shadow-elevated border-b border-white/20 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 gradient-primary shadow-elevated border-b border-white/20 backdrop-blur-md md:rounded-b-3xl md:mx-4">
       <div className="container mx-auto px-3 py-3 md:px-4 md:py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 text-lg md:text-2xl font-serif font-bold hover:scale-105 transition-transform duration-300">
-            <MapPin className="h-5 w-5 md:h-7 md:w-7 text-primary drop-shadow-glow animate-bounce-subtle" />
-            <span className="text-white drop-shadow-sm">
+            <MapPin className="h-5 w-5 md:h-7 md:w-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-bounce-subtle" />
+            <span className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
               Travo Tedunu
             </span>
           </Link>

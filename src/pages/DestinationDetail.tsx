@@ -31,6 +31,11 @@ const DestinationDetail = () => {
   return (
     <div className="min-h-screen pb-16 md:pb-0">
       <Navbar />
+      
+      {/* Destination-specific animations */}
+      {destination.slug === "dehradun" && <SnowfallAnimation />}
+      {destination.slug === "mathura" && <DiyaAnimation />}
+      {destination.slug === "delhi" && <DelhiHeritage />}
 
       {/* Hero Gallery */}
       <section className="relative">
