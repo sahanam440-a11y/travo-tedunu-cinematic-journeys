@@ -2,9 +2,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import KrishnaBackground from "./components/KrishnaBackground";
 import WaveBackground from "./components/WaveBackground";
+import { PageTransition } from "./components/transitions/PageTransition";
 import Index from "./pages/Index";
 import Destinations from "./pages/Destinations";
 import DestinationDetail from "./pages/DestinationDetail";
@@ -19,6 +20,29 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const AppRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <PageTransition key={location.pathname}>
+      <Routes location={location}>
+        <Route path="/" element={<Index />} />
+        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/destination/:slug" element={<DestinationDetail />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/auth" element={<Auth />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </PageTransition>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -27,20 +51,7 @@ const App = () => (
       <KrishnaBackground />
       <WaveBackground />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/destinations" element={<Destinations />} />
-          <Route path="/destination/:slug" element={<DestinationDetail />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/confirmation" element={<Confirmation />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/auth" element={<Auth />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppRoutes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
