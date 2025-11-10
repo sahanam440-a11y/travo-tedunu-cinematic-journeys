@@ -144,7 +144,7 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full text-white" style={{ background: '#d97706' }}>
+                  <Button type="submit" size="lg" className="w-full text-amber-900" style={{ background: '#fef3c7' }}>
                     <Send className="mr-2 h-4 w-4" />
                     Send Message
                   </Button>

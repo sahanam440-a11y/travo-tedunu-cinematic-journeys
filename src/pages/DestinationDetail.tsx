@@ -196,7 +196,7 @@ const DestinationDetail = () => {
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full text-lg shadow-elevated hover:shadow-glow transition-all duration-300 text-white" style={{ background: '#d97706' }} asChild>
+                <Button size="lg" className="w-full text-lg shadow-elevated hover:shadow-glow transition-all duration-300 text-amber-900" style={{ background: '#fef3c7' }} asChild>
                   <Link to={`/booking?destination=${destination.id}`}>
                     Book This Trip
                   </Link>

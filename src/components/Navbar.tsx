@@ -86,7 +86,7 @@ const Navbar = () => {
                 <Link to="/auth">Login</Link>
               </Button>
             )}
-            <Button size="sm" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold text-white" style={{ background: '#d97706' }} asChild>
+            <Button size="sm" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold text-amber-900" style={{ background: '#fef3c7' }} asChild>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>
@@ -126,7 +126,7 @@ const Navbar = () => {
                 <Link to="/auth">Login</Link>
               </Button>
             )}
-            <Button size="sm" className="w-full text-sm h-8 text-white" style={{ background: '#d97706' }} asChild onClick={() => setIsOpen(false)}>
+            <Button size="sm" className="w-full text-sm h-8 text-amber-900" style={{ background: '#fef3c7' }} asChild onClick={() => setIsOpen(false)}>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>
