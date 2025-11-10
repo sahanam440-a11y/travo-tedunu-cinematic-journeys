@@ -13,8 +13,8 @@ const BottomNav = () => {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe shadow-elevated backdrop-blur-md border-t border-pink-200/40 rounded-t-xl overflow-hidden" style={{
-      background: 'linear-gradient(135deg, #fce7f3 0%, #fbcfe8 25%, #f9a8d4 50%, #f472b6 75%, #ec4899 100%)'
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe shadow-elevated backdrop-blur-md border-t border-pink-200/40 rounded-t-xl" style={{
+      background: '#fce7f3'
     }}>
         <div className="flex items-center justify-around px-2 py-2">
           {navItems.map((item) => {
