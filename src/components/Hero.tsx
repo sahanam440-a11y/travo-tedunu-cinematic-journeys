@@ -91,22 +91,6 @@ const Hero = () => {
               <Link to="/destinations">Explore Destinations</Link>
             </Button>
           </div>
-
-          {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 pt-10 md:pt-14 text-sm md:text-base px-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
-            <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg">
-              <div className="h-2.5 w-2.5 rounded-full bg-accent animate-pulse-slow shadow-glow" />
-              <span className="font-semibold text-white">Verified Local Guides</span>
-            </div>
-            <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg">
-              <div className="h-2.5 w-2.5 rounded-full bg-secondary animate-pulse-slow shadow-glow" />
-              <span className="font-semibold text-white">24/7 Support</span>
-            </div>
-            <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg">
-              <div className="h-2.5 w-2.5 rounded-full bg-primary animate-pulse-slow shadow-glow" />
-              <span className="font-semibold text-white">Best-Price Guarantee</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
