@@ -18,6 +18,7 @@ import { SnowfallAnimation } from "@/components/animations/SnowfallAnimation";
 import { LotusAnimation } from "@/components/animations/LotusAnimation";
 import { DiyaAnimation } from "@/components/animations/DiyaAnimation";
 import { DestinationGallery } from "@/components/DestinationGallery";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const DestinationDetail = () => {
   const { slug } = useParams();
@@ -226,6 +227,7 @@ const DestinationDetail = () => {
 
       <Footer />
       <BottomNav />
+      <WhatsAppButton message={`Hi! I'm interested in the ${destination.name} tour package. Can you provide more details?`} />
     </div>
   );
 };
