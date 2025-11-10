@@ -32,7 +32,7 @@ export interface DestinationDetail {
   slug: string;
   tagline: string;
   image: string;
-  gallery: string[];
+  gallery: { image: string; caption: string }[];
   priceFrom: number;
   duration: string;
   tags: string[];
@@ -59,7 +59,14 @@ export const destinations: DestinationDetail[] = [
     slug: "delhi",
     tagline: "Monuments, street food & city secrets",
     image: delhiImage,
-    gallery: [delhi1, delhi2, delhi3, delhi4, delhi5, delhi6],
+    gallery: [
+      { image: delhi1, caption: "India Gate - The iconic war memorial at sunset" },
+      { image: delhi2, caption: "Red Fort - Magnificent Mughal architecture" },
+      { image: delhi3, caption: "Chandni Chowk - Bustling streets of Old Delhi" },
+      { image: delhi4, caption: "Qutub Minar - UNESCO World Heritage Site" },
+      { image: delhi5, caption: "Lotus Temple - Architectural marvel of peace" },
+      { image: delhi6, caption: "Jama Masjid - One of India's largest mosques" },
+    ],
     priceFrom: 2499,
     duration: "2 days",
     tags: ["Culture", "History", "Food"],
@@ -116,7 +123,14 @@ export const destinations: DestinationDetail[] = [
     slug: "mathura",
     tagline: "Sacred ghats, rituals and timeless devotion",
     image: mathuraImage,
-    gallery: [mathura1, mathura2, mathura3, mathura4, mathura5, mathura6],
+    gallery: [
+      { image: mathura1, caption: "Krishna Janmabhoomi - Birthplace of Lord Krishna" },
+      { image: mathura2, caption: "Vishram Ghat - Sacred bathing ghat on Yamuna" },
+      { image: mathura3, caption: "Evening Aarti - Divine ritual ceremony" },
+      { image: mathura4, caption: "Govardhan Hill - Sacred pilgrimage site" },
+      { image: mathura5, caption: "Dwarkadhish Temple - Ancient Krishna temple" },
+      { image: mathura6, caption: "Yamuna River - Peaceful boat ride at dawn" },
+    ],
     priceFrom: 1199,
     duration: "2 days",
     tags: ["Spiritual", "Culture", "Pilgrimage"],
@@ -173,7 +187,16 @@ export const destinations: DestinationDetail[] = [
     slug: "dehradun",
     tagline: "Riverside trails, mountain air, gentle escapes",
     image: dehradunImage,
-    gallery: [dehradun1, dehradun2, dehradun3, dehradun4, dehradun5, dehradun6, dehradun7, dehradun8],
+    gallery: [
+      { image: dehradun1, caption: "Robber's Cave - Natural cave formation" },
+      { image: dehradun2, caption: "Sahastradhara - Therapeutic sulphur springs" },
+      { image: dehradun3, caption: "Forest Research Institute - Colonial architecture" },
+      { image: dehradun4, caption: "Mussoorie Hills - Queen of the Hills" },
+      { image: dehradun5, caption: "Cable Car Ride - Spectacular mountain views" },
+      { image: dehradun6, caption: "Kempty Falls - Scenic waterfall trek" },
+      { image: dehradun7, caption: "Lakshman Jhula - Iconic suspension bridge" },
+      { image: dehradun8, caption: "Ganga Aarti - Evening spiritual ceremony" },
+    ],
     priceFrom: 3999,
     duration: "3 days",
     tags: ["Adventure", "Nature", "Mountains"],
