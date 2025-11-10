@@ -11,18 +11,33 @@ interface Snowflake {
 
 export const SnowfallAnimation = () => {
   const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const snowflakeArray: Snowflake[] = Array.from({ length: 50 }, (_, i) => ({
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const count = isMobile ? 30 : 50;
+    const baseSize = isMobile ? 6 : 8;
+    const sizeRange = isMobile ? 10 : 16;
+    
+    const snowflakeArray: Snowflake[] = Array.from({ length: count }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       animationDuration: 10 + Math.random() * 15,
       animationDelay: Math.random() * 10,
-      size: 8 + Math.random() * 16,
+      size: baseSize + Math.random() * sizeRange,
       opacity: 0.3 + Math.random() * 0.7,
     }));
     setSnowflakes(snowflakeArray);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
