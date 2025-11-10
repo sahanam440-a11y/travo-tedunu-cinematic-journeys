@@ -15,7 +15,7 @@ import {
 import { MapPin, Clock, IndianRupee, Check, X } from "lucide-react";
 import NotFound from "./NotFound";
 import { SnowfallAnimation } from "@/components/animations/SnowfallAnimation";
-import { LotusAnimation } from "@/components/animations/LotusAnimation";
+import { DelhiHeritage } from "@/components/animations/DelhiHeritage";
 import { DiyaAnimation } from "@/components/animations/DiyaAnimation";
 import { DestinationGallery } from "@/components/DestinationGallery";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -31,7 +31,7 @@ const DestinationDetail = () => {
   return (
     <div className="min-h-screen pb-16 md:pb-0">
       {destination.slug === 'dehradun' && <SnowfallAnimation />}
-      {destination.slug === 'delhi' && <LotusAnimation />}
+      {destination.slug === 'delhi' && <DelhiHeritage />}
       {destination.slug === 'mathura' && <DiyaAnimation />}
       <Navbar />
 
