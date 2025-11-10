@@ -17,9 +17,6 @@ import NotFound from "./NotFound";
 import { SnowfallAnimation } from "@/components/animations/SnowfallAnimation";
 import { DelhiHeritage } from "@/components/animations/DelhiHeritage";
 import { DiyaAnimation } from "@/components/animations/DiyaAnimation";
-import { MathuraBackground } from "@/components/backgrounds/MathuraBackground";
-import { DelhiBackground } from "@/components/backgrounds/DelhiBackground";
-import { DehradunBackground } from "@/components/backgrounds/DehradunBackground";
 import { DestinationGallery } from "@/components/DestinationGallery";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
@@ -33,25 +30,6 @@ const DestinationDetail = () => {
 
   return (
     <div className="min-h-screen pb-16 md:pb-0">
-      {/* Destination-specific backgrounds */}
-      {destination.slug === 'dehradun' && (
-        <>
-          <DehradunBackground />
-          <SnowfallAnimation />
-        </>
-      )}
-      {destination.slug === 'delhi' && (
-        <>
-          <DelhiBackground />
-          <DelhiHeritage />
-        </>
-      )}
-      {destination.slug === 'mathura' && (
-        <>
-          <MathuraBackground />
-          <DiyaAnimation />
-        </>
-      )}
       <Navbar />
 
       {/* Hero Gallery */}
