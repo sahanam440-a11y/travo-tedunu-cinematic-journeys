@@ -61,6 +61,8 @@ export default {
         soft: "var(--shadow-soft)",
         elevated: "var(--shadow-elevated)",
         strong: "var(--shadow-strong)",
+        glow: "var(--shadow-glow)",
+        premium: "var(--shadow-premium)",
       },
       keyframes: {
         "accordion-down": {
@@ -97,7 +99,17 @@ export default {
         },
         "pulse-slow": {
           "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
+          "50%": { opacity: "0.6" },
+        },
+        "bounce-subtle": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%": {
+            transform: "translateY(-8px)",
+            animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
+          },
         },
       },
       animation: {
@@ -106,7 +118,8 @@ export default {
         "fade-up": "fade-up 0.6s cubic-bezier(0.22, 0.9, 0.31, 1)",
         "fade-in": "fade-in 0.4s ease-out",
         "scale-in": "scale-in 0.3s ease-out",
-        "pulse-slow": "pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "pulse-slow": "pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
       },
     },
   },

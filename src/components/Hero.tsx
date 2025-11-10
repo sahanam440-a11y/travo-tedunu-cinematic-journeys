@@ -64,34 +64,40 @@ const Hero = () => {
           </div>
         ))}
         
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 md:py-32 text-center">
-        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 animate-fade-up">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white text-balance leading-tight px-2">
-            Travel, Tailored & Timeless
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-2xl mx-auto text-balance px-4">
+        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
+          <div className="animate-fade-up space-y-4">
+            <div className="inline-block px-6 py-2 rounded-full glass text-white text-sm font-medium mb-4 animate-bounce-subtle">
+              ✨ Discover Your Next Adventure
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-2xl">
+              Travel, Tailored & Timeless
+            </h1>
+          </div>
+          <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-3xl mx-auto text-balance px-4 font-medium drop-shadow-lg animate-fade-up" style={{ animationDelay: '0.2s' }}>
             Curated journeys across India with cinematic visuals and authentic experiences
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 pt-2 md:pt-4 px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 pt-4 md:pt-6 px-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <Button
               size="lg"
-              className="gradient-primary text-base md:text-lg px-6 md:px-8 py-5 md:py-6 hover:shadow-elevated transition-all w-full sm:w-auto"
+              className="gradient-primary text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:shadow-glow hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold shadow-elevated"
               asChild
             >
               <Link to="/destinations">
                 Start Planning
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
               </Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 w-full sm:w-auto"
+              className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 glass border-white/40 text-white hover:bg-white/25 hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold"
               asChild
             >
               <Link to="/destinations">Explore Destinations</Link>
@@ -99,18 +105,18 @@ const Hero = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-8 md:pt-12 text-white/95 text-xs md:text-sm px-4">
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              <span>Verified Local Guides</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 pt-10 md:pt-14 text-white text-sm md:text-base px-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow">
+              <div className="h-2.5 w-2.5 rounded-full bg-accent animate-pulse-slow shadow-glow" />
+              <span className="font-medium">Verified Local Guides</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              <span>24/7 Support</span>
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow">
+              <div className="h-2.5 w-2.5 rounded-full bg-secondary animate-pulse-slow shadow-glow" />
+              <span className="font-medium">24/7 Support</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              <span>Best-Price Guarantee</span>
+            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow">
+              <div className="h-2.5 w-2.5 rounded-full bg-primary animate-pulse-slow shadow-glow" />
+              <span className="font-medium">Best-Price Guarantee</span>
             </div>
           </div>
         </div>

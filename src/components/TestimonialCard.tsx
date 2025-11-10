@@ -16,34 +16,34 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <Card className="glass-card">
-      <CardContent className="p-6 space-y-4">
+    <Card className="glass-card hover-glow border-2 border-border/30 hover:border-accent/40 transition-all duration-500">
+      <CardContent className="p-7 space-y-5">
         <div className="flex gap-1">
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
-              className={`h-4 w-4 ${
+              className={`h-5 w-5 transition-all duration-300 ${
                 i < testimonial.rating
-                  ? "fill-primary text-primary"
+                  ? "fill-accent text-accent drop-shadow-glow"
                   : "text-muted-foreground/30"
               }`}
             />
           ))}
         </div>
 
-        <p className="text-foreground/90 italic leading-relaxed">
+        <p className="text-foreground text-base md:text-lg italic leading-relaxed font-medium">
           "{testimonial.quote}"
         </p>
 
-        <div className="flex items-center gap-3 pt-2">
-          <Avatar className="h-10 w-10 bg-primary/10">
-            <AvatarFallback className="bg-primary/20 text-primary font-semibold">
+        <div className="flex items-center gap-4 pt-3 border-t border-border/50">
+          <Avatar className="h-12 w-12 bg-gradient-primary border-2 border-primary/30">
+            <AvatarFallback className="gradient-primary text-white font-bold text-lg">
               {testimonial.initial}
             </AvatarFallback>
           </Avatar>
           <div>
-            <p className="font-semibold text-foreground">{testimonial.name}</p>
-            <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+            <p className="font-bold text-foreground text-base">{testimonial.name}</p>
+            <p className="text-sm text-muted-foreground font-medium">{testimonial.location}</p>
           </div>
         </div>
       </CardContent>

@@ -14,12 +14,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-header shadow-soft">
-      <div className="container mx-auto px-3 py-2 md:px-4 md:py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-header shadow-elevated border-b border-border/40">
+      <div className="container mx-auto px-3 py-3 md:px-4 md:py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-1.5 text-lg md:text-2xl font-serif font-bold">
-            <MapPin className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <Link to="/" className="flex items-center gap-2 text-lg md:text-2xl font-serif font-bold hover:scale-105 transition-transform duration-300">
+            <MapPin className="h-5 w-5 md:h-7 md:w-7 text-primary drop-shadow-glow animate-bounce-subtle" />
+            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-sm">
               Travo Tedunu
             </span>
           </Link>
@@ -30,12 +30,12 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+                className="text-foreground/80 hover:text-primary transition-all duration-300 font-semibold text-base relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.name}
               </Link>
             ))}
-            <Button size="sm" className="gradient-primary">
+            <Button size="sm" className="gradient-primary shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold">
               Book Now
             </Button>
           </div>
