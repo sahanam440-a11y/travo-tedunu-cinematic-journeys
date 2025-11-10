@@ -14,13 +14,13 @@ export const DiyaAnimation = () => {
 
   useEffect(() => {
     const diyaArray: Diya[] = [];
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 6; i++) {
       diyaArray.push({
         id: i,
         left: Math.random() * 100,
-        animationDuration: 12 + Math.random() * 8,
-        size: 30 + Math.random() * 20,
-        delay: Math.random() * 10,
+        animationDuration: 14 + Math.random() * 10,
+        size: 35 + Math.random() * 15,
+        delay: Math.random() * 12,
         glowIntensity: 0.7 + Math.random() * 0.3,
       });
     }
