@@ -28,12 +28,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-header shadow-elevated border-b border-border/40">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-sky-500 shadow-elevated border-b border-sky-600/40 backdrop-blur-md">
       <div className="container mx-auto px-3 py-3 md:px-4 md:py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 text-lg md:text-2xl font-serif font-bold hover:scale-105 transition-transform duration-300">
             <MapPin className="h-5 w-5 md:h-7 md:w-7 text-primary drop-shadow-glow animate-bounce-subtle" />
-            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-sm">
+            <span className="text-white drop-shadow-sm">
               Travo Tedunu
             </span>
           </Link>
@@ -44,20 +44,20 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-foreground/80 hover:text-primary transition-all duration-300 font-semibold text-base relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                className="text-white/90 hover:text-white transition-all duration-300 font-semibold text-base relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.name}
               </Link>
             ))}
             {user ? (
-              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300" asChild>
+              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-white/20 border-white/40 text-white hover:bg-white/30" asChild>
                 <Link to="/profile">
                   <User className="h-4 w-4 mr-2" />
                   Profile
                 </Link>
               </Button>
             ) : (
-              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300" asChild>
+              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-white/20 border-white/40 text-white hover:bg-white/30" asChild>
                 <Link to="/auth">Login</Link>
               </Button>
             )}
@@ -69,7 +69,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-1 text-foreground"
+            className="md:hidden p-1 text-white"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -83,21 +83,21 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="block text-foreground/80 hover:text-foreground transition-colors font-medium text-sm py-1"
+                className="block text-white/90 hover:text-white transition-colors font-medium text-sm py-1"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
             {user ? (
-              <Button size="sm" variant="outline" className="w-full text-sm h-8" asChild onClick={() => setIsOpen(false)}>
+              <Button size="sm" variant="outline" className="w-full text-sm h-8 bg-white/20 border-white/40 text-white hover:bg-white/30" asChild onClick={() => setIsOpen(false)}>
                 <Link to="/profile">
                   <User className="h-4 w-4 mr-2" />
                   Profile
                 </Link>
               </Button>
             ) : (
-              <Button size="sm" variant="outline" className="w-full text-sm h-8" asChild onClick={() => setIsOpen(false)}>
+              <Button size="sm" variant="outline" className="w-full text-sm h-8 bg-white/20 border-white/40 text-white hover:bg-white/30" asChild onClick={() => setIsOpen(false)}>
                 <Link to="/auth">Login</Link>
               </Button>
             )}
