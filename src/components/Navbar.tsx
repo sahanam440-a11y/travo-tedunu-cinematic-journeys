@@ -51,7 +51,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 gradient-primary shadow-elevated border-b border-white/20 backdrop-blur-md rounded-b-xl transition-transform duration-300 ${
+    <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 gradient-primary shadow-elevated border-b border-white/20 backdrop-blur-md rounded-b-xl transition-transform duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
