@@ -608,7 +608,8 @@ export function BookingForm({ destinations, preSelectedDestination }: BookingFor
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full h-14 text-lg gradient-primary shadow-elevated hover:shadow-glow transition-all duration-300 font-bold"
+                  className="w-full h-14 text-lg shadow-elevated hover:shadow-glow transition-all duration-300 font-bold text-white"
+                  style={{ background: '#ec4899' }}
                 >
                   Confirm Booking - ₹{calculatedPrice.toLocaleString()}
                 </Button>
@@ -621,7 +622,7 @@ export function BookingForm({ destinations, preSelectedDestination }: BookingFor
       {/* Price Summary Sidebar */}
       <div className="lg:col-span-1">
         <Card className="glass-card border-2 border-primary/30 sticky top-24 shadow-elevated">
-          <CardHeader className="gradient-primary text-white">
+          <CardHeader className="text-white" style={{ background: '#ec4899' }}>
             <CardTitle className="text-2xl font-serif flex items-center gap-2">
               <IndianRupee className="h-6 w-6" />
               Price Summary
