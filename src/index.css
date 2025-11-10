@@ -39,6 +39,22 @@ All colors MUST be HSL.
 
     --radius: 1rem;
 
+    /* Action Colors - Main amber action buttons and navigation */
+    --action: 54 90% 88%;  /* Soft amber for primary actions - #fef08a */
+    --action-foreground: 30 100% 20%;  /* Dark amber text - #663300 */
+    --action-hover: 54 95% 82%;  /* Slightly darker amber on hover */
+    
+    /* Navigation specific */
+    --nav-background: 54 90% 88%;
+    --nav-foreground: 30 95% 25%;
+    --nav-border: 45 85% 75%;
+    
+    /* Amber variations for badges, highlights */
+    --amber-light: 45 95% 92%;
+    --amber-medium: 45 90% 85%;
+    --amber-dark: 45 85% 70%;
+    --amber-text: 30 100% 20%;
+
     /* Travel-Inspired Ultra-Premium Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(202 92% 50% / 0.95) 0%, hsl(195 95% 55% / 0.92) 50%, hsl(165 78% 52% / 0.95) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(28 90% 62% / 0.92) 0%, hsl(35 92% 65% / 0.9) 50%, hsl(42 95% 68% / 0.92) 100%);
@@ -53,6 +69,14 @@ All colors MUST be HSL.
     --gradient-golden-hour: linear-gradient(135deg, hsl(42 90% 88% / 0.6) 0%, hsl(35 88% 85% / 0.6) 50%, hsl(28 85% 90% / 0.6) 100%);
     --gradient-adventure-sky: linear-gradient(135deg, hsl(202 85% 90% / 0.6) 0%, hsl(195 80% 88% / 0.6) 50%, hsl(188 75% 92% / 0.6) 100%);
     --gradient-tropical-breeze: linear-gradient(135deg, hsl(165 65% 90% / 0.7) 0%, hsl(175 70% 88% / 0.7) 50%, hsl(185 65% 92% / 0.7) 100%);
+    
+    /* Additional Page Backgrounds - Previously Missing */
+    --gradient-champagne-glow: linear-gradient(135deg, hsl(42 85% 90% / 0.6) 0%, hsl(38 80% 88% / 0.6) 50%, hsl(35 85% 92% / 0.6) 100%);
+    --gradient-lavender-mist: linear-gradient(135deg, hsl(250 65% 92% / 0.6) 0%, hsl(240 60% 90% / 0.6) 50%, hsl(230 65% 94% / 0.6) 100%);
+    --gradient-rose-gold-dust: linear-gradient(135deg, hsl(15 75% 88% / 0.6) 0%, hsl(25 70% 85% / 0.6) 50%, hsl(35 75% 90% / 0.6) 100%);
+    --gradient-mint-breeze: linear-gradient(135deg, hsl(155 60% 90% / 0.6) 0%, hsl(165 65% 88% / 0.6) 50%, hsl(175 60% 92% / 0.6) 100%);
+    --gradient-pearl-elegance: linear-gradient(135deg, hsl(200 30% 95% / 0.6) 0%, hsl(210 25% 93% / 0.6) 50%, hsl(220 30% 96% / 0.6) 100%);
+    --gradient-ethereal-dream: linear-gradient(135deg, hsl(270 45% 92% / 0.6) 0%, hsl(260 40% 90% / 0.6) 50%, hsl(250 45% 94% / 0.6) 100%);
     
     /* Premium Travel Overlay Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(202 92% 48% / 0.96) 0%, hsl(195 90% 52% / 0.94) 50%, hsl(165 78% 50% / 0.96) 100%);
@@ -105,6 +129,20 @@ All colors MUST be HSL.
     --border: 220 28% 22%;
     --input: 220 28% 16%;
     --ring: 202 95% 55%;
+
+    /* Action Colors - Dark Mode */
+    --action: 54 90% 88%;
+    --action-foreground: 30 100% 20%;
+    --action-hover: 54 95% 82%;
+    
+    --nav-background: 54 90% 88%;
+    --nav-foreground: 30 95% 25%;
+    --nav-border: 45 85% 75%;
+    
+    --amber-light: 45 95% 92%;
+    --amber-medium: 45 90% 85%;
+    --amber-dark: 45 85% 70%;
+    --amber-text: 30 100% 20%;
 
     /* Dark Mode Travel-Themed Cinematic Backgrounds */
     --gradient-midnight-ocean: linear-gradient(135deg, hsl(202 70% 12% / 0.7) 0%, hsl(210 68% 18% / 0.7) 50%, hsl(220 65% 24% / 0.7) 100%);
@@ -239,6 +277,30 @@ All colors MUST be HSL.
 
   .gradient-warm-embrace {
     background: var(--gradient-warm-embrace);
+  }
+
+  .gradient-champagne-glow {
+    background: var(--gradient-champagne-glow);
+  }
+
+  .gradient-lavender-mist {
+    background: var(--gradient-lavender-mist);
+  }
+
+  .gradient-rose-gold-dust {
+    background: var(--gradient-rose-gold-dust);
+  }
+
+  .gradient-mint-breeze {
+    background: var(--gradient-mint-breeze);
+  }
+
+  .gradient-pearl-elegance {
+    background: var(--gradient-pearl-elegance);
+  }
+
+  .gradient-ethereal-dream {
+    background: var(--gradient-ethereal-dream);
   }
 
   /* Dark Mode Travel Backgrounds */

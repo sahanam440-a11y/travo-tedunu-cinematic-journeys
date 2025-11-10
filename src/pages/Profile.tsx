@@ -145,8 +145,8 @@ const Profile = () => {
           <Card className="glass-card p-6 mb-6 animate-fade-up">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-6">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ background: '#fef08a' }}>
-                  <User className="h-10 w-10 text-amber-900" />
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-action">
+                  <User className="h-10 w-10 text-action-foreground" />
                 </div>
                 <div className="text-center md:text-left">
                   <h1 className="text-2xl font-serif mb-1">Welcome Back!</h1>
@@ -210,7 +210,7 @@ const Profile = () => {
                   <MapPin className="h-16 w-16 mx-auto mb-4 text-muted-foreground/30" />
                   <h3 className="text-lg font-semibold mb-2">No bookings yet</h3>
                   <p className="text-muted-foreground mb-6">Start your spiritual journey today!</p>
-                  <Button className="text-amber-900" style={{ background: '#fef08a' }} asChild>
+                  <Button className="bg-action text-action-foreground hover:bg-action-hover" asChild>
                     <Link to="/destinations">Explore Destinations</Link>
                   </Button>
                 </div>
@@ -277,7 +277,7 @@ const Profile = () => {
                               Booked on {format(new Date(booking.created_at), "MMM dd, yyyy")}
                             </p>
                             {booking.payment_status === "pending" && (
-                              <Button size="sm" className="text-amber-900" style={{ background: '#fef08a' }} asChild>
+                              <Button size="sm" className="bg-action text-action-foreground hover:bg-action-hover" asChild>
                                 <Link to={`/checkout?bookingId=${booking.id}`}>Complete Payment</Link>
                               </Button>
                             )}

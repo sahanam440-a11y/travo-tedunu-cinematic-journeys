@@ -155,8 +155,7 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full text-amber-900 font-semibold h-12 shadow-md hover:shadow-lg transition-all" 
-                    style={{ background: '#fef08a' }}
+                    className="w-full bg-action text-action-foreground hover:bg-action-hover font-semibold h-12 shadow-md hover:shadow-lg transition-all"
                   >
                     <Send className="mr-2 h-4 w-4" />
                     Send Message

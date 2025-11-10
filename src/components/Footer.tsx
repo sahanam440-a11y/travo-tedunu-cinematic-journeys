@@ -162,7 +162,7 @@ const Footer = () => {
               <p className="text-sm font-medium">Newsletter</p>
               <div className="flex gap-2">
                 <Input placeholder="Your email" className="h-9 text-sm" />
-                <Button size="sm" className="text-amber-900" style={{ background: '#fef08a' }}>
+                <Button size="sm" className="bg-action text-action-foreground hover:bg-action-hover">
                   Subscribe
                 </Button>
               </div>

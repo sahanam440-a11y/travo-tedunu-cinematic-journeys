@@ -47,6 +47,22 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        action: {
+          DEFAULT: "hsl(var(--action))",
+          foreground: "hsl(var(--action-foreground))",
+          hover: "hsl(var(--action-hover))",
+        },
+        nav: {
+          background: "hsl(var(--nav-background))",
+          foreground: "hsl(var(--nav-foreground))",
+          border: "hsl(var(--nav-border))",
+        },
+        amber: {
+          light: "hsl(var(--amber-light))",
+          medium: "hsl(var(--amber-medium))",
+          dark: "hsl(var(--amber-dark))",
+          text: "hsl(var(--amber-text))",
+        },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

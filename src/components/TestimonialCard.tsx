@@ -36,8 +36,8 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
         </p>
 
         <div className="flex items-center gap-4 pt-3 border-t border-border/50">
-          <Avatar className="h-12 w-12 border-2 border-amber-300/50" style={{ background: '#fef08a' }}>
-            <AvatarFallback className="text-amber-900 font-bold text-lg" style={{ background: '#fef08a' }}>
+          <Avatar className="h-12 w-12 border-2 border-nav-border bg-action">
+            <AvatarFallback className="text-action-foreground font-bold text-lg bg-action">
               {testimonial.initial}
             </AvatarFallback>
           </Avatar>

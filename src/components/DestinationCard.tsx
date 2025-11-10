@@ -33,7 +33,7 @@ const DestinationCard = ({ destination }: DestinationCardProps) => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           {/* Price Badge */}
-          <div className="absolute top-4 right-4 rounded-full px-4 py-2 flex items-center gap-1.5 text-amber-900 font-bold text-sm shadow-elevated hover:shadow-glow transition-all duration-300 hover:scale-110" style={{ background: '#fef08a' }}>
+          <div className="absolute top-4 right-4 rounded-full px-4 py-2 flex items-center gap-1.5 bg-action text-action-foreground font-bold text-sm shadow-elevated hover:shadow-glow transition-all duration-300 hover:scale-110">
             <IndianRupee className="h-4 w-4" />
             {destination.priceFrom.toLocaleString()}
           </div>
