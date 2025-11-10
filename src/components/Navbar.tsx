@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 shadow-elevated border-b border-amber-200/40 backdrop-blur-md rounded-b-xl transition-transform duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`} style={{ background: '#fde68a' }}>
+    }`} style={{ background: '#fef08a' }}>
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1.5 text-base md:text-2xl font-serif font-bold hover:scale-105 transition-transform duration-300">
@@ -86,7 +86,7 @@ const Navbar = () => {
                 <Link to="/auth">Login</Link>
               </Button>
             )}
-            <Button size="sm" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold text-amber-900" style={{ background: '#fde68a' }} asChild>
+            <Button size="sm" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold text-amber-900" style={{ background: '#fef08a' }} asChild>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>
@@ -126,7 +126,7 @@ const Navbar = () => {
                 <Link to="/auth">Login</Link>
               </Button>
             )}
-            <Button size="sm" className="w-full text-sm h-8 text-amber-900" style={{ background: '#fde68a' }} asChild onClick={() => setIsOpen(false)}>
+            <Button size="sm" className="w-full text-sm h-8 text-amber-900" style={{ background: '#fef08a' }} asChild onClick={() => setIsOpen(false)}>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>

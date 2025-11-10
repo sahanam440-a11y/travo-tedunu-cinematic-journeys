@@ -14,7 +14,7 @@ const BottomNav = () => {
 
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe shadow-elevated backdrop-blur-md border-t border-amber-200/40 rounded-t-xl" style={{
-      background: '#fde68a'
+      background: '#fef08a'
     }}>
         <div className="flex items-center justify-around px-2 py-2">
           {navItems.map((item) => {
