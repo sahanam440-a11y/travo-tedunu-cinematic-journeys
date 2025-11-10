@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, MapPin } from "lucide-react";
+import { Menu, X, MapPin, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -35,6 +49,18 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            {user ? (
+              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300" asChild>
+                <Link to="/profile">
+                  <User className="h-4 w-4 mr-2" />
+                  Profile
+                </Link>
+              </Button>
+            ) : (
+              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300" asChild>
+                <Link to="/auth">Login</Link>
+              </Button>
+            )}
             <Button size="sm" className="gradient-primary shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold" asChild>
               <Link to="/booking">Book Now</Link>
             </Button>
@@ -63,7 +89,19 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button size="sm" className="w-full gradient-primary text-sm h-8" asChild>
+            {user ? (
+              <Button size="sm" variant="outline" className="w-full text-sm h-8" asChild onClick={() => setIsOpen(false)}>
+                <Link to="/profile">
+                  <User className="h-4 w-4 mr-2" />
+                  Profile
+                </Link>
+              </Button>
+            ) : (
+              <Button size="sm" variant="outline" className="w-full text-sm h-8" asChild onClick={() => setIsOpen(false)}>
+                <Link to="/auth">Login</Link>
+              </Button>
+            )}
+            <Button size="sm" className="w-full gradient-primary text-sm h-8" asChild onClick={() => setIsOpen(false)}>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>
