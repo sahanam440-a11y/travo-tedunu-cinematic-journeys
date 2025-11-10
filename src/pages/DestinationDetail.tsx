@@ -15,6 +15,7 @@ import {
 import { MapPin, Clock, IndianRupee, Check, X } from "lucide-react";
 import NotFound from "./NotFound";
 import { SnowfallAnimation } from "@/components/animations/SnowfallAnimation";
+import { DestinationGallery } from "@/components/DestinationGallery";
 
 const DestinationDetail = () => {
   const { slug } = useParams();
@@ -29,17 +30,13 @@ const DestinationDetail = () => {
       {destination.slug === 'dehradun' && <SnowfallAnimation />}
       <Navbar />
 
-      {/* Hero Image */}
-      <section className="relative h-[50vh] md:h-[60vh]">
-        <img
-          src={destination.image}
-          alt={destination.name}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        
-        <div className="absolute bottom-0 left-0 right-0 container mx-auto px-4 pb-8">
-          <div className="space-y-4 text-white">
+      {/* Hero Gallery */}
+      <section className="relative">
+        <div className="container mx-auto px-4 pt-24 pb-8">
+          <DestinationGallery images={destination.gallery} title={destination.name} />
+          
+          {/* Overlay Info */}
+          <div className="mt-6 space-y-4">
             <div className="flex flex-wrap gap-2">
               {destination.tags.map((tag) => (
                 <Badge key={tag} variant="secondary">
@@ -50,8 +47,8 @@ const DestinationDetail = () => {
             <h1 className="text-4xl md:text-6xl font-serif font-bold">
               {destination.name}
             </h1>
-            <p className="text-xl text-white/90">{destination.tagline}</p>
-            <div className="flex flex-wrap items-center gap-6 text-white/90">
+            <p className="text-xl text-muted-foreground">{destination.tagline}</p>
+            <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
               <div className="flex items-center gap-2">
                 <IndianRupee className="h-5 w-5" />
                 <span className="text-lg font-semibold">

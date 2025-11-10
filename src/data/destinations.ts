@@ -2,12 +2,37 @@ import delhiImage from "@/assets/delhi.jpg";
 import mathuraImage from "@/assets/mathura.jpg";
 import dehradunImage from "@/assets/dehradun.jpg";
 
+// Gallery images
+import delhi1 from "@/assets/hero/delhi-1.jpg";
+import delhi2 from "@/assets/hero/delhi-2.jpg";
+import delhi3 from "@/assets/hero/delhi-3.jpg";
+import delhi4 from "@/assets/hero/delhi-4.jpg";
+import delhi5 from "@/assets/hero/delhi-5.jpg";
+import delhi6 from "@/assets/hero/delhi-6.jpg";
+
+import mathura1 from "@/assets/hero/mathura-1.jpg";
+import mathura2 from "@/assets/hero/mathura-2.jpg";
+import mathura3 from "@/assets/hero/mathura-3.jpg";
+import mathura4 from "@/assets/hero/mathura-4.jpg";
+import mathura5 from "@/assets/hero/mathura-5.jpg";
+import mathura6 from "@/assets/hero/mathura-6.jpg";
+
+import dehradun1 from "@/assets/hero/dehradun-1.jpg";
+import dehradun2 from "@/assets/hero/dehradun-2.jpg";
+import dehradun3 from "@/assets/hero/dehradun-3.jpg";
+import dehradun4 from "@/assets/hero/dehradun-4.jpg";
+import dehradun5 from "@/assets/hero/dehradun-5.jpg";
+import dehradun6 from "@/assets/hero/dehradun-6.jpg";
+import dehradun7 from "@/assets/hero/dehradun-7.jpg";
+import dehradun8 from "@/assets/hero/dehradun-8.jpg";
+
 export interface DestinationDetail {
   id: string;
   name: string;
   slug: string;
   tagline: string;
   image: string;
+  gallery: string[];
   priceFrom: number;
   duration: string;
   tags: string[];
@@ -34,6 +59,7 @@ export const destinations: DestinationDetail[] = [
     slug: "delhi",
     tagline: "Monuments, street food & city secrets",
     image: delhiImage,
+    gallery: [delhi1, delhi2, delhi3, delhi4, delhi5, delhi6],
     priceFrom: 2499,
     duration: "2 days",
     tags: ["Culture", "History", "Food"],
@@ -90,6 +116,7 @@ export const destinations: DestinationDetail[] = [
     slug: "mathura",
     tagline: "Sacred ghats, rituals and timeless devotion",
     image: mathuraImage,
+    gallery: [mathura1, mathura2, mathura3, mathura4, mathura5, mathura6],
     priceFrom: 1199,
     duration: "2 days",
     tags: ["Spiritual", "Culture", "Pilgrimage"],
@@ -146,6 +173,7 @@ export const destinations: DestinationDetail[] = [
     slug: "dehradun",
     tagline: "Riverside trails, mountain air, gentle escapes",
     image: dehradunImage,
+    gallery: [dehradun1, dehradun2, dehradun3, dehradun4, dehradun5, dehradun6, dehradun7, dehradun8],
     priceFrom: 3999,
     duration: "3 days",
     tags: ["Adventure", "Nature", "Mountains"],
