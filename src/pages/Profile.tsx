@@ -140,7 +140,7 @@ const Profile = () => {
       <div className="fixed inset-0 gradient-mint-breeze -z-10"></div>
       <Navbar />
       
-      <main className="container mx-auto px-4 pt-24 pb-32 md:pb-16">
+      <main className="container mx-auto px-4 pt-4 md:pt-24 pb-32 md:pb-16">
         <div className="max-w-6xl mx-auto">
           <PageBreadcrumb 
             items={[{ label: "Profile" }]}

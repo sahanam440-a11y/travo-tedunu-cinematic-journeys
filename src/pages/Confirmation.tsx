@@ -93,7 +93,7 @@ const Confirmation = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <section className="pt-24 pb-16 gradient-ocean-serenity">
+      <section className="pt-4 md:pt-24 pb-16 gradient-ocean-serenity">
         <div className="container mx-auto px-4 space-y-6">
           <PageBreadcrumb 
             items={[

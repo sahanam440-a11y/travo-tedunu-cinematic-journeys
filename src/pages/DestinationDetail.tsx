@@ -64,7 +64,7 @@ const DestinationDetail = () => {
 
       {/* Hero Gallery */}
       <section className="relative">
-        <div className="container mx-auto px-4 pt-24 pb-8">
+        <div className="container mx-auto px-4 pt-4 md:pt-24 pb-8">
           <PageBreadcrumb 
             items={[
               { label: "Destinations", href: "/destinations" },

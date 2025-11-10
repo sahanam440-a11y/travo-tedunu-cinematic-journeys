@@ -80,7 +80,7 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-28 pb-12 relative">
+      <section className="pt-6 md:pt-28 pb-12 relative">
         <div className="container mx-auto px-4 space-y-3">
           <PageBreadcrumb 
             items={[{ label: "Contact" }]}

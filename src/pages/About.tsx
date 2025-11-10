@@ -50,7 +50,7 @@ const About = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 relative">
+      <section className="pt-8 md:pt-32 pb-16 relative">
         <div className="absolute inset-0 gradient-rose-gold-dust -z-10"></div>
         <div className="container mx-auto px-4 space-y-6">
           <PageBreadcrumb 
