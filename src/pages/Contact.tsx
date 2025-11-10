@@ -2,12 +2,14 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -17,6 +19,11 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Contact", url: "/contact" },
+  ]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +66,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pb-16 md:pb-0 relative">
+    <>
+      <SEO
+        title="Contact Us - Travo Tedunu Travel Agency"
+        description="Get in touch with Travo Tedunu for personalized travel planning across India. Email, phone support available Mon-Sat. Quick response within 24 hours. Office in New Delhi."
+        keywords="contact Travo Tedunu, travel inquiry India, book tour, travel consultation, India trip planning, customer support"
+        url="/contact"
+        schema={breadcrumbs}
+      />
+      <div className="min-h-screen pb-16 md:pb-0 relative">
       <div className="fixed inset-0 gradient-sunset-luxe -z-10"></div>
       <Navbar />
 
@@ -263,7 +278,8 @@ const Contact = () => {
 
       <Footer />
       <BottomNav />
-    </div>
+      </div>
+    </>
   );
 };
 

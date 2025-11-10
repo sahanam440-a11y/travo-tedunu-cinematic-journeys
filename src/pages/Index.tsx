@@ -3,13 +3,23 @@ import Hero from "@/components/Hero";
 import DestinationCard from "@/components/DestinationCard";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { SEO } from "@/components/SEO";
 import { destinations } from "@/data/destinations";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 const Index = () => {
   return (
-    <div className="min-h-screen pb-16 md:pb-0">
-      <Navbar />
-      <Hero />
+    <>
+      <SEO
+        title="Travo Tedunu - Travel, Tailored & Timeless | India Tour Packages"
+        description="Curated journeys across India with cinematic visuals and authentic experiences. Explore heritage tours, spiritual pilgrimages, and mountain adventures with expert local guides."
+        keywords="travel India, India tours, Delhi heritage tour, Mathura pilgrimage, Dehradun adventure, spiritual travel, cultural experiences, India vacation packages, customized tours, authentic travel"
+        url="/"
+        schema={[organizationSchema, websiteSchema]}
+      />
+      <div className="min-h-screen pb-16 md:pb-0">
+        <Navbar />
+        <Hero />
 
       {/* Featured Destinations */}
       <section className="py-24 container mx-auto px-4 relative">
@@ -36,9 +46,10 @@ const Index = () => {
         </div>
       </section>
 
-      <Footer />
-      <BottomNav />
-    </div>
+        <Footer />
+        <BottomNav />
+      </div>
+    </>
   );
 };
 

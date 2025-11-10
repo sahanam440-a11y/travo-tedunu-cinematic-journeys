@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Users, Award, Heart } from "lucide-react";
+import { organizationSchema, breadcrumbSchema } from "@/lib/schema";
 
 const About = () => {
   const values = [
@@ -28,8 +30,21 @@ const About = () => {
     },
   ];
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/about" },
+  ]);
+
   return (
-    <div className="min-h-screen pb-16 md:pb-0 relative">
+    <>
+      <SEO
+        title="About Travo Tedunu - Your Travel Partner in India"
+        description="Learn about Travo Tedunu, India's premier travel agency. We craft authentic, tailored journeys across India with expert local guides and sustainable tourism practices since 2024."
+        keywords="about Travo Tedunu, travel agency India, sustainable tourism, local guides, authentic travel experiences, Indian tours company"
+        url="/about"
+        schema={[organizationSchema, breadcrumbs]}
+      />
+      <div className="min-h-screen pb-16 md:pb-0 relative">
       <div className="fixed inset-0 gradient-ethereal-dream -z-10"></div>
       <Navbar />
 
@@ -127,7 +142,8 @@ const About = () => {
 
       <Footer />
       <BottomNav />
-    </div>
+      </div>
+    </>
   );
 };
 

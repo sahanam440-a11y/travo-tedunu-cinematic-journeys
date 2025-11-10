@@ -2,7 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { SEO } from "@/components/SEO";
 import { destinations } from "@/data/destinations";
+import { destinationSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,9 +30,31 @@ const DestinationDetail = () => {
     return <NotFound />;
   }
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Destinations", url: "/destinations" },
+    { name: destination.name, url: `/destination/${destination.slug}` },
+  ]);
+
+  const combinedSchema = [
+    destinationSchema(destination),
+    breadcrumbs,
+    faqSchema(destination.faqs),
+  ];
+
   return (
-    <div className="min-h-screen pb-16 md:pb-0">
-      <Navbar />
+    <>
+      <SEO
+        title={`${destination.name} Tour Package - ${destination.tagline}`}
+        description={`${destination.overview.substring(0, 155)}...`}
+        keywords={`${destination.name} tour, ${destination.tags.join(", ")}, India travel, ${destination.name} package, ${destination.name} tourism`}
+        url={`/destination/${destination.slug}`}
+        image={destination.gallery[0].image}
+        type="article"
+        schema={combinedSchema}
+      />
+      <div className="min-h-screen pb-16 md:pb-0">
+        <Navbar />
       
       {/* Destination-specific animations */}
       {destination.slug === "dehradun" && <SnowfallAnimation />}
@@ -227,10 +251,11 @@ const DestinationDetail = () => {
         </div>
       </div>
 
-      <Footer />
-      <BottomNav />
-      <WhatsAppButton message={`Hi! I'm interested in the ${destination.name} tour package. Can you provide more details?`} />
-    </div>
+        <Footer />
+        <BottomNav />
+        <WhatsAppButton message={`Hi! I'm interested in the ${destination.name} tour package. Can you provide more details?`} />
+      </div>
+    </>
   );
 };
 

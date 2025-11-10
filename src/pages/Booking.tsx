@@ -2,8 +2,10 @@ import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { SEO } from "@/components/SEO";
 import { BookingForm } from "@/components/BookingForm";
 import { destinations } from "@/data/destinations";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const Booking = () => {
   const [searchParams] = useSearchParams();
@@ -16,8 +18,21 @@ const Booking = () => {
     duration: dest.duration,
   }));
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Book Your Trip", url: "/booking" },
+  ]);
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
+      <SEO
+        title="Book Your India Tour - Travo Tedunu | Custom Travel Packages"
+        description="Book customized India tour packages online with Travo Tedunu. Instant pricing, flexible options, and expert travel planning. 500+ happy travelers, 98% satisfaction rate."
+        keywords="book India tour, online booking travel India, customize tour package, India trip booking, travel packages India, instant pricing tours"
+        url="/booking"
+        schema={breadcrumbs}
+      />
+      <div className="min-h-screen flex flex-col">
       <Navbar />
       
       {/* Hero Section */}
@@ -77,7 +92,8 @@ const Booking = () => {
 
       <Footer />
       <BottomNav />
-    </div>
+      </div>
+    </>
   );
 };
 

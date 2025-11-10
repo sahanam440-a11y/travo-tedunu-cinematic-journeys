@@ -59,7 +59,8 @@ export const DestinationGallery = ({ images, title }: DestinationGalleryProps) =
               <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] overflow-hidden rounded-lg">
                 <img
                   src={item.image}
-                  alt={item.caption}
+                  alt={`${title} - ${item.caption}`}
+                  loading={index < 2 ? "eager" : "lazy"}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
@@ -99,7 +100,8 @@ export const DestinationGallery = ({ images, title }: DestinationGalleryProps) =
             >
               <img
                 src={item.image}
-                alt={item.caption}
+                alt={`${title} thumbnail - ${item.caption}`}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </button>

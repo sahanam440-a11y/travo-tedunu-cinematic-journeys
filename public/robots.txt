@@ -10,5 +10,18 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Disallow admin and checkout pages from indexing
+Disallow: /checkout
+Disallow: /confirmation
+Disallow: /profile
+Disallow: /auth
+
+# Sitemap location
+Sitemap: https://travotedunu.com/sitemap.xml
+
+# Crawl delay for better server performance
+Crawl-delay: 1

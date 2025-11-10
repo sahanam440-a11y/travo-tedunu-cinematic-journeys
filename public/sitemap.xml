@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
+  <url>
+    <loc>https://travotedunu.com/</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Destinations Page -->
+  <url>
+    <loc>https://travotedunu.com/destinations</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Delhi Destination -->
+  <url>
+    <loc>https://travotedunu.com/destination/delhi</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/delhi.jpg</image:loc>
+      <image:title>Delhi Heritage Tour - India Gate, Red Fort, Street Food</image:title>
+      <image:caption>Experience vibrant Delhi: Monuments, street food and city secrets</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Mathura Destination -->
+  <url>
+    <loc>https://travotedunu.com/destination/mathura</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/mathura.jpg</image:loc>
+      <image:title>Mathura Spiritual Journey - Krishna Janmabhoomi, Ghats</image:title>
+      <image:caption>Sacred ghats, rituals and timeless devotion in Mathura</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Dehradun Destination -->
+  <url>
+    <loc>https://travotedunu.com/destination/dehradun</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/dehradun.jpg</image:loc>
+      <image:title>Dehradun Adventure - Mountains, River Rafting, Nature</image:title>
+      <image:caption>Riverside trails, mountain air, gentle escapes in Dehradun</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://travotedunu.com/about</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://travotedunu.com/contact</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Booking Page -->
+  <url>
+    <loc>https://travotedunu.com/booking</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>

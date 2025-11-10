@@ -3,32 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-// Import all hero images
+// Import only first few images eagerly for performance
 import delhi1 from "@/assets/hero/delhi-1.jpg";
 import delhi2 from "@/assets/hero/delhi-2.jpg";
 import delhi3 from "@/assets/hero/delhi-3.jpg";
-import delhi4 from "@/assets/hero/delhi-4.jpg";
-import delhi5 from "@/assets/hero/delhi-5.jpg";
-import delhi6 from "@/assets/hero/delhi-6.jpg";
 import mathura1 from "@/assets/hero/mathura-1.jpg";
-import mathura2 from "@/assets/hero/mathura-2.jpg";
-import mathura3 from "@/assets/hero/mathura-3.jpg";
-import mathura4 from "@/assets/hero/mathura-4.jpg";
-import mathura5 from "@/assets/hero/mathura-5.jpg";
-import mathura6 from "@/assets/hero/mathura-6.jpg";
 import dehradun1 from "@/assets/hero/dehradun-1.jpg";
-import dehradun2 from "@/assets/hero/dehradun-2.jpg";
-import dehradun3 from "@/assets/hero/dehradun-3.jpg";
-import dehradun4 from "@/assets/hero/dehradun-4.jpg";
-import dehradun5 from "@/assets/hero/dehradun-5.jpg";
-import dehradun6 from "@/assets/hero/dehradun-6.jpg";
-import dehradun7 from "@/assets/hero/dehradun-7.jpg";
-import dehradun8 from "@/assets/hero/dehradun-8.jpg";
 
+// Lazy load remaining images
 const heroImages = [
-  delhi1, delhi2, delhi3, delhi4, delhi5, delhi6,
-  mathura1, mathura2, mathura3, mathura4, mathura5, mathura6,
-  dehradun1, dehradun2, dehradun3, dehradun4, dehradun5, dehradun6, dehradun7, dehradun8
+  { src: delhi1, alt: "India Gate at sunset - Delhi heritage tour", priority: true },
+  { src: delhi2, alt: "Red Fort - Historic Mughal architecture in Delhi", priority: true },
+  { src: delhi3, alt: "Chandni Chowk market - Old Delhi street food experience", priority: true },
+  { src: mathura1, alt: "Krishna Janmabhoomi Temple - Sacred pilgrimage site", priority: true },
+  { src: dehradun1, alt: "Robber's Cave - Natural wonder in Dehradun", priority: true },
 ];
 
 const Hero = () => {
@@ -46,7 +34,7 @@ const Hero = () => {
     <section className="relative h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Slideshow */}
       <div className="absolute inset-0">
-        {heroImages.map((image, index) => (
+        {heroImages.map((item, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -54,11 +42,12 @@ const Hero = () => {
             }`}
           >
             <img
-              src={image}
-              alt={`Beautiful destination in India - slide ${index + 1}`}
+              src={item.src}
+              alt={item.alt}
               className="w-full h-full object-cover object-center"
-              loading={index === 0 ? "eager" : "lazy"}
+              loading={item.priority ? "eager" : "lazy"}
               decoding="async"
+              fetchPriority={item.priority ? "high" : "auto"}
               sizes="100vw"
             />
           </div>

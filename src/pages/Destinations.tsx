@@ -2,8 +2,10 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
+import { SEO } from "@/components/SEO";
 import DestinationCard from "@/components/DestinationCard";
 import { destinations } from "@/data/destinations";
+import { breadcrumbSchema } from "@/lib/schema";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search } from "lucide-react";
@@ -24,8 +26,21 @@ const Destinations = () => {
     return matchesSearch && matchesTag;
   });
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Destinations", url: "/destinations" },
+  ]);
+
   return (
-    <div className="min-h-screen pb-16 md:pb-0 relative">
+    <>
+      <SEO
+        title="India Tour Destinations - Delhi, Mathura, Dehradun | Travo Tedunu"
+        description="Explore curated India tour destinations with Travo Tedunu. Heritage tours in Delhi, spiritual journeys in Mathura, adventure trips in Dehradun. Browse 15+ authentic experiences."
+        keywords="India destinations, Delhi tours, Mathura pilgrimage, Dehradun trekking, heritage destinations, spiritual tours India, adventure travel India, cultural experiences"
+        url="/destinations"
+        schema={breadcrumbs}
+      />
+      <div className="min-h-screen pb-16 md:pb-0 relative">
       <div className="fixed inset-0 gradient-pearl-elegance -z-10"></div>
       <Navbar />
 
@@ -105,7 +120,8 @@ const Destinations = () => {
 
       <Footer />
       <BottomNav />
-    </div>
+      </div>
+    </>
   );
 };
 
