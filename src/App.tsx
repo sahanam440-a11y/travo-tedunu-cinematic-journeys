@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import Destinations from "./pages/Destinations";
 import DestinationDetail from "./pages/DestinationDetail";
 import Booking from "./pages/Booking";
+import Checkout from "./pages/Checkout";
+import Confirmation from "./pages/Confirmation";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destination/:slug" element={<DestinationDetail />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/confirmation" element={<Confirmation />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />

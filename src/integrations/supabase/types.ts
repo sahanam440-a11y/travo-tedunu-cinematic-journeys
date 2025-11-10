@@ -14,7 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          accommodation: string
+          add_ons: string[] | null
+          adults: number
+          check_in: string
+          check_out: string
+          children: number
+          created_at: string
+          destination_id: string
+          destination_name: string
+          id: string
+          package_type: string
+          payment_status: string
+          razorpay_order_id: string | null
+          razorpay_payment_id: string | null
+          total_price: number
+          updated_at: string
+          user_email: string
+          user_name: string
+          user_phone: string
+        }
+        Insert: {
+          accommodation: string
+          add_ons?: string[] | null
+          adults?: number
+          check_in: string
+          check_out: string
+          children?: number
+          created_at?: string
+          destination_id: string
+          destination_name: string
+          id?: string
+          package_type: string
+          payment_status?: string
+          razorpay_order_id?: string | null
+          razorpay_payment_id?: string | null
+          total_price: number
+          updated_at?: string
+          user_email: string
+          user_name: string
+          user_phone: string
+        }
+        Update: {
+          accommodation?: string
+          add_ons?: string[] | null
+          adults?: number
+          check_in?: string
+          check_out?: string
+          children?: number
+          created_at?: string
+          destination_id?: string
+          destination_name?: string
+          id?: string
+          package_type?: string
+          payment_status?: string
+          razorpay_order_id?: string | null
+          razorpay_payment_id?: string | null
+          total_price?: number
+          updated_at?: string
+          user_email?: string
+          user_name?: string
+          user_phone?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

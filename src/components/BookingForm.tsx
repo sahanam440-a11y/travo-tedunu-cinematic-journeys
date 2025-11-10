@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { format } from "date-fns";
 import { CalendarIcon, Users, Package, IndianRupee, Sparkles, Check } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -159,14 +160,50 @@ export function BookingForm({ destinations, preSelectedDestination }: BookingFor
   };
 
   const onSubmit = async (data: BookingFormValues) => {
-    console.log("Booking data:", { ...data, totalPrice: calculatedPrice });
-    
-    toast({
-      title: "Booking Request Received! 🎉",
-      description: `Total: ₹${calculatedPrice.toLocaleString()}. We'll contact you shortly to confirm your booking.`,
-    });
+    try {
+      const destination = destinations.find((d) => d.id === data.destination);
+      
+      // Save booking to database
+      const { data: bookingData, error } = await supabase
+        .from("bookings")
+        .insert({
+          user_email: data.email,
+          user_name: data.name,
+          user_phone: data.phone,
+          destination_id: data.destination,
+          destination_name: destination?.name || "",
+          check_in: format(data.startDate, "yyyy-MM-dd"),
+          check_out: format(data.endDate, "yyyy-MM-dd"),
+          adults: data.adults,
+          children: data.children,
+          package_type: data.packageType,
+          accommodation: data.accommodationType,
+          add_ons: data.addons,
+          total_price: calculatedPrice,
+          payment_status: "pending",
+        })
+        .select()
+        .single();
 
-    // Here you would typically send the data to your backend
+      if (error) throw error;
+
+      toast({
+        title: "Booking Created! 🎉",
+        description: "Redirecting to checkout...",
+      });
+      
+      // Redirect to checkout page
+      setTimeout(() => {
+        window.location.href = `/checkout?bookingId=${bookingData.id}`;
+      }, 1000);
+    } catch (error: any) {
+      console.error("Error creating booking:", error);
+      toast({
+        title: "Error",
+        description: "Failed to create booking. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
