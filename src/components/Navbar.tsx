@@ -35,8 +35,8 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button size="sm" className="gradient-primary shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold">
-              Book Now
+            <Button size="sm" className="gradient-primary shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold" asChild>
+              <Link to="/booking">Book Now</Link>
             </Button>
           </div>
 
@@ -63,8 +63,8 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button size="sm" className="w-full gradient-primary text-sm h-8">
-              Book Now
+            <Button size="sm" className="w-full gradient-primary text-sm h-8" asChild>
+              <Link to="/booking">Book Now</Link>
             </Button>
           </div>
         )}

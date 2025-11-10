@@ -89,7 +89,7 @@ const Hero = () => {
               className="gradient-primary text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:shadow-glow hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold shadow-elevated"
               asChild
             >
-              <Link to="/destinations">
+              <Link to="/booking">
                 Start Planning
                 <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
               </Link>

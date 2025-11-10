@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
@@ -190,8 +190,10 @@ const DestinationDetail = () => {
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full gradient-primary text-lg">
-                  Book This Trip
+                <Button size="lg" className="w-full gradient-primary text-lg shadow-elevated hover:shadow-glow transition-all duration-300" asChild>
+                  <Link to={`/booking?destination=${destination.id}`}>
+                    Book This Trip
+                  </Link>
                 </Button>
 
                 <Button
