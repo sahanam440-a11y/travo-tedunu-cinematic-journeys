@@ -11,21 +11,36 @@ interface Diya {
 
 export const DiyaAnimation = () => {
   const [diyas, setDiyas] = useState<Diya[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const diyaArray: Diya[] = [];
-    for (let i = 0; i < 6; i++) {
+    const baseSize = isMobile ? 20 : 35;
+    const sizeRange = isMobile ? 8 : 15;
+    const count = isMobile ? 4 : 6;
+    
+    for (let i = 0; i < count; i++) {
       diyaArray.push({
         id: i,
         left: Math.random() * 100,
         animationDuration: 14 + Math.random() * 10,
-        size: 35 + Math.random() * 15,
+        size: baseSize + Math.random() * sizeRange,
         delay: Math.random() * 12,
         glowIntensity: 0.7 + Math.random() * 0.3,
       });
     }
     setDiyas(diyaArray);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
