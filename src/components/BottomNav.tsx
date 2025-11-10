@@ -13,7 +13,9 @@ const BottomNav = () => {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 gradient-primary pb-safe shadow-elevated backdrop-blur-md border-t border-white/20 rounded-t-xl">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe shadow-elevated backdrop-blur-md border-t border-pink-200/40 rounded-t-xl overflow-hidden" style={{
+      background: 'linear-gradient(135deg, #fce7f3 0%, #fbcfe8 25%, #f9a8d4 50%, #f472b6 75%, #ec4899 100%)'
+    }}>
         <div className="flex items-center justify-around px-2 py-2">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -25,8 +27,8 @@ const BottomNav = () => {
                 to={item.path}
                 className={`flex flex-col items-center gap-0.5 min-w-[50px] transition-all ${
                   isActive
-                    ? "text-white font-semibold scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
-                    : "text-white/80 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+                    ? "text-pink-900 font-semibold scale-110 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]"
+                    : "text-pink-800/80 hover:text-pink-900 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]"
                 }`}
               >
                 <Icon className={`h-4 w-4 ${isActive ? "stroke-[2.5]" : ""}`} />
