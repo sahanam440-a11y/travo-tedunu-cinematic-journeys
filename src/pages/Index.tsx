@@ -5,6 +5,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { destinations } from "@/data/destinations";
+import { FlightAnimation } from "@/components/animations/FlightAnimation";
 
 const testimonials = [
   {
@@ -33,6 +34,7 @@ const testimonials = [
 const Index = () => {
   return (
     <div className="min-h-screen pb-16 md:pb-0">
+      <FlightAnimation />
       <Navbar />
       <Hero />
 

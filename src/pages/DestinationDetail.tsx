@@ -14,6 +14,9 @@ import {
 } from "@/components/ui/accordion";
 import { MapPin, Clock, IndianRupee, Check, X } from "lucide-react";
 import NotFound from "./NotFound";
+import { PeacockFeatherAnimation } from "@/components/animations/PeacockFeatherAnimation";
+import { SnowfallAnimation } from "@/components/animations/SnowfallAnimation";
+import { ButterflyAnimation } from "@/components/animations/ButterflyAnimation";
 
 const DestinationDetail = () => {
   const { slug } = useParams();
@@ -23,8 +26,23 @@ const DestinationDetail = () => {
     return <NotFound />;
   }
 
+  // Render animation based on destination slug
+  const renderAnimation = () => {
+    switch (destination.slug) {
+      case 'mathura':
+        return <PeacockFeatherAnimation />;
+      case 'dehradun':
+        return <SnowfallAnimation />;
+      case 'delhi':
+        return <ButterflyAnimation />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="min-h-screen pb-16 md:pb-0">
+      {renderAnimation()}
       <Navbar />
 
       {/* Hero Image */}
