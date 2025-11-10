@@ -47,7 +47,6 @@ const Hero = () => {
               className="w-full h-full object-cover object-center"
               loading={item.priority ? "eager" : "lazy"}
               decoding="async"
-              fetchPriority={item.priority ? "high" : "auto"}
               sizes="100vw"
             />
           </div>
@@ -86,7 +85,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 glass border-white/40 !text-foreground hover:!text-foreground hover:bg-white/25 hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold"
+              className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 backdrop-blur-md bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold"
               asChild
             >
               <Link to="/destinations">Explore Destinations</Link>
@@ -95,17 +94,17 @@ const Hero = () => {
 
           {/* Trust Badges */}
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 pt-10 md:pt-14 text-sm md:text-base px-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
-            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow shadow-lg">
+            <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg">
               <div className="h-2.5 w-2.5 rounded-full bg-accent animate-pulse-slow shadow-glow" />
-              <span className="font-semibold text-foreground">Verified Local Guides</span>
+              <span className="font-semibold text-white">Verified Local Guides</span>
             </div>
-            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow shadow-lg">
+            <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg">
               <div className="h-2.5 w-2.5 rounded-full bg-secondary animate-pulse-slow shadow-glow" />
-              <span className="font-semibold text-foreground">24/7 Support</span>
+              <span className="font-semibold text-white">24/7 Support</span>
             </div>
-            <div className="flex items-center gap-2 glass px-4 py-2 rounded-full hover-glow shadow-lg">
+            <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg">
               <div className="h-2.5 w-2.5 rounded-full bg-primary animate-pulse-slow shadow-glow" />
-              <span className="font-semibold text-foreground">Best-Price Guarantee</span>
+              <span className="font-semibold text-white">Best-Price Guarantee</span>
             </div>
           </div>
         </div>
