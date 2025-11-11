@@ -35,9 +35,9 @@ const Destinations = () => {
   return (
     <>
       <SEO
-        title="India Tour Destinations - Delhi, Mathura, Dehradun | Travo Tedunu"
-        description="Explore curated India tour destinations with Travo Tedunu. Heritage tours in Delhi, spiritual journeys in Mathura, adventure trips in Dehradun. Browse 15+ authentic experiences."
-        keywords="India destinations, Delhi tours, Mathura pilgrimage, Dehradun trekking, heritage destinations, spiritual tours India, adventure travel India, cultural experiences"
+        title="India Tour Packages 2025 - Delhi, Goa, Mathura, Dehradun | Travo Tedunu"
+        description="Discover best tour packages for India destinations. Delhi heritage tours ₹2,499+, Goa beach packages ₹4,999+, Mathura spiritual journeys ₹1,199+, Dehradun adventures ₹3,999+. Book now with Travo Tedunu - India's trusted travel agency."
+        keywords="India tour packages 2025, Delhi package, Goa tour, Mathura package, Dehradun tour, India travel deals, best tour packages India, heritage tours, beach packages, pilgrimage tours, adventure tours, cultural tourism India, Travo Tedunu packages"
         url="/destinations"
         schema={breadcrumbs}
       />

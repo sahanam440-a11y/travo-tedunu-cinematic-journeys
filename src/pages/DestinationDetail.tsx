@@ -47,13 +47,14 @@ const DestinationDetail = () => {
   return (
     <>
       <SEO
-        title={`${destination.name} Tour Package - ${destination.tagline}`}
-        description={`${destination.overview.substring(0, 155)}...`}
-        keywords={`${destination.name} tour, ${destination.tags.join(", ")}, India travel, ${destination.name} package, ${destination.name} tourism`}
+        title={`${destination.name} Tour Package ₹${destination.priceFrom.toLocaleString()} - ${destination.tagline} | Travo Tedunu`}
+        description={`Book ${destination.name} tour package starting from ₹${destination.priceFrom.toLocaleString()}. ${destination.duration} trip with ${destination.highlights.slice(0, 3).join(", ")}. Expert guides, authentic experiences. ${destination.overview.substring(0, 100)}...`}
+        keywords={`${destination.name} tour package, ${destination.name} package price, ${destination.name} trip, ${destination.name} travel, ${destination.tags.join(", ")}, book ${destination.name} tour, ${destination.name} tourism, India ${destination.name} package, Travo Tedunu ${destination.name}, best ${destination.name} tour operator`}
         url={`/destination/${destination.slug}`}
         image={destination.gallery[0].image}
         type="article"
         schema={combinedSchema}
+        canonicalUrl={`https://travotedunu.com/destination/${destination.slug}`}
       />
       <div className="min-h-screen pb-16 md:pb-0">
         <Navbar />

@@ -13,10 +13,10 @@ const Footer = lazy(() => import("@/components/Footer"));
 const Index = () => {
   return (
     <>
-      <SEO
-        title="Travo Tedunu - Travel, Tailored & Timeless | India Tour Packages"
-        description="Curated journeys across India with cinematic visuals and authentic experiences. Explore heritage tours, spiritual pilgrimages, and mountain adventures with expert local guides."
-        keywords="travel India, India tours, Delhi heritage tour, Mathura pilgrimage, Dehradun adventure, spiritual travel, cultural experiences, India vacation packages, customized tours, authentic travel"
+      <SEO 
+        title="Travo Tedunu - India Tour Packages | Delhi, Goa, Mathura & Dehradun Tours"
+        description="Book best India tour packages with Travo Tedunu. Explore Delhi heritage tours (₹2,499), Goa beaches (₹4,999), Mathura pilgrimage (₹1,199), Dehradun adventures (₹3,999). Expert local guides, authentic experiences. #1 travel agency for Indian destinations."
+        keywords="India tour packages, Delhi tour package, Goa package, Mathura tour, Dehradun package, India travel, Travo Tedunu, best travel agency India, cultural tours, pilgrimage tours, beach holidays, mountain treks, heritage tours, spiritual travel"
         url="/"
         schema={[organizationSchema, websiteSchema]}
       />

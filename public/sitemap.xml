@@ -1,81 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <!-- Homepage - Primary landing page for Travo Tedunu travel agency -->
   <url>
     <loc>https://travotedunu.com/</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/hero-main.jpg</image:loc>
+      <image:title>Travo Tedunu - Travel, Tailored &amp; Timeless | India Tour Packages</image:title>
+      <image:caption>Discover curated journeys across India with expert guides</image:caption>
+    </image:image>
   </url>
 
-  <!-- Destinations Page -->
+  <!-- Destinations Listing Page - All tour packages -->
   <url>
     <loc>https://travotedunu.com/destinations</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Delhi Destination -->
+  <!-- Delhi Tour Package - Heritage, Culture & Street Food -->
   <url>
     <loc>https://travotedunu.com/destination/delhi</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.95</priority>
     <image:image>
       <image:loc>https://travotedunu.com/assets/delhi.jpg</image:loc>
-      <image:title>Delhi Heritage Tour - India Gate, Red Fort, Street Food</image:title>
-      <image:caption>Experience vibrant Delhi: Monuments, street food and city secrets</image:caption>
+      <image:title>Delhi Tour Package ₹2,499 - Heritage Sites, Street Food, Culture | Travo Tedunu</image:title>
+      <image:caption>Explore Delhi: India Gate, Red Fort, Chandni Chowk street food tour. 2 days package with expert local guide</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/hero/delhi-1.jpg</image:loc>
+      <image:title>India Gate Delhi - Iconic War Memorial</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/hero/delhi-2.jpg</image:loc>
+      <image:title>Red Fort Delhi - Mughal Architecture</image:title>
     </image:image>
   </url>
 
-  <!-- Mathura Destination -->
+  <!-- Mathura Pilgrimage Package - Spiritual Journey -->
   <url>
     <loc>https://travotedunu.com/destination/mathura</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://travotedunu.com/assets/mathura.jpg</image:loc>
-      <image:title>Mathura Spiritual Journey - Krishna Janmabhoomi, Ghats</image:title>
-      <image:caption>Sacred ghats, rituals and timeless devotion in Mathura</image:caption>
+      <image:title>Mathura Tour Package ₹1,199 - Krishna Janmabhoomi, Temple Tour | Travo Tedunu</image:title>
+      <image:caption>Sacred Mathura pilgrimage: Krishna temples, Yamuna ghats, evening aarti. 2 days spiritual journey</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/hero/mathura-1.jpg</image:loc>
+      <image:title>Krishna Janmabhoomi Mathura - Birthplace of Lord Krishna</image:title>
     </image:image>
   </url>
 
-  <!-- Dehradun Destination -->
+  <!-- Dehradun Adventure Package - Mountains & Nature -->
   <url>
     <loc>https://travotedunu.com/destination/dehradun</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://travotedunu.com/assets/dehradun.jpg</image:loc>
-      <image:title>Dehradun Adventure - Mountains, River Rafting, Nature</image:title>
-      <image:caption>Riverside trails, mountain air, gentle escapes in Dehradun</image:caption>
+      <image:title>Dehradun Tour Package ₹3,999 - Mussoorie, River Rafting, Mountains | Travo Tedunu</image:title>
+      <image:caption>Himalayan adventure: Dehradun valley, Mussoorie hills, Rishikesh rafting. 3 days mountain escape</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/hero/dehradun-1.jpg</image:loc>
+      <image:title>Robber's Cave Dehradun - Natural Cave Formation</image:title>
     </image:image>
   </url>
 
-  <!-- About Page -->
+  <!-- Goa Beach Package - Sun, Sand & Sea -->
+  <url>
+    <loc>https://travotedunu.com/destination/goa</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/goa.jpg</image:loc>
+      <image:title>Goa Tour Package ₹4,999 - Beaches, Nightlife, Water Sports | Travo Tedunu</image:title>
+      <image:caption>Paradise awaits: Goa beaches, Portuguese heritage, water sports, beach parties. 4 days tropical escape</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/hero/goa-1.jpg</image:loc>
+      <image:title>Baga Beach Goa - Water Sports Paradise</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://travotedunu.com/assets/hero/goa-2.jpg</image:loc>
+      <image:title>Basilica of Bom Jesus Goa - UNESCO Heritage Site</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Travo Tedunu - Company Information -->
   <url>
     <loc>https://travotedunu.com/about</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Contact Page -->
+  <!-- Contact Travo Tedunu - Get in Touch -->
   <url>
     <loc>https://travotedunu.com/contact</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Booking Page -->
+  <!-- Book Tour Package - Online Booking -->
   <url>
     <loc>https://travotedunu.com/booking</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 </urlset>

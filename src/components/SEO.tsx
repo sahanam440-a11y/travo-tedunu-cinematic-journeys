@@ -55,11 +55,27 @@ export const SEO = ({
       {/* Additional SEO Tags */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow" />
+      <meta name="bingbot" content="index, follow" />
       <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
+      <meta name="revisit-after" content="3 days" />
       <meta name="author" content="Travo Tedunu" />
       <meta name="geo.region" content="IN" />
       <meta name="geo.placename" content="India" />
+      <meta name="geo.position" content="28.6139;77.2090" />
+      <meta name="ICBM" content="28.6139, 77.2090" />
+      <meta name="distribution" content="global" />
+      <meta name="rating" content="general" />
+      <meta name="classification" content="Travel Agency, Tour Operator, Tourism" />
+      <meta name="coverage" content="Worldwide" />
+      <meta name="target" content="all" />
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="MobileOptimized" content="320" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      
+      {/* Search Engine Verification (add your actual codes) */}
+      <meta name="google-site-verification" content="your-google-verification-code" />
+      <meta name="msvalidate.01" content="your-bing-verification-code" />
 
       {/* Structured Data */}
       {schema && (
