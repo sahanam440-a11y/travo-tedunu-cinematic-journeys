@@ -1,6 +1,7 @@
 import delhiImage from "@/assets/delhi.jpg";
 import mathuraImage from "@/assets/mathura.jpg";
 import dehradunImage from "@/assets/dehradun.jpg";
+import goaImage from "@/assets/goa.jpg";
 
 // Gallery images
 import delhi1 from "@/assets/hero/delhi-1.jpg";
@@ -25,6 +26,15 @@ import dehradun5 from "@/assets/hero/dehradun-5.jpg";
 import dehradun6 from "@/assets/hero/dehradun-6.jpg";
 import dehradun7 from "@/assets/hero/dehradun-7.jpg";
 import dehradun8 from "@/assets/hero/dehradun-8.jpg";
+
+import goa1 from "@/assets/hero/goa-1.jpg";
+import goa2 from "@/assets/hero/goa-2.jpg";
+import goa3 from "@/assets/hero/goa-3.jpg";
+import goa4 from "@/assets/hero/goa-4.jpg";
+import goa5 from "@/assets/hero/goa-5.jpg";
+import goa6 from "@/assets/hero/goa-6.jpg";
+import goa7 from "@/assets/hero/goa-7.jpg";
+import goa8 from "@/assets/hero/goa-8.jpg";
 
 export interface DestinationDetail {
   id: string;
@@ -251,6 +261,96 @@ export const destinations: DestinationDetail[] = [
       {
         question: "Can I customize the itinerary?",
         answer: "Yes! We can adjust activities based on your preferences and fitness level.",
+      },
+    ],
+  },
+  {
+    id: "4",
+    name: "Goa",
+    slug: "goa",
+    tagline: "Sun, sand, sea, and endless serenity",
+    image: goaImage,
+    gallery: [
+      { image: goa1, caption: "Baga Beach - Vibrant beach life with water sports" },
+      { image: goa2, caption: "Basilica of Bom Jesus - UNESCO World Heritage Site" },
+      { image: goa3, caption: "Dudhsagar Waterfall - Majestic four-tiered falls" },
+      { image: goa4, caption: "Anjuna Flea Market - Colorful shopping paradise" },
+      { image: goa5, caption: "Fort Aguada - Historic Portuguese fort at sunset" },
+      { image: goa6, caption: "Goan Cuisine - Fresh seafood and local delicacies" },
+      { image: goa7, caption: "Palolem Beach - Peaceful crescent beach paradise" },
+      { image: goa8, caption: "Beach Nightlife - Vibrant parties under the stars" },
+    ],
+    priceFrom: 4999,
+    duration: "4 days",
+    tags: ["Beach", "Adventure", "Nightlife", "Food"],
+    overview:
+      "Discover India's tropical paradise where golden beaches meet Portuguese heritage. Goa offers the perfect blend of relaxation, adventure, culture, and vibrant nightlife amidst swaying palms and turquoise waters.",
+    highlights: [
+      "Beach hopping from North to South Goa",
+      "UNESCO heritage churches in Old Goa",
+      "Dudhsagar Waterfall trekking",
+      "Water sports and boat cruises",
+      "Beach shack dining and nightlife",
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "North Goa Beach Explorer",
+        description:
+          "Arrive and check into your beach resort. Explore famous Baga Beach with water sports activities. Visit the vibrant Calangute Beach and enjoy sunset at Anjuna Beach. Evening at your leisure to explore beach shacks and local cuisine.",
+      },
+      {
+        day: 2,
+        title: "Heritage & Culture Trail",
+        description:
+          "Visit the historic Old Goa with its magnificent Portuguese churches including Basilica of Bom Jesus and Se Cathedral. Explore Fort Aguada and its lighthouse. Evening visit to Anjuna Flea Market for shopping. Sunset dinner cruise on the Mandovi River.",
+      },
+      {
+        day: 3,
+        title: "Adventure & Nature",
+        description:
+          "Full day trip to Dudhsagar Waterfall with jungle jeep safari. Experience spice plantation tour with traditional Goan lunch. Visit butterfly conservatory. Return to beach for relaxation and water sports at Palolem or Agonda Beach.",
+      },
+      {
+        day: 4,
+        title: "South Goa Serenity",
+        description:
+          "Explore peaceful South Goa beaches - Palolem, Agonda, and Cabo de Rama Fort. Visit local markets and try authentic Goan seafood. Optional: Dolphin spotting tour or yoga session. Evening beach party experience before departure.",
+      },
+    ],
+    included: [
+      "4 nights beachside resort stay",
+      "Daily breakfast buffet",
+      "Waterfall jeep safari",
+      "Sunset river cruise",
+      "Spice plantation tour with lunch",
+      "All transfers and sightseeing",
+      "Professional guide",
+    ],
+    excluded: [
+      "Flights",
+      "Lunches & Dinners (except plantation lunch)",
+      "Water sports activities",
+      "Nightclub entry fees",
+      "Shopping and personal expenses",
+    ],
+    mapLink: "https://maps.google.com/?q=Goa,India",
+    faqs: [
+      {
+        question: "What's the best time to visit Goa?",
+        answer: "November to February offers perfect beach weather with pleasant temperatures. October and March are also good for fewer crowds.",
+      },
+      {
+        question: "Are water sports included in the package?",
+        answer: "Basic beach activities are included, but premium water sports like parasailing, jet skiing, and scuba diving can be arranged at additional cost.",
+      },
+      {
+        question: "Is this tour suitable for families?",
+        answer: "Absolutely! Goa offers something for everyone - peaceful beaches for relaxation, adventure activities for thrill-seekers, and cultural sites for history buffs.",
+      },
+      {
+        question: "What should I pack for Goa?",
+        answer: "Light cotton clothes, swimwear, sunscreen, hat, sunglasses, comfortable sandals, and a light jacket for evenings. Don't forget your camera!",
       },
     ],
   },
