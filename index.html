@@ -9,11 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Preload LCP image for faster rendering -->
+    <!-- Preload critical resources for faster FCP -->
     <link rel="preload" as="image" href="/src/assets/hero/delhi-1.jpg" fetchpriority="high" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" />
     
-    <!-- Google Fonts - Non-blocking async load -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <!-- Critical CSS for initial render - prevents layout shift and improves FCP -->
+    <style>
+      *{box-sizing:border-box;margin:0;padding:0}
+      body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;background:#f8fafc;color:#0f172a;min-height:100vh}
+      #root{min-height:100vh}
+      .hero-section{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center}
+    </style>
+    
+    <!-- Google Fonts - Optimized with font-display swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" media="print" onload="this.media='all';this.onload=null" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" /></noscript>
     
     <!-- Primary Meta Tags -->
