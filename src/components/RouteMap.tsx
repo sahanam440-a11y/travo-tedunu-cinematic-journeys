@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Card, CardContent } from './ui/card';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
+import { supabase } from '@/integrations/supabase/client';
 
 interface RouteMapProps {
   origin: { lat: number; lng: number; name: string };
@@ -13,8 +12,8 @@ interface RouteMapProps {
 const RouteMap: React.FC<RouteMapProps> = ({ origin, destination }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
-  const [tokenSet, setTokenSet] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const initializeMap = (token: string) => {
     if (!mapContainer.current || map.current) return;
@@ -92,57 +91,60 @@ const RouteMap: React.FC<RouteMapProps> = ({ origin, destination }) => {
     });
   };
 
-  const handleTokenSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (mapboxToken.trim()) {
-      setTokenSet(true);
-      initializeMap(mapboxToken);
-    }
-  };
-
   useEffect(() => {
+    const fetchTokenAndInitMap = async () => {
+      try {
+        setLoading(true);
+        const { data, error: fetchError } = await supabase.functions.invoke('get-mapbox-token');
+        
+        if (fetchError) {
+          console.error('Error fetching Mapbox token:', fetchError);
+          setError('Failed to load map. Please try refreshing the page.');
+          setLoading(false);
+          return;
+        }
+        
+        if (data?.token) {
+          initializeMap(data.token);
+        } else {
+          setError('Map configuration error. Please contact support.');
+        }
+        setLoading(false);
+      } catch (err) {
+        console.error('Error initializing map:', err);
+        setError('Failed to load map. Please try refreshing the page.');
+        setLoading(false);
+      }
+    };
+
+    fetchTokenAndInitMap();
+
     return () => {
       map.current?.remove();
     };
-  }, []);
+  }, [origin, destination]);
 
-  if (!tokenSet) {
+  if (loading) {
     return (
       <Card className="border-border/50">
         <CardContent className="p-6">
           <h3 className="text-xl font-semibold mb-4 text-foreground">Travel Route Map</h3>
-          <form onSubmit={handleTokenSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="mapbox-token">
-                Enter Mapbox Public Token
-              </Label>
-              <Input
-                id="mapbox-token"
-                type="text"
-                placeholder="pk.eyJ1..."
-                value={mapboxToken}
-                onChange={(e) => setMapboxToken(e.target.value)}
-                className="w-full"
-              />
-              <p className="text-xs text-muted-foreground">
-                Get your free token at{' '}
-                <a
-                  href="https://www.mapbox.com/signup"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  mapbox.com
-                </a>
-              </p>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-2 rounded-md transition-colors"
-            >
-              Show Route Map
-            </button>
-          </form>
+          <div className="flex items-center justify-center h-[400px]">
+            <p className="text-muted-foreground">Loading map...</p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card className="border-border/50">
+        <CardContent className="p-6">
+          <h3 className="text-xl font-semibold mb-4 text-foreground">Travel Route Map</h3>
+          <div className="flex items-center justify-center h-[400px]">
+            <p className="text-destructive">{error}</p>
+          </div>
         </CardContent>
       </Card>
     );
