@@ -21,7 +21,6 @@ import { SnowfallAnimation } from "@/components/animations/SnowfallAnimation";
 import { DelhiHeritage } from "@/components/animations/DelhiHeritage";
 import { DiyaAnimation } from "@/components/animations/DiyaAnimation";
 import { BeachAnimation } from "@/components/animations/BeachAnimation";
-import { ButterflyAnimation } from "@/components/animations/ButterflyAnimation";
 import { DestinationGallery } from "@/components/DestinationGallery";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
@@ -63,12 +62,7 @@ const DestinationDetail = () => {
       {destination.slug === "dehradun" && <SnowfallAnimation />}
       {destination.slug === "mathura" && <DiyaAnimation />}
       {destination.slug === "delhi" && <DelhiHeritage />}
-      {destination.slug === "goa" && (
-        <>
-          <BeachAnimation />
-          <ButterflyAnimation />
-        </>
-      )}
+      {destination.slug === "goa" && <BeachAnimation />}
 
       {/* Hero Gallery */}
       <section className="relative">
