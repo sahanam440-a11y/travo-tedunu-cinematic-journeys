@@ -23,23 +23,22 @@ const Index = () => {
       />
       <div className="min-h-screen pb-16 md:pb-0">
         <Navbar />
-        <Hero />
-
-      {/* Interactive India Map */}
-      <Suspense fallback={<div className="py-24 container mx-auto px-4" />}>
-        <section className="py-24 container mx-auto px-4 relative">
+      {/* Interactive India Map - moved above the fold */}
+      <Suspense fallback={<div className="py-16 container mx-auto px-4" />}> 
+        <section className="py-12 md:py-16 container mx-auto px-4 relative">
           <div className="absolute inset-0 gradient-ocean-breeze -z-10"></div>
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
+          <div className="text-center space-y-4 mb-8">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">
               Explore India
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Click on any destination to discover your next adventure
             </p>
           </div>
           <IndiaMap />
         </section>
       </Suspense>
+        <Hero />
 
       {/* Featured Destinations */}
       <Suspense fallback={<div className="py-24 container mx-auto px-4" />}>
