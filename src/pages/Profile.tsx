@@ -160,17 +160,15 @@ const Profile = () => {
           
           {/* Hero Profile Header */}
           <div className="relative mb-8 animate-fade-up">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 rounded-3xl blur-3xl"></div>
-            <Card className="relative glass-card overflow-hidden border-2">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-secondary/30 to-primary/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+            <Card className="relative glass-card overflow-hidden border-2 border-border">
+              <div className="absolute inset-0 gradient-ocean-serenity opacity-50"></div>
               
               <CardContent className="relative p-8 md:p-12">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-secondary rounded-full animate-pulse-slow blur-xl opacity-60"></div>
-                    <Avatar className="relative w-32 h-32 border-4 border-background shadow-2xl">
-                      <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-primary to-accent text-white">
+                    <div className="absolute inset-0 bg-primary/40 rounded-full animate-pulse-slow blur-xl"></div>
+                    <Avatar className="relative w-32 h-32 border-4 border-background shadow-premium">
+                      <AvatarFallback className="text-4xl font-bold bg-primary text-primary-foreground">
                         {user?.email?.[0].toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
@@ -178,18 +176,18 @@ const Profile = () => {
                   
                   <div className="flex-1 text-center md:text-left space-y-3">
                     <div>
-                      <h1 className="text-4xl md:text-5xl font-serif mb-2 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+                      <h1 className="text-4xl md:text-5xl font-serif mb-2 text-foreground">
                         Welcome Back, Traveler!
                       </h1>
                       <p className="text-lg text-muted-foreground">Your journey continues...</p>
                     </div>
                     
                     <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                      <Badge variant="outline" className="px-4 py-2 text-base border-primary/50">
+                      <Badge variant="outline" className="px-4 py-2 text-base">
                         <Mail className="h-4 w-4 mr-2" />
                         {user?.email}
                       </Badge>
-                      <Badge variant="outline" className="px-4 py-2 text-base border-accent/50">
+                      <Badge variant="outline" className="px-4 py-2 text-base">
                         <Calendar className="h-4 w-4 mr-2" />
                         Since {format(new Date(user?.created_at), "MMM yyyy")}
                       </Badge>
@@ -202,53 +200,53 @@ const Profile = () => {
 
           {/* Stats Cards - Enhanced Design */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card className="relative group hover-lift animate-fade-up overflow-hidden border-2" style={{ animationDelay: "0.1s" }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all"></div>
+            <Card className="relative group hover-lift animate-fade-up overflow-hidden border-2 border-border" style={{ animationDelay: "0.1s" }}>
+              <div className="absolute inset-0 gradient-ocean-serenity opacity-30 group-hover:opacity-50 transition-opacity"></div>
               <CardContent className="relative p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center">
                     <Plane className="h-7 w-7 text-primary" />
                   </div>
-                  <TrendingUp className="h-5 w-5 text-primary/50" />
+                  <TrendingUp className="h-5 w-5 text-primary" />
                 </div>
-                <div className="text-4xl font-bold mb-1">{bookings.length}</div>
+                <div className="text-4xl font-bold mb-1 text-foreground">{bookings.length}</div>
                 <p className="text-sm text-muted-foreground font-medium">Total Bookings</p>
               </CardContent>
             </Card>
 
-            <Card className="relative group hover-lift animate-fade-up overflow-hidden border-2" style={{ animationDelay: "0.2s" }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-accent/5 group-hover:from-accent/20 group-hover:to-accent/10 transition-all"></div>
+            <Card className="relative group hover-lift animate-fade-up overflow-hidden border-2 border-border" style={{ animationDelay: "0.2s" }}>
+              <div className="absolute inset-0 gradient-tropical-breeze opacity-30 group-hover:opacity-50 transition-opacity"></div>
               <CardContent className="relative p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center">
                     <MapPin className="h-7 w-7 text-accent" />
                   </div>
-                  <Clock className="h-5 w-5 text-accent/50 animate-pulse" />
+                  <Clock className="h-5 w-5 text-accent animate-pulse" />
                 </div>
-                <div className="text-4xl font-bold mb-1 text-accent">{upcomingTrips.length}</div>
+                <div className="text-4xl font-bold mb-1 text-foreground">{upcomingTrips.length}</div>
                 <p className="text-sm text-muted-foreground font-medium">Upcoming Trips</p>
               </CardContent>
             </Card>
 
-            <Card className="relative group hover-lift animate-fade-up overflow-hidden border-2" style={{ animationDelay: "0.3s" }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-secondary/5 group-hover:from-secondary/20 group-hover:to-secondary/10 transition-all"></div>
+            <Card className="relative group hover-lift animate-fade-up overflow-hidden border-2 border-border" style={{ animationDelay: "0.3s" }}>
+              <div className="absolute inset-0 gradient-golden-hour opacity-30 group-hover:opacity-50 transition-opacity"></div>
               <CardContent className="relative p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center">
                     <Award className="h-7 w-7 text-secondary" />
                   </div>
-                  <CheckCircle className="h-5 w-5 text-secondary/50" />
+                  <CheckCircle className="h-5 w-5 text-secondary" />
                 </div>
-                <div className="text-4xl font-bold mb-1 text-secondary">{completedTrips.length}</div>
+                <div className="text-4xl font-bold mb-1 text-foreground">{completedTrips.length}</div>
                 <p className="text-sm text-muted-foreground font-medium">Completed Trips</p>
               </CardContent>
             </Card>
           </div>
 
           {/* Bookings List */}
-          <Card className="glass-card p-6 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          <Card className="glass-card p-6 animate-fade-up border-2 border-border" style={{ animationDelay: "0.4s" }}>
             <CardHeader className="px-0 pt-0">
-              <CardTitle className="text-2xl font-serif flex items-center gap-2">
+              <CardTitle className="text-2xl font-serif flex items-center gap-2 text-foreground">
                 <Calendar className="h-6 w-6 text-primary" />
                 Your Bookings
               </CardTitle>
