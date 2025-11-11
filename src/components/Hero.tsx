@@ -46,7 +46,7 @@ const Hero = () => {
               alt={item.alt}
               className="w-full h-full object-cover object-center"
               loading={item.priority ? "eager" : "lazy"}
-              fetchPriority={index === 0 ? "high" : "auto"}
+              fetchPriority={item.priority ? "high" : "auto"}
               decoding="async"
               sizes="100vw"
             />
