@@ -6,7 +6,7 @@ interface BeachElement {
   animationDuration: number;
   size: number;
   delay: number;
-  type: 'shell' | 'starfish';
+  type: 'starfish';
 }
 
 interface TropicalFish {
@@ -39,7 +39,6 @@ export const BeachAnimation = () => {
     // Create floating beach elements
     const elementArray: BeachElement[] = [];
     const elementCount = isMobile ? 4 : 6;
-    const types: ('shell' | 'starfish')[] = ['shell', 'starfish'];
     
     for (let i = 0; i < elementCount; i++) {
       elementArray.push({
@@ -48,7 +47,7 @@ export const BeachAnimation = () => {
         animationDuration: 12 + Math.random() * 8,
         size: isMobile ? 25 : 35,
         delay: Math.random() * 10,
-        type: types[i % types.length],
+        type: 'starfish',
       });
     }
     setBeachElements(elementArray);
@@ -75,48 +74,29 @@ export const BeachAnimation = () => {
   }, [isMobile]);
 
   const renderBeachElement = (element: BeachElement) => {
-    const baseColor = element.type === 'shell' ? '#f8b4d9' : '#fbbf24';
+    const baseColor = '#fbbf24';
     
     return (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {element.type === 'shell' && (
-          <>
-            <path
-              d="M24 8C20 8 16 10 16 14C16 18 18 22 20 26L24 36L28 26C30 22 32 18 32 14C32 10 28 8 24 8Z"
+        {[0, 1, 2, 3, 4].map((i) => {
+          const angle = (i * 72 - 90) * (Math.PI / 180);
+          const x = 24 + Math.cos(angle) * 12;
+          const y = 24 + Math.sin(angle) * 12;
+          return (
+            <ellipse
+              key={i}
+              cx={x}
+              cy={y}
+              rx="4"
+              ry="8"
               fill={baseColor}
-              opacity="0.9"
+              opacity="0.85"
+              transform={`rotate(${i * 72} ${x} ${y})`}
             />
-            <path
-              d="M24 10C21 10 18 11.5 18 14.5C18 17.5 20 20 22 23L24 30L26 23C28 20 30 17.5 30 14.5C30 11.5 27 10 24 10Z"
-              fill="white"
-              opacity="0.3"
-            />
-            <circle cx="24" cy="15" r="2" fill="white" opacity="0.5" />
-          </>
-        )}
-        {element.type === 'starfish' && (
-          <>
-            {[0, 1, 2, 3, 4].map((i) => {
-              const angle = (i * 72 - 90) * (Math.PI / 180);
-              const x = 24 + Math.cos(angle) * 12;
-              const y = 24 + Math.sin(angle) * 12;
-              return (
-                <ellipse
-                  key={i}
-                  cx={x}
-                  cy={y}
-                  rx="4"
-                  ry="8"
-                  fill={baseColor}
-                  opacity="0.85"
-                  transform={`rotate(${i * 72} ${x} ${y})`}
-                />
-              );
-            })}
-            <circle cx="24" cy="24" r="6" fill={baseColor} opacity="0.9" />
-            <circle cx="24" cy="24" r="3" fill="white" opacity="0.4" />
-          </>
-        )}
+          );
+        })}
+        <circle cx="24" cy="24" r="6" fill={baseColor} opacity="0.9" />
+        <circle cx="24" cy="24" r="3" fill="white" opacity="0.4" />
       </svg>
     );
   };
