@@ -28,6 +28,10 @@ const DestinationCard = ({ destination }: DestinationCardProps) => {
             src={destination.image}
             alt={`${destination.name} tour package - ${destination.tagline}. Starting from ₹${destination.priceFrom.toLocaleString()}`}
             loading="lazy"
+            decoding="async"
+            width="882"
+            height="662"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115"
           />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
