@@ -13,10 +13,10 @@ import dehradun1 from "@/assets/hero/dehradun-1.jpg";
 // Lazy load remaining images
 const heroImages = [
   { src: delhi1, alt: "India Gate at sunset - Delhi heritage tour", priority: true },
-  { src: delhi2, alt: "Red Fort - Historic Mughal architecture in Delhi", priority: true },
-  { src: delhi3, alt: "Chandni Chowk market - Old Delhi street food experience", priority: true },
-  { src: mathura1, alt: "Krishna Janmabhoomi Temple - Sacred pilgrimage site", priority: true },
-  { src: dehradun1, alt: "Robber's Cave - Natural wonder in Dehradun", priority: true },
+  { src: delhi2, alt: "Red Fort - Historic Mughal architecture in Delhi", priority: false },
+  { src: delhi3, alt: "Chandni Chowk market - Old Delhi street food experience", priority: false },
+  { src: mathura1, alt: "Krishna Janmabhoomi Temple - Sacred pilgrimage site", priority: false },
+  { src: dehradun1, alt: "Robber's Cave - Natural wonder in Dehradun", priority: false },
 ];
 
 const Hero = () => {
