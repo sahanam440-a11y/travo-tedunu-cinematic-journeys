@@ -36,6 +36,9 @@ const Footer = () => {
                 <Link to="/terms-and-conditions" className="text-sm text-muted-foreground hover:text-primary">
                   Terms
                 </Link>
+                <Link to="/cancellation-policy" className="text-sm text-muted-foreground hover:text-primary">
+                  Refunds
+                </Link>
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -120,6 +123,14 @@ const Footer = () => {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/cancellation-policy"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Cancellation & Refund
                 </Link>
               </li>
             </ul>
