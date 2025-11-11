@@ -9,7 +9,6 @@ import { lazy, Suspense } from "react";
 // Lazy load below-the-fold components
 const DestinationCard = lazy(() => import("@/components/DestinationCard"));
 const Footer = lazy(() => import("@/components/Footer"));
-const IndiaMap = lazy(() => import("@/components/IndiaMap"));
 
 const Index = () => {
   return (
@@ -23,21 +22,6 @@ const Index = () => {
       />
       <div className="min-h-screen pb-16 md:pb-0">
         <Navbar />
-      {/* Interactive India Map - moved above the fold */}
-      <Suspense fallback={<div className="py-16 container mx-auto px-4" />}> 
-        <section className="py-12 md:py-16 container mx-auto px-4 relative">
-          <div className="absolute inset-0 gradient-ocean-breeze -z-10"></div>
-          <div className="text-center space-y-4 mb-8">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">
-              Explore India
-            </h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Click on any destination to discover your next adventure
-            </p>
-          </div>
-          <IndiaMap />
-        </section>
-      </Suspense>
         <Hero />
 
       {/* Featured Destinations */}
