@@ -18,6 +18,7 @@ import Profile from "./pages/Profile";
 import Auth from "./pages/Auth";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import CancellationPolicy from "./pages/CancellationPolicy";
+import ShippingPolicy from "./pages/ShippingPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+            <Route path="/shipping-policy" element={<ShippingPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
