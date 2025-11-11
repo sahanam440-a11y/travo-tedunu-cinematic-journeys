@@ -1,11 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import DestinationCard from "@/components/DestinationCard";
-import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
 import { destinations } from "@/data/destinations";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { lazy, Suspense } from "react";
+
+// Lazy load below-the-fold components
+const DestinationCard = lazy(() => import("@/components/DestinationCard"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
@@ -22,32 +25,30 @@ const Index = () => {
         <Hero />
 
       {/* Featured Destinations */}
-      <section className="py-24 container mx-auto px-4 relative">
-        <div className="absolute inset-0 gradient-lavender-mist -z-10"></div>
-        <div className="text-center space-y-4 mb-16 animate-fade-up">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
-            Featured Destinations
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover India's most captivating journeys, curated for curious souls
-          </p>
-        </div>
+      <Suspense fallback={<div className="py-24 container mx-auto px-4" />}>
+        <section className="py-24 container mx-auto px-4 relative">
+          <div className="absolute inset-0 gradient-lavender-mist -z-10"></div>
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
+              Featured Destinations
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover India's most captivating journeys, curated for curious souls
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinations.map((destination, index) => (
-            <div
-              key={destination.id}
-              className="animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <DestinationCard destination={destination} />
-            </div>
-          ))}
-        </div>
-      </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {destinations.map((destination) => (
+              <DestinationCard key={destination.id} destination={destination} />
+            ))}
+          </div>
+        </section>
+      </Suspense>
 
+      <Suspense fallback={<div />}>
         <Footer />
-        <BottomNav />
+      </Suspense>
+      <BottomNav />
       </div>
     </>
   );

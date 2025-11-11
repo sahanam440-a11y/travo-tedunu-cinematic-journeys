@@ -30,28 +30,28 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const currentImage = heroImages[currentImageIndex];
+  const nextIndex = (currentImageIndex + 1) % heroImages.length;
+  const nextImage = heroImages[nextIndex];
+
   return (
     <section className="relative h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image Slideshow */}
+      {/* Background Image Slideshow - Only render current image */}
       <div className="absolute inset-0">
-        {heroImages.map((item, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="w-full h-full object-cover object-center"
-              loading={item.priority ? "eager" : "lazy"}
-              fetchPriority={item.priority ? "high" : "auto"}
-              decoding="async"
-              sizes="100vw"
-            />
-          </div>
-        ))}
+        <div className="absolute inset-0">
+          <img
+            src={currentImage.src}
+            alt={currentImage.alt}
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
+          />
+        </div>
+        
+        {/* Preload next image invisibly */}
+        <link rel="preload" as="image" href={nextImage.src} />
         
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
