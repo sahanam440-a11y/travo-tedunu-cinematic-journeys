@@ -33,6 +33,9 @@ const Footer = () => {
                 <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary">
                   Contact
                 </Link>
+                <Link to="/terms-and-conditions" className="text-sm text-muted-foreground hover:text-primary">
+                  Terms
+                </Link>
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -109,6 +112,14 @@ const Footer = () => {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/terms-and-conditions"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Terms & Conditions
                 </Link>
               </li>
             </ul>
