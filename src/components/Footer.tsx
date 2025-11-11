@@ -40,13 +40,13 @@ const Footer = () => {
         
         <div className="flex items-center justify-between pt-3 border-t border-border/50">
           <div className="flex gap-2">
-            <Button size="icon" variant="ghost" className="h-7 w-7">
+            <Button size="icon" variant="ghost" className="h-7 w-7" aria-label="Visit our Facebook page">
               <Facebook className="h-3.5 w-3.5" />
             </Button>
-            <Button size="icon" variant="ghost" className="h-7 w-7">
+            <Button size="icon" variant="ghost" className="h-7 w-7" aria-label="Visit our Instagram page">
               <Instagram className="h-3.5 w-3.5" />
             </Button>
-            <Button size="icon" variant="ghost" className="h-7 w-7">
+            <Button size="icon" variant="ghost" className="h-7 w-7" aria-label="Visit our YouTube channel">
               <Youtube className="h-3.5 w-3.5" />
             </Button>
           </div>
@@ -69,13 +69,13 @@ const Footer = () => {
               Travel, Tailored & Timeless. Curated journeys across India with authentic experiences.
             </p>
             <div className="flex gap-3">
-              <Button size="icon" variant="ghost" className="h-8 w-8">
+              <Button size="icon" variant="ghost" className="h-8 w-8" aria-label="Visit our Facebook page">
                 <Facebook className="h-4 w-4" />
               </Button>
-              <Button size="icon" variant="ghost" className="h-8 w-8">
+              <Button size="icon" variant="ghost" className="h-8 w-8" aria-label="Visit our Instagram page">
                 <Instagram className="h-4 w-4" />
               </Button>
-              <Button size="icon" variant="ghost" className="h-8 w-8">
+              <Button size="icon" variant="ghost" className="h-8 w-8" aria-label="Visit our YouTube channel">
                 <Youtube className="h-4 w-4" />
               </Button>
             </div>
