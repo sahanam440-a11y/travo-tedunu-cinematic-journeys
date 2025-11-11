@@ -154,32 +154,6 @@ const RouteMap: React.FC<RouteMapProps> = ({ origin, destination }) => {
     };
   }, [origin.lat, origin.lng, destination.lat, destination.lng]);
 
-  if (loading) {
-    return (
-      <Card className="border-border/50">
-        <CardContent className="p-6">
-          <h3 className="text-xl font-semibold mb-4 text-foreground">Travel Route Map</h3>
-          <div className="flex items-center justify-center h-[400px]">
-            <p className="text-muted-foreground">Loading map...</p>
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  if (error) {
-    return (
-      <Card className="border-border/50">
-        <CardContent className="p-6">
-          <h3 className="text-xl font-semibold mb-4 text-foreground">Travel Route Map</h3>
-          <div className="flex items-center justify-center h-[400px]">
-            <p className="text-destructive">{error}</p>
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
   return (
     <Card className="border-border/50">
       <CardContent className="p-6">
@@ -194,10 +168,25 @@ const RouteMap: React.FC<RouteMapProps> = ({ origin, destination }) => {
             <span className="text-sm text-muted-foreground">Destination: {destination.name}</span>
           </div>
         </div>
-        <div 
-          ref={mapContainer} 
-          className="w-full h-[400px] rounded-lg overflow-hidden"
-        />
+        
+        {loading && (
+          <div className="flex items-center justify-center h-[400px] bg-muted/20 rounded-lg">
+            <p className="text-muted-foreground">Loading map...</p>
+          </div>
+        )}
+        
+        {error && (
+          <div className="flex items-center justify-center h-[400px] bg-destructive/10 rounded-lg">
+            <p className="text-destructive">{error}</p>
+          </div>
+        )}
+        
+        {!loading && !error && (
+          <div 
+            ref={mapContainer} 
+            className="w-full h-[400px] rounded-lg overflow-hidden border border-border"
+          />
+        )}
       </CardContent>
     </Card>
   );
