@@ -12,10 +12,7 @@
     <!-- Preload LCP image for faster rendering -->
     <link rel="preload" as="image" href="/src/assets/hero/delhi-1.jpg" fetchpriority="high" />
     
-    <!-- Preload Google Fonts CSS to reduce dependency chain -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" />
-    
-    <!-- Google Fonts - Optimized loading -->
+    <!-- Google Fonts - Non-blocking async load -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" /></noscript>
     
