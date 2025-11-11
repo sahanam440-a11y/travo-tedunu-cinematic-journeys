@@ -119,7 +119,7 @@ const Contact = () => {
                 {/* Glow effect */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
                 
-                <Card className="relative border-0 shadow-2xl bg-card/80 dark:bg-card/40 backdrop-blur-xl overflow-hidden">
+                <Card className="relative border-0 shadow-2xl bg-card overflow-hidden">
                   {/* Decorative gradient overlay */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-amber-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
                   
@@ -148,7 +148,7 @@ const Contact = () => {
                             focusedField === "name" 
                               ? "border-amber-500 dark:border-amber-400 shadow-lg shadow-amber-500/20" 
                               : "border-border hover:border-amber-300 dark:hover:border-amber-700"
-                          } bg-background/50 backdrop-blur-sm`}
+                          } bg-background`}
                           required
                         />
                       </div>
@@ -168,7 +168,7 @@ const Contact = () => {
                               focusedField === "email" 
                                 ? "border-amber-500 dark:border-amber-400 shadow-lg shadow-amber-500/20" 
                                 : "border-border hover:border-amber-300 dark:hover:border-amber-700"
-                            } bg-background/50 backdrop-blur-sm`}
+                            } bg-background`}
                             required
                           />
                         </div>
@@ -187,7 +187,7 @@ const Contact = () => {
                               focusedField === "phone" 
                                 ? "border-amber-500 dark:border-amber-400 shadow-lg shadow-amber-500/20" 
                                 : "border-border hover:border-amber-300 dark:hover:border-amber-700"
-                            } bg-background/50 backdrop-blur-sm`}
+                            } bg-background`}
                           />
                         </div>
                       </div>
@@ -206,7 +206,7 @@ const Contact = () => {
                             focusedField === "message" 
                               ? "border-amber-500 dark:border-amber-400 shadow-lg shadow-amber-500/20" 
                               : "border-border hover:border-amber-300 dark:hover:border-amber-700"
-                          } bg-background/50 backdrop-blur-sm`}
+                          } bg-background`}
                           required
                         />
                       </div>
@@ -242,7 +242,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-6 animate-fade-up lg:sticky lg:top-24 lg:self-start" style={{ animationDelay: '100ms' }}>
               <div className="space-y-4">
-                <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-gradient-to-br from-amber-50 to-orange-50/50 dark:from-amber-950/30 dark:to-orange-950/20 backdrop-blur-sm overflow-hidden">
+                <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/30 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <CardContent className="p-6 relative">
                     <div className="flex items-start gap-4">
@@ -266,7 +266,7 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-gradient-to-br from-blue-50 to-indigo-50/50 dark:from-blue-950/30 dark:to-indigo-950/20 backdrop-blur-sm overflow-hidden">
+                <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/40 dark:to-indigo-950/30 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <CardContent className="p-6 relative">
                     <div className="flex items-start gap-4">
@@ -289,7 +289,7 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-gradient-to-br from-emerald-50 to-teal-50/50 dark:from-emerald-950/30 dark:to-teal-950/20 backdrop-blur-sm overflow-hidden">
+                <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/40 dark:to-teal-950/30 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <CardContent className="p-6 relative">
                     <div className="flex items-start gap-4">
@@ -308,7 +308,7 @@ const Contact = () => {
                 </Card>
               </div>
 
-              <Card className="border-0 shadow-xl bg-gradient-to-br from-purple-50 to-pink-50/50 dark:from-purple-950/30 dark:to-pink-950/20 backdrop-blur-sm overflow-hidden">
+              <Card className="border-0 shadow-xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/40 dark:to-pink-950/30 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 via-transparent to-transparent"></div>
                 <CardContent className="p-6 relative">
                   <h3 className="font-semibold text-foreground mb-4 flex items-center gap-3 text-lg">
