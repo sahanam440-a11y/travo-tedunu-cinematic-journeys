@@ -9,6 +9,7 @@ import { lazy, Suspense } from "react";
 // Lazy load below-the-fold components
 const DestinationCard = lazy(() => import("@/components/DestinationCard"));
 const Footer = lazy(() => import("@/components/Footer"));
+const SpecialOffers = lazy(() => import("@/components/SpecialOffers"));
 
 const Index = () => {
   return (
@@ -23,6 +24,11 @@ const Index = () => {
       <div className="min-h-screen pb-16 md:pb-0">
         <Navbar />
         <Hero />
+
+      {/* Special Offers */}
+      <Suspense fallback={<div className="py-24 container mx-auto px-4" />}>
+        <SpecialOffers />
+      </Suspense>
 
       {/* Featured Destinations */}
       <Suspense fallback={<div className="py-24 container mx-auto px-4" />}>
