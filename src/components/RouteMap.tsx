@@ -16,86 +16,110 @@ const RouteMap: React.FC<RouteMapProps> = ({ origin, destination }) => {
   const [error, setError] = useState<string | null>(null);
 
   const initializeMap = (token: string) => {
-    if (!mapContainer.current || map.current) return;
+    if (!mapContainer.current) return;
 
-    mapboxgl.accessToken = token;
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [
-        (origin.lng + destination.lng) / 2,
-        (origin.lat + destination.lat) / 2
-      ],
-      zoom: 5,
-    });
+    // Clean up existing map if any
+    if (map.current) {
+      map.current.remove();
+      map.current = null;
+    }
 
-    // Add navigation controls
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-    map.current.on('load', () => {
-      if (!map.current) return;
-
-      // Add origin marker
-      new mapboxgl.Marker({ color: '#22c55e' })
-        .setLngLat([origin.lng, origin.lat])
-        .setPopup(new mapboxgl.Popup().setHTML(`<strong>Start:</strong> ${origin.name}`))
-        .addTo(map.current);
-
-      // Add destination marker
-      new mapboxgl.Marker({ color: '#ef4444' })
-        .setLngLat([destination.lng, destination.lat])
-        .setPopup(new mapboxgl.Popup().setHTML(`<strong>Destination:</strong> ${destination.name}`))
-        .addTo(map.current);
-
-      // Add route line
-      map.current.addSource('route', {
-        type: 'geojson',
-        data: {
-          type: 'Feature',
-          properties: {},
-          geometry: {
-            type: 'LineString',
-            coordinates: [
-              [origin.lng, origin.lat],
-              [destination.lng, destination.lat]
-            ]
-          }
-        }
-      });
-
-      map.current.addLayer({
-        id: 'route',
-        type: 'line',
-        source: 'route',
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        paint: {
-          'line-color': '#3b82f6',
-          'line-width': 4,
-          'line-dasharray': [2, 2]
-        }
-      });
-
-      // Fit map to show both points
-      const bounds = new mapboxgl.LngLatBounds()
-        .extend([origin.lng, origin.lat])
-        .extend([destination.lng, destination.lat]);
+    try {
+      mapboxgl.accessToken = token;
       
-      map.current.fitBounds(bounds, {
-        padding: 80,
-        maxZoom: 8
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: 'mapbox://styles/mapbox/streets-v12',
+        center: [
+          (origin.lng + destination.lng) / 2,
+          (origin.lat + destination.lat) / 2
+        ],
+        zoom: 5,
       });
-    });
+
+      // Add navigation controls
+      map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+      map.current.on('load', () => {
+        if (!map.current) return;
+
+        // Add origin marker
+        new mapboxgl.Marker({ color: '#22c55e' })
+          .setLngLat([origin.lng, origin.lat])
+          .setPopup(new mapboxgl.Popup().setHTML(`<strong>Start:</strong> ${origin.name}`))
+          .addTo(map.current);
+
+        // Add destination marker
+        new mapboxgl.Marker({ color: '#ef4444' })
+          .setLngLat([destination.lng, destination.lat])
+          .setPopup(new mapboxgl.Popup().setHTML(`<strong>Destination:</strong> ${destination.name}`))
+          .addTo(map.current);
+
+        // Add route line
+        map.current.addSource('route', {
+          type: 'geojson',
+          data: {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'LineString',
+              coordinates: [
+                [origin.lng, origin.lat],
+                [destination.lng, destination.lat]
+              ]
+            }
+          }
+        });
+
+        map.current.addLayer({
+          id: 'route',
+          type: 'line',
+          source: 'route',
+          layout: {
+            'line-join': 'round',
+            'line-cap': 'round'
+          },
+          paint: {
+            'line-color': '#3b82f6',
+            'line-width': 4,
+            'line-dasharray': [2, 2]
+          }
+        });
+
+        // Fit map to show both points
+        const bounds = new mapboxgl.LngLatBounds()
+          .extend([origin.lng, origin.lat])
+          .extend([destination.lng, destination.lat]);
+        
+        map.current.fitBounds(bounds, {
+          padding: 80,
+          maxZoom: 8
+        });
+      });
+
+      map.current.on('error', (e) => {
+        console.error('Mapbox error:', e);
+        setError('Map loading error. Please refresh the page.');
+      });
+    } catch (err) {
+      console.error('Error creating map:', err);
+      setError('Failed to initialize map. Please refresh the page.');
+    }
   };
 
   useEffect(() => {
+    let mounted = true;
+
     const fetchTokenAndInitMap = async () => {
+      if (!mounted) return;
+      
       try {
         setLoading(true);
+        setError(null);
+        
         const { data, error: fetchError } = await supabase.functions.invoke('get-mapbox-token');
+        
+        if (!mounted) return;
         
         if (fetchError) {
           console.error('Error fetching Mapbox token:', fetchError);
@@ -106,11 +130,13 @@ const RouteMap: React.FC<RouteMapProps> = ({ origin, destination }) => {
         
         if (data?.token) {
           initializeMap(data.token);
+          setLoading(false);
         } else {
           setError('Map configuration error. Please contact support.');
+          setLoading(false);
         }
-        setLoading(false);
       } catch (err) {
+        if (!mounted) return;
         console.error('Error initializing map:', err);
         setError('Failed to load map. Please try refreshing the page.');
         setLoading(false);
@@ -120,9 +146,13 @@ const RouteMap: React.FC<RouteMapProps> = ({ origin, destination }) => {
     fetchTokenAndInitMap();
 
     return () => {
-      map.current?.remove();
+      mounted = false;
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+      }
     };
-  }, [origin, destination]);
+  }, [origin.lat, origin.lng, destination.lat, destination.lng]);
 
   if (loading) {
     return (
