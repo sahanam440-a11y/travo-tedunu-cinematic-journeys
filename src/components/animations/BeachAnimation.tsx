@@ -6,7 +6,7 @@ interface BeachElement {
   animationDuration: number;
   size: number;
   delay: number;
-  type: 'shell' | 'starfish' | 'coconut';
+  type: 'shell' | 'starfish';
 }
 
 export const BeachAnimation = () => {
@@ -27,7 +27,7 @@ export const BeachAnimation = () => {
     // Create floating beach elements
     const elementArray: BeachElement[] = [];
     const elementCount = isMobile ? 4 : 6;
-    const types: ('shell' | 'starfish' | 'coconut')[] = ['shell', 'starfish', 'coconut'];
+    const types: ('shell' | 'starfish')[] = ['shell', 'starfish'];
     
     for (let i = 0; i < elementCount; i++) {
       elementArray.push({
@@ -43,7 +43,7 @@ export const BeachAnimation = () => {
   }, [isMobile]);
 
   const renderBeachElement = (element: BeachElement) => {
-    const baseColor = element.type === 'shell' ? '#f8b4d9' : element.type === 'starfish' ? '#fbbf24' : '#8b4513';
+    const baseColor = element.type === 'shell' ? '#f8b4d9' : '#fbbf24';
     
     return (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,16 +83,6 @@ export const BeachAnimation = () => {
             })}
             <circle cx="24" cy="24" r="6" fill={baseColor} opacity="0.9" />
             <circle cx="24" cy="24" r="3" fill="white" opacity="0.4" />
-          </>
-        )}
-        {element.type === 'coconut' && (
-          <>
-            <ellipse cx="24" cy="24" rx="10" ry="12" fill={baseColor} opacity="0.9" />
-            <ellipse cx="24" cy="22" rx="8" ry="9" fill="#654321" opacity="0.7" />
-            <ellipse cx="24" cy="20" rx="6" ry="7" fill="#8b6f47" opacity="0.5" />
-            <circle cx="22" cy="18" r="1.5" fill="black" opacity="0.6" />
-            <circle cx="26" cy="18" r="1.5" fill="black" opacity="0.6" />
-            <circle cx="24" cy="22" r="1" fill="black" opacity="0.6" />
           </>
         )}
       </svg>
