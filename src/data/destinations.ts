@@ -56,6 +56,10 @@ export interface DestinationDetail {
   included: string[];
   excluded: string[];
   mapLink: string;
+  coordinates: {
+    origin: { lat: number; lng: number; name: string };
+    destination: { lat: number; lng: number; name: string };
+  };
   faqs: {
     question: string;
     answer: string;
@@ -112,6 +116,10 @@ export const destinations: DestinationDetail[] = [
     ],
     excluded: ["Flights", "Lunch & Dinner", "Personal expenses", "Tips"],
     mapLink: "https://maps.google.com/?q=Delhi,India",
+    coordinates: {
+      origin: { lat: 12.9716, lng: 77.5946, name: "Bangalore" },
+      destination: { lat: 28.6139, lng: 77.2090, name: "Delhi" },
+    },
     faqs: [
       {
         question: "What's the best time to visit Delhi?",
@@ -176,6 +184,10 @@ export const destinations: DestinationDetail[] = [
     ],
     excluded: ["Flights", "Lunch & Dinner", "Donations", "Personal expenses"],
     mapLink: "https://maps.google.com/?q=Mathura,India",
+    coordinates: {
+      origin: { lat: 12.9716, lng: 77.5946, name: "Bangalore" },
+      destination: { lat: 27.4924, lng: 77.6737, name: "Mathura" },
+    },
     faqs: [
       {
         question: "What should I wear for temple visits?",
@@ -249,6 +261,10 @@ export const destinations: DestinationDetail[] = [
     ],
     excluded: ["Flights", "Lunches", "Rafting photos", "Personal gear", "Tips"],
     mapLink: "https://maps.google.com/?q=Dehradun,India",
+    coordinates: {
+      origin: { lat: 12.9716, lng: 77.5946, name: "Bangalore" },
+      destination: { lat: 30.3165, lng: 78.0322, name: "Dehradun" },
+    },
     faqs: [
       {
         question: "What's the difficulty level for activities?",
@@ -335,6 +351,10 @@ export const destinations: DestinationDetail[] = [
       "Shopping and personal expenses",
     ],
     mapLink: "https://maps.google.com/?q=Goa,India",
+    coordinates: {
+      origin: { lat: 12.9716, lng: 77.5946, name: "Bangalore" },
+      destination: { lat: 15.2993, lng: 74.1240, name: "Goa" },
+    },
     faqs: [
       {
         question: "What's the best time to visit Goa?",

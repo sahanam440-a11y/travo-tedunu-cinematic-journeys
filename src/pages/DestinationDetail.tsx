@@ -23,6 +23,7 @@ import { DiyaAnimation } from "@/components/animations/DiyaAnimation";
 import { BeachAnimation } from "@/components/animations/BeachAnimation";
 import { DestinationGallery } from "@/components/DestinationGallery";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import RouteMap from "@/components/RouteMap";
 
 const DestinationDetail = () => {
   const { slug } = useParams();
@@ -183,6 +184,14 @@ const DestinationDetail = () => {
                   ))}
                 </ul>
               </div>
+            </section>
+
+            {/* Route Map */}
+            <section className="bg-background/90 backdrop-blur-sm p-6 rounded-lg">
+              <RouteMap 
+                origin={destination.coordinates.origin}
+                destination={destination.coordinates.destination}
+              />
             </section>
 
             {/* FAQs */}
