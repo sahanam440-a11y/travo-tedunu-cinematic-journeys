@@ -9,8 +9,18 @@ interface BeachElement {
   type: 'shell' | 'starfish';
 }
 
+interface Bubble {
+  id: number;
+  left: number;
+  size: number;
+  animationDuration: number;
+  delay: number;
+  opacity: number;
+}
+
 export const BeachAnimation = () => {
   const [beachElements, setBeachElements] = useState<BeachElement[]>([]);
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -40,6 +50,22 @@ export const BeachAnimation = () => {
       });
     }
     setBeachElements(elementArray);
+
+    // Create bubbles
+    const bubbleArray: Bubble[] = [];
+    const bubbleCount = isMobile ? 15 : 25;
+    
+    for (let i = 0; i < bubbleCount; i++) {
+      bubbleArray.push({
+        id: i,
+        left: Math.random() * 100,
+        size: 4 + Math.random() * 12,
+        animationDuration: 3 + Math.random() * 4,
+        delay: Math.random() * 5,
+        opacity: 0.3 + Math.random() * 0.4,
+      });
+    }
+    setBubbles(bubbleArray);
   }, [isMobile]);
 
   const renderBeachElement = (element: BeachElement) => {
@@ -91,6 +117,29 @@ export const BeachAnimation = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+      {/* Bubbles */}
+      {bubbles.map((bubble) => (
+        <div
+          key={`bubble-${bubble.id}`}
+          className="absolute animate-bubble-rise"
+          style={{
+            left: `${bubble.left}%`,
+            width: `${bubble.size}px`,
+            height: `${bubble.size}px`,
+            animationDuration: `${bubble.animationDuration}s`,
+            animationDelay: `${bubble.delay}s`,
+          }}
+        >
+          <div
+            className="w-full h-full rounded-full animate-bubble-wobble"
+            style={{
+              background: `radial-gradient(circle at 30% 30%, rgba(255, 255, 255, ${bubble.opacity}), rgba(173, 216, 230, ${bubble.opacity * 0.6}))`,
+              boxShadow: `inset -2px -2px 4px rgba(255, 255, 255, 0.5), 0 0 ${bubble.size / 2}px rgba(173, 216, 230, 0.3)`,
+            }}
+          />
+        </div>
+      ))}
+
       {/* Beach Elements */}
       {beachElements.map((element) => (
         <div
@@ -116,6 +165,38 @@ export const BeachAnimation = () => {
       ))}
 
       <style>{`
+        @keyframes bubble-rise {
+          0% {
+            bottom: -10%;
+            opacity: 0;
+            transform: translateX(0) scale(0.5);
+          }
+          10% {
+            opacity: 1;
+          }
+          50% {
+            transform: translateX(20px) scale(1);
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            bottom: 110%;
+            opacity: 0;
+            transform: translateX(-10px) scale(0.8);
+          }
+        }
+        @keyframes bubble-wobble {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          25% {
+            transform: translateX(-3px);
+          }
+          75% {
+            transform: translateX(3px);
+          }
+        }
         @keyframes float-beach {
           0% {
             bottom: -10%;
@@ -142,6 +223,12 @@ export const BeachAnimation = () => {
             opacity: 0;
             transform: translateX(-20px) rotate(360deg) scale(0.7);
           }
+        }
+        .animate-bubble-rise {
+          animation: bubble-rise linear infinite;
+        }
+        .animate-bubble-wobble {
+          animation: bubble-wobble ease-in-out 2s infinite;
         }
         .animate-float-beach {
           animation: float-beach linear infinite;
