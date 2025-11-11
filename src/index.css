@@ -181,6 +181,10 @@ All colors MUST be HSL.
     font-family: 'Playfair Display', serif;
     font-weight: 700;
   }
+
+  #lovable-badge {
+    display: none !important;
+  }
 }
 
 @layer utilities {
