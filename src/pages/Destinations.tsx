@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import TravelersParallax from "@/components/animations/TravelersParallax";
+import WalkingTraveler from "@/components/animations/WalkingTraveler";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";

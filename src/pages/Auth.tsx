@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import TravelersParallax from "@/components/animations/TravelersParallax";
+import WalkingTraveler from "@/components/animations/WalkingTraveler";
 import BottomNav from "@/components/BottomNav";
 
 const Auth = () => {
