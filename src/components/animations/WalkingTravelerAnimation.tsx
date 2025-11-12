@@ -24,8 +24,8 @@ export const WalkingTravelerAnimation = () => {
 
   const renderTraveler = (direction: "left" | "right") => (
     <svg
-      width="60"
-      height="60"
+      width="72"
+      height="72"
       viewBox="0 0 60 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ export const WalkingTravelerAnimation = () => {
       {travelers.map((traveler) => (
         <div
           key={traveler.id}
-          className={`absolute bottom-0 ${
+          className={`absolute bottom-16 md:bottom-6 ${
             traveler.direction === "right" ? "animate-walk-right" : "animate-walk-left"
           }`}
           style={{
