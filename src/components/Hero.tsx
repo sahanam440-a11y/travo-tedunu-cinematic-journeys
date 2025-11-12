@@ -66,19 +66,22 @@ const Hero = () => {
           {/* Logo - Mobile Only */}
           <div className="md:hidden flex justify-center mb-4 animate-fade-up">
             <div className="relative">
-              {/* Subtle, clean contrast halo (no blur) */}
-              <div aria-hidden className="absolute -inset-8 pointer-events-none rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.7), rgba(0,0,0,0) 75%)' }} />
-              {/* Gentle brand accent ring using theme tokens */}
-              <div className="absolute inset-0 rounded-full ring-2 ring-primary/30" />
+              {/* Contrast booster (no blur) for perfect readability */}
+              <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
 
-              {/* Logo - maximum visibility with clean edge */}
+              {/* Color aura - crisp, semantic tokens */}
+              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/70 via-accent/60 to-primary/70 rounded-full blur-xl scale-110 animate-pulse-slow" />
+
+              {/* Logo with maximum clarity and emphasis */}
               <img 
                 src={logo}
                 alt="Travo Tedunu Logo"
-                className="relative h-56 sm:h-64 w-auto object-contain"
+                className="relative z-10 h-48 sm:h-56 w-auto object-contain"
                 style={{
-                  filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.95)) drop-shadow(0 2px 10px rgba(0,0,0,0.7)) drop-shadow(0 0 24px rgba(255,200,0,0.35)) contrast(1.4) brightness(1.3) saturate(1.2)',
-                  imageRendering: 'crisp-edges'
+                  willChange: 'transform, filter',
+                  transform: 'translateZ(0)',
+                  imageRendering: 'auto',
+                  filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.95)) drop-shadow(0 0 14px rgba(255,255,255,0.6)) drop-shadow(0 0 40px rgba(255,200,0,0.55)) contrast(1.35) brightness(1.35) saturate(1.25)'
                 }}
                 loading="eager"
                 fetchPriority="high"
