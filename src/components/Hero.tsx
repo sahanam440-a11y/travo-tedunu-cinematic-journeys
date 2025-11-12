@@ -36,7 +36,7 @@ const Hero = () => {
   const nextImage = heroImages[nextIndex];
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden pb-20 md:pb-24">
+    <section className="relative min-h-[90vh] md:min-h-screen overflow-hidden pb-24 md:pb-28">
       {/* Background Image Slideshow - Only render current image */}
       <div className="absolute inset-0">
         <div className="absolute inset-0">
@@ -61,10 +61,10 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-8 md:pt-20 pb-4 md:pb-8 text-center">
-        <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
+      <div className="relative z-10 container mx-auto px-4 pt-24 md:pt-28 pb-6 md:pb-10 text-center">
+        <div className="max-w-4xl mx-auto space-y-5 md:space-y-7">
           {/* Logo - All Devices */}
-          <div className="flex justify-center mb-2 md:mb-4 animate-fade-up">
+          <div className="flex justify-center mb-3 md:mb-5 animate-fade-up">
             <div className="relative">
               {/* Contrast booster (no blur) for perfect readability */}
               <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
@@ -94,7 +94,7 @@ const Hero = () => {
             <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-1 animate-bounce-subtle shadow-lg">
               ✨ Discover Your Next Adventure
             </div>
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               Travel, Tailored & Timeless
             </h1>
           </div>
@@ -102,7 +102,7 @@ const Hero = () => {
             Curated journeys across India with cinematic visuals and authentic experiences
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-5 pt-3 md:pt-6 px-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 pt-4 md:pt-8 px-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <Button
               size="lg"
               className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:shadow-glow hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold shadow-elevated bg-action text-action-foreground hover:bg-action-hover"
