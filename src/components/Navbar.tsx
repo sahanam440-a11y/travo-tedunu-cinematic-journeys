@@ -30,33 +30,7 @@ const Navbar = () => {
   return (
     <nav className="hidden md:block fixed bottom-0 left-0 right-0 z-50 shadow-elevated border-t border-nav-border backdrop-blur-md transition-transform duration-300 bg-nav-background/95 rounded-t-xl">
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center hover:scale-105 transition-transform duration-300">
-            <div className="relative h-10 md:h-14 w-auto overflow-visible">
-              {/* Contrast booster for readability */}
-              <div aria-hidden className="absolute -inset-4 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.35), rgba(0,0,0,0) 70%)' }} />
-
-              {/* Color aura - crisp, semantic tokens */}
-              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/40 via-accent/30 to-primary/40 rounded-full blur-md scale-110 animate-pulse-slow" />
-
-              {/* Logo with enhanced visibility */}
-              <img 
-                src={logo}
-                alt="Travo Tedunu Logo"
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 h-20 md:h-24 w-auto object-contain"
-                style={{
-                  willChange: 'transform, filter',
-                  transform: 'translateZ(0)',
-                  imageRendering: 'auto',
-                  filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8)) drop-shadow(0 0 8px rgba(255,255,255,0.3)) drop-shadow(0 0 20px rgba(255,200,0,0.3)) contrast(1.3) brightness(1.3) saturate(1.2)'
-                }}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-              />
-            </div>
-          </Link>
-
+        <div className="flex items-center justify-center">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
