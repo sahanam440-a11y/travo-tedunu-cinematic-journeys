@@ -60,7 +60,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-4 md:pt-32 pb-16 md:pb-20 text-center">
+      <div className="relative z-10 container mx-auto px-4 pt-20 md:pt-32 pb-16 md:pb-20 text-center">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="animate-fade-up space-y-4">
             <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-4 animate-bounce-subtle shadow-lg">
