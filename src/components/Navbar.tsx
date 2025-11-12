@@ -57,7 +57,7 @@ const Navbar = () => {
                 <Link to="/auth">Login</Link>
               </Button>
             )}
-            <Button size="lg" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold bg-action text-action-foreground hover:bg-action-hover" asChild>
+            <Button size="lg" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] hover:bg-[position:100%_0] text-white" asChild>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>
