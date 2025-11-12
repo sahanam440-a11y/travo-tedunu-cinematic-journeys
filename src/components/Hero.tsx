@@ -70,7 +70,7 @@ const Hero = () => {
               <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
 
               {/* Color aura - crisp, semantic tokens */}
-              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/50 via-accent/40 to-primary/50 rounded-full blur-lg scale-110 animate-pulse-slow" />
+              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/30 via-accent/25 to-primary/30 rounded-full blur-md scale-105 animate-pulse-slow" />
 
               {/* Logo with maximum clarity and emphasis */}
               <img 
