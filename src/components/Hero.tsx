@@ -36,7 +36,7 @@ const Hero = () => {
   const nextImage = heroImages[nextIndex];
 
   return (
-    <section className="relative h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden pb-20 md:pb-24">
       {/* Background Image Slideshow - Only render current image */}
       <div className="absolute inset-0">
         <div className="absolute inset-0">
@@ -61,10 +61,10 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-4 md:pt-32 pb-16 md:pb-20 text-center">
+      <div className="relative z-10 container mx-auto px-4 pt-4 md:pt-32 pb-4 md:pb-8 text-center">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           {/* Logo - All Devices */}
-          <div className="flex justify-center mb-4 md:mb-6 animate-fade-up">
+          <div className="flex justify-center mb-3 md:mb-6 animate-fade-up">
             <div className="relative">
               {/* Contrast booster (no blur) for perfect readability */}
               <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
@@ -76,7 +76,7 @@ const Hero = () => {
               <img 
                 src={logo}
                 alt="Travo Tedunu Logo"
-                className="relative z-10 h-48 sm:h-56 w-auto object-contain"
+                className="relative z-10 h-40 sm:h-56 w-auto object-contain"
                 style={{
                   willChange: 'transform, filter',
                   transform: 'translateZ(0)',
@@ -90,19 +90,19 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="animate-fade-up space-y-4">
-            <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-4 animate-bounce-subtle shadow-lg">
+          <div className="animate-fade-up space-y-3">
+            <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-2 animate-bounce-subtle shadow-lg">
               ✨ Discover Your Next Adventure
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               Travel, Tailored & Timeless
             </h1>
           </div>
-          <p className="text-lg sm:text-xl md:text-2xl text-white max-w-3xl mx-auto text-balance px-4 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] animate-fade-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-xl md:text-2xl text-white max-w-3xl mx-auto text-balance px-4 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] animate-fade-up" style={{ animationDelay: '0.2s' }}>
             Curated journeys across India with cinematic visuals and authentic experiences
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 pt-4 md:pt-6 px-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-5 pt-3 md:pt-6 px-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <Button
               size="lg"
               className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:shadow-glow hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold shadow-elevated bg-action text-action-foreground hover:bg-action-hover"
