@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, User } from "lucide-react";
+import { User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [user, setUser] = useState<any>(null);
@@ -30,11 +31,8 @@ const Navbar = () => {
     <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 shadow-elevated border-b border-nav-border backdrop-blur-md rounded-b-xl transition-transform duration-300 bg-nav-background">
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-1.5 text-base md:text-2xl font-serif font-bold hover:scale-105 transition-transform duration-300">
-            <MapPin className="h-4 w-4 md:h-7 md:w-7 text-secondary drop-shadow-[0_0_8px_rgba(217,119,6,0.6)] animate-bounce-subtle" />
-            <span className="text-nav-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]">
-              Travo Tedunu
-            </span>
+          <Link to="/" className="flex items-center hover:scale-105 transition-transform duration-300">
+            <img src={logo} alt="Travo Tedunu Logo" className="h-12 md:h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
