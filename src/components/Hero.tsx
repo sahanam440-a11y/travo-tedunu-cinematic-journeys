@@ -64,9 +64,9 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 pt-4 md:pt-32 pb-16 md:pb-20 text-center">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           {/* Logo - Mobile Only */}
-          <div className="md:hidden flex justify-center mb-6 animate-fade-up">
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-3 shadow-elevated">
-              <img src={logo} alt="Travo Tedunu Logo" className="h-14 w-auto object-contain" />
+          <div className="md:hidden flex justify-center mb-4 animate-fade-up">
+            <div className="bg-white/90 backdrop-blur-md rounded-3xl px-8 py-4 shadow-2xl border border-white/20">
+              <img src={logo} alt="Travo Tedunu Logo" className="h-20 w-auto object-contain" />
             </div>
           </div>
           
