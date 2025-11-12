@@ -66,13 +66,16 @@ const Hero = () => {
           {/* Logo - Mobile Only */}
           <div className="md:hidden flex justify-center mb-4 animate-fade-up">
             <div className="relative">
-              {/* Gradient glow behind logo */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/40 via-orange-500/30 to-amber-600/40 blur-2xl rounded-full scale-110"></div>
-              {/* Logo with enhanced visibility */}
+              {/* Multi-layer gradient glow with animation */}
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-400/60 via-orange-500/50 to-amber-500/60 blur-3xl rounded-full scale-125 animate-pulse-slow"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400/40 via-amber-400/40 to-orange-400/40 blur-2xl rounded-full scale-110 animate-pulse-slow" style={{ animationDelay: '0.5s' }}></div>
+              {/* Outer ring glow */}
+              <div className="absolute inset-0 ring-4 ring-amber-400/30 rounded-full blur-sm scale-105"></div>
+              {/* Logo with maximum visibility */}
               <img 
                 src={logo} 
                 alt="Travo Tedunu Logo" 
-                className="relative h-36 w-auto object-contain drop-shadow-[0_8px_24px_rgba(217,119,6,0.8)] filter brightness-110 contrast-110" 
+                className="relative h-40 w-auto object-contain drop-shadow-[0_0_40px_rgba(251,191,36,1)] drop-shadow-[0_0_20px_rgba(217,119,6,1)] filter brightness-125 contrast-125 saturate-110" 
               />
             </div>
           </div>
