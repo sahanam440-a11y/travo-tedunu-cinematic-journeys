@@ -119,7 +119,7 @@ export const destinations: DestinationDetail[] = [
       },
       {
         question: "Is transportation included?",
-        answer: "Yes, private AC transport is included for all sightseeing activities.",
+        answer: "Yes, the transportation is included for all sightseeing activities.",
       },
       {
         question: "Are meals included?",
