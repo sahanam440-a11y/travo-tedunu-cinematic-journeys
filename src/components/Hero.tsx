@@ -36,7 +36,7 @@ const Hero = () => {
   const nextImage = heroImages[nextIndex];
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen overflow-hidden pb-24 md:pb-28">
+    <section className="relative min-h-[85vh] md:min-h-screen overflow-hidden pb-40 md:pb-48">
       {/* Background Image Slideshow - Only render current image */}
       <div className="absolute inset-0">
         <div className="absolute inset-0">
