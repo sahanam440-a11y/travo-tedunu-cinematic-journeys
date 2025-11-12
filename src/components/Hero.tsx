@@ -61,7 +61,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-24 md:pt-28 pb-6 md:pb-10 text-center">
+      <div className="relative z-10 container mx-auto px-4 pt-16 md:pt-24 pb-6 md:pb-10 text-center">
         <div className="max-w-4xl mx-auto space-y-5 md:space-y-7">
           {/* Logo - All Devices */}
           <div className="flex justify-center mb-3 md:mb-5 animate-fade-up">
