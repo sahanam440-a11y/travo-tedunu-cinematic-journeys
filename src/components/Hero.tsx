@@ -66,16 +66,26 @@ const Hero = () => {
           {/* Logo - Mobile Only */}
           <div className="md:hidden flex justify-center mb-4 animate-fade-up">
             <div className="relative">
-              {/* Multi-layer gradient glow with animation */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-400/60 via-orange-500/50 to-amber-500/60 blur-3xl rounded-full scale-125 animate-pulse-slow"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400/40 via-amber-400/40 to-orange-400/40 blur-2xl rounded-full scale-110 animate-pulse-slow" style={{ animationDelay: '0.5s' }}></div>
-              {/* Outer ring glow */}
-              <div className="absolute inset-0 ring-4 ring-amber-400/30 rounded-full blur-sm scale-105"></div>
-              {/* Logo with maximum visibility */}
+              {/* Contrast booster (no blur) for perfect readability */}
+              <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
+
+              {/* Color aura - crisp, semantic tokens */}
+              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/70 via-accent/60 to-primary/70 rounded-full blur-xl scale-110 animate-pulse-slow" />
+
+              {/* Logo with maximum clarity and emphasis */}
               <img 
-                src={logo} 
-                alt="Travo Tedunu Logo" 
-                className="relative h-40 w-auto object-contain drop-shadow-[0_0_40px_rgba(251,191,36,1)] drop-shadow-[0_0_20px_rgba(217,119,6,1)] filter brightness-125 contrast-125 saturate-110" 
+                src={logo}
+                alt="Travo Tedunu Logo"
+                className="relative z-10 h-48 sm:h-56 w-auto object-contain"
+                style={{
+                  willChange: 'transform, filter',
+                  transform: 'translateZ(0)',
+                  imageRendering: 'auto',
+                  filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.95)) drop-shadow(0 0 14px rgba(255,255,255,0.6)) drop-shadow(0 0 40px rgba(255,200,0,0.55)) contrast(1.35) brightness(1.35) saturate(1.25)'
+                }}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
           </div>
