@@ -8,12 +8,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { WalkingTravelerAnimation } from "@/components/animations/WalkingTravelerAnimation";
 
 const Footer = () => {
   return (
-    <footer className="glass-card border-t-2 border-primary/20 shadow-elevated">
+    <footer className="glass-card border-t-2 border-primary/20 shadow-elevated relative overflow-hidden">
+      <WalkingTravelerAnimation />
       {/* Mobile Compact Footer */}
-      <div className="md:hidden px-4 py-4">
+      <div className="md:hidden px-4 py-4 relative z-10">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="links" className="border-b-0">
             <AccordionTrigger className="text-sm font-semibold hover:no-underline py-2">
@@ -67,7 +69,7 @@ const Footer = () => {
       </div>
 
       {/* Desktop Full Footer */}
-      <div className="hidden md:block container mx-auto px-4 py-12">
+      <div className="hidden md:block container mx-auto px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
