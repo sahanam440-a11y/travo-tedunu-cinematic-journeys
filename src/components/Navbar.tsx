@@ -32,7 +32,29 @@ const Navbar = () => {
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center hover:scale-105 transition-transform duration-300">
-            <img src={logo} alt="Travo Tedunu Logo" className="h-10 md:h-14 w-auto object-contain" />
+            <div className="relative">
+              {/* Contrast booster for readability */}
+              <div aria-hidden className="absolute -inset-4 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.35), rgba(0,0,0,0) 70%)' }} />
+
+              {/* Color aura - crisp, semantic tokens */}
+              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/40 via-accent/30 to-primary/40 rounded-full blur-md scale-110 animate-pulse-slow" />
+
+              {/* Logo with enhanced visibility */}
+              <img 
+                src={logo}
+                alt="Travo Tedunu Logo"
+                className="relative z-10 h-10 md:h-14 w-auto object-contain"
+                style={{
+                  willChange: 'transform, filter',
+                  transform: 'translateZ(0)',
+                  imageRendering: 'auto',
+                  filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8)) drop-shadow(0 0 8px rgba(255,255,255,0.3)) drop-shadow(0 0 20px rgba(255,200,0,0.3)) contrast(1.3) brightness(1.3) saturate(1.2)'
+                }}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
