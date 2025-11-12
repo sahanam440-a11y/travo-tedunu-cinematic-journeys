@@ -32,20 +32,20 @@ export const WalkingTravelerAnimation = () => {
       style={{ transform: direction === "left" ? "scaleX(-1)" : "none" }}
     >
       {/* Head */}
-      <circle cx="30" cy="15" r="6" fill="hsl(var(--amber-500))" />
+      <circle cx="30" cy="15" r="6" fill="#F59E0B" />
       
       {/* Body */}
-      <ellipse cx="30" cy="28" rx="7" ry="10" fill="hsl(var(--primary))" />
+      <ellipse cx="30" cy="28" rx="7" ry="10" fill="#8B5CF6" />
       
       {/* Backpack */}
-      <rect x="32" y="20" width="8" height="12" rx="2" fill="hsl(var(--accent))" />
-      <rect x="33" y="22" width="6" height="3" rx="1" fill="hsl(var(--accent-foreground))" opacity="0.3" />
+      <rect x="32" y="20" width="8" height="12" rx="2" fill="#10B981" />
+      <rect x="33" y="22" width="6" height="3" rx="1" fill="#FFFFFF" opacity="0.3" />
       
       {/* Suitcase */}
       <g className="animate-suitcase-bounce">
-        <rect x="18" y="38" width="8" height="10" rx="1" fill="hsl(var(--destructive))" />
-        <rect x="19" y="39" width="6" height="3" rx="0.5" fill="hsl(var(--destructive-foreground))" opacity="0.3" />
-        <line x1="22" y1="38" x2="22" y2="35" stroke="hsl(var(--destructive))" strokeWidth="2" strokeLinecap="round" />
+        <rect x="18" y="38" width="8" height="10" rx="1" fill="#EF4444" />
+        <rect x="19" y="39" width="6" height="3" rx="0.5" fill="#FFFFFF" opacity="0.3" />
+        <line x1="22" y1="38" x2="22" y2="35" stroke="#EF4444" strokeWidth="2" strokeLinecap="round" />
       </g>
       
       {/* Left Leg - Walking animation */}
@@ -54,7 +54,7 @@ export const WalkingTravelerAnimation = () => {
         y1="38" 
         x2="25" 
         y2="50" 
-        stroke="hsl(var(--primary))" 
+        stroke="#8B5CF6" 
         strokeWidth="3" 
         strokeLinecap="round"
         className="animate-walk-left-leg"
@@ -66,7 +66,7 @@ export const WalkingTravelerAnimation = () => {
         y1="38" 
         x2="35" 
         y2="50" 
-        stroke="hsl(var(--primary))" 
+        stroke="#8B5CF6" 
         strokeWidth="3" 
         strokeLinecap="round"
         className="animate-walk-right-leg"
@@ -78,7 +78,7 @@ export const WalkingTravelerAnimation = () => {
         y1="23" 
         x2="20" 
         y2="35" 
-        stroke="hsl(var(--primary))" 
+        stroke="#8B5CF6" 
         strokeWidth="2.5" 
         strokeLinecap="round"
         className="animate-walk-left-arm"
@@ -90,7 +90,7 @@ export const WalkingTravelerAnimation = () => {
         y1="23" 
         x2="22" 
         y2="35" 
-        stroke="hsl(var(--primary))" 
+        stroke="#8B5CF6" 
         strokeWidth="2.5" 
         strokeLinecap="round"
       />
