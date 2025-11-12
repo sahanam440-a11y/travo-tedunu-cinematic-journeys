@@ -9,6 +9,7 @@ import { lazy, Suspense } from "react";
 // Lazy load below-the-fold components
 const DestinationCard = lazy(() => import("@/components/DestinationCard"));
 const Footer = lazy(() => import("@/components/Footer"));
+const TravelersParallax = lazy(() => import("@/components/animations/TravelersParallax"));
 
 const Index = () => {
   return (
@@ -43,6 +44,9 @@ const Index = () => {
             ))}
           </div>
         </section>
+      </Suspense>
+      <Suspense fallback={<div className="h-28" />}>
+        <TravelersParallax />
       </Suspense>
 
       <Suspense fallback={<div />}>

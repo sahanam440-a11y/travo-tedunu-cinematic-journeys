@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TravelersParallax from "@/components/animations/TravelersParallax";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
@@ -95,7 +96,6 @@ const Booking = () => {
         </div>
       </section>
 
-      <Footer />
       <BottomNav />
       </div>
     </>

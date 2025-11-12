@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TravelersParallax from "@/components/animations/TravelersParallax";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
@@ -171,7 +172,6 @@ const ShippingPolicy = () => {
             </div>
           </div>
         </main>
-        <Footer />
         <BottomNav />
       </div>
     </>
