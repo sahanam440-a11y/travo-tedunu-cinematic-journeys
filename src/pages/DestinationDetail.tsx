@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WalkingTraveler from "@/components/animations/WalkingTraveler";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
@@ -263,6 +262,7 @@ const DestinationDetail = () => {
         </div>
       </div>
 
+        <Footer />
         <BottomNav />
         <WhatsAppButton message={`Hi! I'm interested in the ${destination.name} tour package. Can you provide more details?`} />
       </div>

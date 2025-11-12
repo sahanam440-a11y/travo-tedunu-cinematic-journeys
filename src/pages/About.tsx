@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WalkingTraveler from "@/components/animations/WalkingTraveler";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
@@ -148,7 +147,6 @@ const About = () => {
         </div>
       </section>
 
-      <WalkingTraveler />
       <Footer />
       <BottomNav />
       </div>

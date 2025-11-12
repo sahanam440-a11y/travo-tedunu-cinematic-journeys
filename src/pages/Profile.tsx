@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WalkingTraveler from "@/components/animations/WalkingTraveler";
 import BottomNav from "@/components/BottomNav";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
@@ -304,6 +303,7 @@ const Profile = () => {
         </div>
       </main>
 
+      <Footer />
       <BottomNav />
     </div>
   );

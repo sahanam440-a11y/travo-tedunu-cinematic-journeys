@@ -9,7 +9,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WalkingTraveler from "@/components/animations/WalkingTraveler";
 import BottomNav from "@/components/BottomNav";
 
 const Auth = () => {
@@ -194,6 +193,7 @@ const Auth = () => {
           </CardContent>
         </Card>
       </div>
+      <Footer />
       <BottomNav />
     </div>
   );

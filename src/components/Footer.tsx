@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       {/* Desktop Full Footer */}
-      <div className="hidden md:block container mx-auto px-4 py-12 relative z-10">
+      <div className="hidden md:block container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
