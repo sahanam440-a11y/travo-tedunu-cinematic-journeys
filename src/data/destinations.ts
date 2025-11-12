@@ -108,7 +108,7 @@ export const destinations: DestinationDetail[] = [
       "Daily breakfast",
       "All entry fees",
       "Local guide",
-      "Private transport",
+      "Transportation included",
     ],
     excluded: ["Flights", "Lunch & Dinner", "Personal expenses", "Tips"],
     mapLink: "https://maps.google.com/?q=Delhi,India",
