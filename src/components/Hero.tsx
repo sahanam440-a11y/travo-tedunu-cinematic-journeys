@@ -66,22 +66,16 @@ const Hero = () => {
           {/* Logo - Mobile Only */}
           <div className="md:hidden flex justify-center mb-4 animate-fade-up">
             <div className="relative">
-              {/* Contrast booster (no blur) for perfect readability */}
-              <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
-
-              {/* Color aura - crisp, semantic tokens */}
-              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/70 via-accent/60 to-primary/70 rounded-full blur-xl scale-110 animate-pulse-slow" />
-
-              {/* Logo with maximum clarity and emphasis */}
+              {/* Clean, subtle background for contrast */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent rounded-full scale-110" />
+              
+              {/* Logo with clean, authentic styling */}
               <img 
                 src={logo}
                 alt="Travo Tedunu Logo"
-                className="relative z-10 h-48 sm:h-56 w-auto object-contain"
+                className="relative h-48 sm:h-56 w-auto object-contain"
                 style={{
-                  willChange: 'transform, filter',
-                  transform: 'translateZ(0)',
-                  imageRendering: 'auto',
-                  filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.95)) drop-shadow(0 0 14px rgba(255,255,255,0.6)) drop-shadow(0 0 40px rgba(255,200,0,0.55)) contrast(1.35) brightness(1.35) saturate(1.25)'
+                  filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 24px rgba(255,255,255,0.4)) brightness(1.15) contrast(1.15)'
                 }}
                 loading="eager"
                 fetchPriority="high"
