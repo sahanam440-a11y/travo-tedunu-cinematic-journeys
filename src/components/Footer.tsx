@@ -193,6 +193,14 @@ const Footer = () => {
                   Dehradun
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/destination/goa"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Goa
+                </Link>
+              </li>
             </ul>
           </div>
 
