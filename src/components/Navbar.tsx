@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center hover:scale-105 transition-transform duration-300">
-            <div className="relative">
+            <div className="relative h-10 md:h-14 w-auto overflow-visible">
               {/* Contrast booster for readability */}
               <div aria-hidden className="absolute -inset-4 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.35), rgba(0,0,0,0) 70%)' }} />
 
@@ -43,7 +43,7 @@ const Navbar = () => {
               <img 
                 src={logo}
                 alt="Travo Tedunu Logo"
-                className="relative z-10 h-20 md:h-24 w-auto object-contain -my-5"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 h-20 md:h-24 w-auto object-contain"
                 style={{
                   willChange: 'transform, filter',
                   transform: 'translateZ(0)',
