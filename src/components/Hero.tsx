@@ -63,8 +63,8 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-4 md:pt-32 pb-16 md:pb-20 text-center">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
-          {/* Logo - Mobile Only */}
-          <div className="md:hidden flex justify-center mb-4 animate-fade-up">
+          {/* Logo - All Devices */}
+          <div className="flex justify-center mb-4 md:mb-6 animate-fade-up">
             <div className="relative">
               {/* Contrast booster (no blur) for perfect readability */}
               <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
