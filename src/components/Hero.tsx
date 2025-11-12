@@ -66,16 +66,19 @@ const Hero = () => {
           {/* Logo - Mobile Only */}
           <div className="md:hidden flex justify-center mb-4 animate-fade-up">
             <div className="relative">
-              {/* Clean, subtle background for contrast */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent rounded-full scale-110" />
-              
-              {/* Logo with clean, authentic styling */}
+              {/* Subtle, clean contrast halo (no blur) */}
+              <div aria-hidden className="absolute -inset-8 pointer-events-none rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.7), rgba(0,0,0,0) 75%)' }} />
+              {/* Gentle brand accent ring using theme tokens */}
+              <div className="absolute inset-0 rounded-full ring-2 ring-primary/30" />
+
+              {/* Logo - maximum visibility with clean edge */}
               <img 
                 src={logo}
                 alt="Travo Tedunu Logo"
-                className="relative h-48 sm:h-56 w-auto object-contain"
+                className="relative h-56 sm:h-64 w-auto object-contain"
                 style={{
-                  filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 24px rgba(255,255,255,0.4)) brightness(1.15) contrast(1.15)'
+                  filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.95)) drop-shadow(0 2px 10px rgba(0,0,0,0.7)) drop-shadow(0 0 24px rgba(255,200,0,0.35)) contrast(1.4) brightness(1.3) saturate(1.2)',
+                  imageRendering: 'crisp-edges'
                 }}
                 loading="eager"
                 fetchPriority="high"
