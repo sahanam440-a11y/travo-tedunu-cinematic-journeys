@@ -43,7 +43,7 @@ const Navbar = () => {
               <img 
                 src={logo}
                 alt="Travo Tedunu Logo"
-                className="relative z-10 h-10 md:h-14 w-auto object-contain"
+                className="relative z-10 h-16 md:h-20 w-auto object-contain"
                 style={{
                   willChange: 'transform, filter',
                   transform: 'translateZ(0)',
