@@ -61,10 +61,10 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-4 md:pt-32 pb-4 md:pb-8 text-center">
-        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
+      <div className="relative z-10 container mx-auto px-4 pt-8 md:pt-20 pb-4 md:pb-8 text-center">
+        <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
           {/* Logo - All Devices */}
-          <div className="flex justify-center mb-3 md:mb-6 animate-fade-up">
+          <div className="flex justify-center mb-2 md:mb-4 animate-fade-up">
             <div className="relative">
               {/* Contrast booster (no blur) for perfect readability */}
               <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
@@ -90,8 +90,8 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="animate-fade-up space-y-3">
-            <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-2 animate-bounce-subtle shadow-lg">
+          <div className="animate-fade-up space-y-2">
+            <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-1 animate-bounce-subtle shadow-lg">
               ✨ Discover Your Next Adventure
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
