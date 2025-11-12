@@ -36,7 +36,7 @@ const Hero = () => {
   const nextImage = heroImages[nextIndex];
 
   return (
-    <section className="relative min-h-[88vh] md:min-h-screen overflow-hidden pb-24 md:pb-28">
+    <section className="relative min-h-[85vh] md:min-h-screen overflow-hidden pb-24 md:pb-28">
       {/* Background Image Slideshow - Only render current image */}
       <div className="absolute inset-0">
         <div className="absolute inset-0">
@@ -61,10 +61,10 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-10 md:pt-16 pb-6 md:pb-10 text-center">
-        <div className="max-w-4xl mx-auto space-y-3 md:space-y-5">
+      <div className="relative z-10 container mx-auto px-4 pt-4 md:pt-10 pb-6 md:pb-10 text-center">
+        <div className="max-w-4xl mx-auto space-y-2 md:space-y-4">
           {/* Logo - All Devices */}
-          <div className="flex justify-center mb-1 md:mb-3 animate-fade-up">
+          <div className="flex justify-center mb-0 md:mb-2 animate-fade-up">
             <div className="relative">
               {/* Contrast booster (no blur) for perfect readability */}
               <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
