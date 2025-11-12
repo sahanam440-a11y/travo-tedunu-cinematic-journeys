@@ -65,7 +65,16 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           {/* Logo - Mobile Only */}
           <div className="md:hidden flex justify-center mb-4 animate-fade-up">
-            <img src={logo} alt="Travo Tedunu Logo" className="h-28 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]" />
+            <div className="relative">
+              {/* Gradient glow behind logo */}
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/40 via-orange-500/30 to-amber-600/40 blur-2xl rounded-full scale-110"></div>
+              {/* Logo with enhanced visibility */}
+              <img 
+                src={logo} 
+                alt="Travo Tedunu Logo" 
+                className="relative h-36 w-auto object-contain drop-shadow-[0_8px_24px_rgba(217,119,6,0.8)] filter brightness-110 contrast-110" 
+              />
+            </div>
           </div>
           
           <div className="animate-fade-up space-y-4">
