@@ -36,7 +36,7 @@ const Hero = () => {
   const nextImage = heroImages[nextIndex];
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen overflow-hidden pb-24 md:pb-28">
+    <section className="relative min-h-[88vh] md:min-h-screen overflow-hidden pb-24 md:pb-28">
       {/* Background Image Slideshow - Only render current image */}
       <div className="absolute inset-0">
         <div className="absolute inset-0">
@@ -61,10 +61,10 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-16 md:pt-24 pb-6 md:pb-10 text-center">
-        <div className="max-w-4xl mx-auto space-y-5 md:space-y-7">
+      <div className="relative z-10 container mx-auto px-4 pt-10 md:pt-16 pb-6 md:pb-10 text-center">
+        <div className="max-w-4xl mx-auto space-y-3 md:space-y-5">
           {/* Logo - All Devices */}
-          <div className="flex justify-center mb-3 md:mb-5 animate-fade-up">
+          <div className="flex justify-center mb-1 md:mb-3 animate-fade-up">
             <div className="relative">
               {/* Contrast booster (no blur) for perfect readability */}
               <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
@@ -76,7 +76,7 @@ const Hero = () => {
               <img 
                 src={logo}
                 alt="Travo Tedunu Logo"
-                className="relative z-10 h-40 sm:h-56 w-auto object-contain"
+                className="relative z-10 h-36 sm:h-52 w-auto object-contain"
                 style={{
                   willChange: 'transform, filter',
                   transform: 'translateZ(0)',
@@ -102,7 +102,7 @@ const Hero = () => {
             Curated journeys across India with cinematic visuals and authentic experiences
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 pt-4 md:pt-8 px-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 pt-2 md:pt-6 px-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <Button
               size="lg"
               className="text-base md:text-lg px-8 md:px-10 py-6 md:py-7 hover:shadow-glow hover:scale-105 transition-all duration-300 w-full sm:w-auto font-semibold shadow-elevated bg-action text-action-foreground hover:bg-action-hover"
