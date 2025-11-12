@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import logo from "@/assets/logo.png";
 
 // Import only first few images eagerly for performance
 import delhi1 from "@/assets/hero/delhi-1.jpg";
@@ -60,8 +61,13 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-20 md:pt-32 pb-16 md:pb-20 text-center">
+      <div className="relative z-10 container mx-auto px-4 pt-4 md:pt-32 pb-16 md:pb-20 text-center">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
+          {/* Logo - Mobile Only */}
+          <div className="md:hidden flex justify-center mb-6 animate-fade-up">
+            <img src={logo} alt="Travo Tedunu Logo" className="h-16 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]" />
+          </div>
+          
           <div className="animate-fade-up space-y-4">
             <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-4 animate-bounce-subtle shadow-lg">
               ✨ Discover Your Next Adventure
