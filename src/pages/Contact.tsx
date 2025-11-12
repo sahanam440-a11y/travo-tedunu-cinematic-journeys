@@ -228,8 +228,8 @@ const Contact = () => {
               <Card className="glass-card border border-border/50 hover:shadow-soft transition-all duration-300 group">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-action/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-6 w-6 text-action-foreground" />
+                    <div className="h-12 w-12 rounded-xl bg-action/20 dark:bg-action/30 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <Mail className="h-6 w-6 text-action-foreground dark:text-action" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1">Email</h3>
@@ -247,8 +247,8 @@ const Contact = () => {
               <Card className="glass-card border border-border/50 hover:shadow-soft transition-all duration-300 group">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-6 w-6 text-primary" />
+                    <div className="h-12 w-12 rounded-xl bg-primary/20 dark:bg-primary/30 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <Phone className="h-6 w-6 text-primary dark:text-primary" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1">Phone</h3>
@@ -269,8 +269,8 @@ const Contact = () => {
               <Card className="glass-card border border-border/50 hover:shadow-soft transition-all duration-300 group">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-accent" />
+                    <div className="h-12 w-12 rounded-xl bg-accent/20 dark:bg-accent/30 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <MapPin className="h-6 w-6 text-accent dark:text-accent" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1">Location</h3>
@@ -286,8 +286,8 @@ const Contact = () => {
               <Card className="glass-card border border-border/50">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="h-6 w-6 text-secondary" />
+                    <div className="h-12 w-12 rounded-xl bg-secondary/20 dark:bg-secondary/30 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <Clock className="h-6 w-6 text-secondary dark:text-secondary" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-3">Office Hours</h3>
