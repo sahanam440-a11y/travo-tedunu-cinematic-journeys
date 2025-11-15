@@ -4,10 +4,13 @@ import App from "./App.tsx";
 import "./index.css";
 import { registerSW } from 'virtual:pwa-register';
 
-// Register service worker for PWA - auto-updates and offline support
+// Register service worker for PWA - force immediate updates
 const updateSW = registerSW({
+  immediate: true,
   onNeedRefresh() {
-    updateSW(true);
+    updateSW(true).then(() => {
+      window.location.reload();
+    });
   },
   onOfflineReady() {
     console.log('App ready to work offline');
