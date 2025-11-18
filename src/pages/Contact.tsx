@@ -10,9 +10,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { breadcrumbSchema } from "@/lib/schema";
+import { organizationSchema } from "@/lib/schema";
+import { useSEO } from "@/hooks/useSEO";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/seoHelpers";
 
 const Contact = () => {
+  useSEO();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -23,9 +26,24 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const breadcrumbs = breadcrumbSchema([
+  const breadcrumbs = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Contact", url: "/contact" },
+  ]);
+
+  const faqs = generateFAQSchema([
+    {
+      question: "How can I contact Travo Tedunu?",
+      answer: "You can reach us by phone at +91-63631-50891, email at info@travotedunu.com, or through our contact form. We respond within 24 hours."
+    },
+    {
+      question: "What are your business hours?",
+      answer: "We are open Monday to Saturday, 9:00 AM to 6:00 PM IST. We are closed on Sundays and public holidays."
+    },
+    {
+      question: "Where is your office located?",
+      answer: "Our office is located in Indiranagar, Bluwells apartment, Bengaluru, Karnataka 560078, India."
+    }
   ]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -74,11 +92,13 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Contact Us - Travo Tedunu Travel Agency"
-        description="Get in touch with Travo Tedunu for personalized travel planning across India. Email, phone support available Mon-Sat. Quick response within 24 hours. Office in New Delhi."
-        keywords="contact Travo Tedunu, travel inquiry India, book tour, travel consultation, India trip planning, customer support"
+        title="Contact Travo Tedunu - Get in Touch for India Tour Bookings"
+        description="Contact Travo Tedunu for personalized India tour planning and bookings ☎️ +91-63631-50891 ✉️ info@travotedunu.com • Quick response within 24 hours • Open Mon-Sat 9 AM-6 PM • Office in Bengaluru • Expert travel consultants ready to help plan your perfect India journey."
+        keywords="contact Travo Tedunu, travel inquiry India, book India tour, travel consultation, trip planning India, customer support travel agency, tour booking assistance, travel agent Bengaluru, India tour inquiry"
         url="/contact"
-        schema={breadcrumbs}
+        schema={[breadcrumbs, organizationSchema, faqs]}
+        image="https://travotedunu.com/assets/logo.png"
+        ogType="website"
       />
       <div className="min-h-screen pb-16 md:pb-0 relative">
         <div className="fixed inset-0 gradient-champagne-glow -z-10"></div>

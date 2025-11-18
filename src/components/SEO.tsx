@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { getCanonicalUrl, getAlternateLinks } from "@/utils/seoHelpers";
 
 interface SEOProps {
   title?: string;
@@ -7,23 +8,29 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: string;
-  schema?: object;
+  schema?: object | object[];
   canonicalUrl?: string;
+  noindex?: boolean;
+  ogType?: string;
 }
 
 export const SEO = ({
-  title = "Travo Tedunu - Travel, Tailored & Timeless",
-  description = "Curated journeys across India with cinematic visuals and authentic experiences. Explore heritage, spirituality, and adventure with expert local guides.",
-  keywords = "travel India, Delhi tours, Mathura pilgrimage, Dehradun adventure, spiritual travel, heritage tours, cultural experiences, India vacation packages, customized tours, authentic travel experiences",
+  title = "Travo Tedunu - Best India Tour Packages 2025 | Expert Local Guides",
+  description = "India's #1 rated travel agency ⭐ Book premium tour packages: Delhi heritage ₹2,499+, Goa beaches ₹4,999+, Mathura spiritual ₹1,199+, Dehradun adventure ₹3,999+. 500+ happy travelers • 98% satisfaction • Instant booking • Expert local guides • Best prices guaranteed.",
+  keywords = "Travo Tedunu, India tour packages 2025, Delhi tour, Goa package, Mathura pilgrimage, Dehradun adventure, best travel agency India, heritage tours, spiritual travel, beach holidays, India tourism, customized tours, luxury India tours, budget travel packages, family vacation India, honeymoon packages, group tours India",
   image = "https://lovable.dev/opengraph-image-p98pqg.png",
-  url = "https://travotedunu.com",
+  url = "/",
   type = "website",
   schema,
   canonicalUrl,
+  noindex = false,
+  ogType = "website",
 }: SEOProps) => {
   const siteTitle = title.includes("Travo Tedunu") ? title : `${title} | Travo Tedunu`;
   const fullUrl = url.startsWith("http") ? url : `https://travotedunu.com${url}`;
-  const canonical = canonicalUrl || fullUrl;
+  const canonical = canonicalUrl || getCanonicalUrl(url);
+  const alternateLinks = getAlternateLinks(url);
+  const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
 
   return (
     <Helmet>
@@ -33,9 +40,14 @@ export const SEO = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonical} />
+      
+      {/* Alternate Language Links */}
+      {alternateLinks.map((link) => (
+        <link key={link.hreflang} rel="alternate" hrefLang={link.hreflang} href={link.href} />
+      ))}
 
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
+      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
@@ -53,7 +65,7 @@ export const SEO = ({
       <meta name="twitter:creator" content="@TravoTedunu" />
 
       {/* Additional SEO Tags */}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       <meta name="googlebot" content="index, follow, max-image-preview:large" />
       <meta name="bingbot" content="index, follow" />
       <meta name="language" content="English" />
@@ -103,12 +115,12 @@ export const SEO = ({
       <meta name="yandex-verification" content="your-yandex-verification-code" />
       <meta name="p:domain_verify" content="your-pinterest-verification-code" />
 
-      {/* Structured Data */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {/* Structured Data - Multiple Schemas */}
+      {schemas.map((schemaItem, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schemaItem)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 };
