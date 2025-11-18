@@ -13,6 +13,8 @@ export const WhatsAppButton = ({
   const handleClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    console.log("Opening WhatsApp with URL:", whatsappUrl);
+    console.log("Phone number:", phoneNumber);
     window.open(whatsappUrl, "_blank");
   };
 
