@@ -7,7 +7,7 @@ interface WhatsAppButtonProps {
 }
 
 export const WhatsAppButton = ({ 
-  phoneNumber = "919876543210", // Replace with actual WhatsApp number
+  phoneNumber = "916363150891",
   message = "Hi! I'm interested in booking a tour with Travo Tedunn. Can you help me?"
 }: WhatsAppButtonProps) => {
   const handleClick = () => {
