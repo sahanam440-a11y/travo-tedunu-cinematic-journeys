@@ -64,6 +64,102 @@ export interface DestinationDetail {
 
 export const destinations: DestinationDetail[] = [
   {
+    id: "4",
+    name: "Goa",
+    slug: "goa",
+    tagline: "🌴 Goa Bliss: 3 Days, 3 Nights - Limited Batch for Nov 28, 2025",
+    image: goaImage,
+    gallery: [
+      { image: goa1, caption: "Baga Beach - Vibrant beach life with water sports" },
+      { image: goa2, caption: "Basilica of Bom Jesus - UNESCO World Heritage Site" },
+      { image: goa3, caption: "Dudhsagar Waterfall - Majestic four-tiered falls" },
+      { image: goa4, caption: "Anjuna Flea Market - Colorful shopping paradise" },
+      { image: goa5, caption: "Fort Aguada - Historic Portuguese fort at sunset" },
+      { image: goa6, caption: "Goan Cuisine - Fresh seafood and local delicacies" },
+      { image: goa7, caption: "Palolem Beach - Peaceful crescent beach paradise" },
+      { image: goa8, caption: "Beach Nightlife - Vibrant parties under the stars" },
+    ],
+    priceFrom: 6599,
+    duration: "3 days",
+    tags: ["Beach", "Culture", "Wellness", "Comfort", "Limited Offer"],
+    overview:
+      "🗓️ EXCLUSIVE BATCH: November 28, 2025 Only\n\nStep into serenity with our handcrafted 3-day Goa escape — designed for soulful travelers who crave comfort, clarity, and connection. Experience coastal comfort with premium stays, wholesome meals, and personalized exploration of Goa's hidden gems and vibrant culture. This special limited batch offers an intimate group experience with personalized attention.",
+    highlights: [
+      "⭐ Exclusive batch starting November 28, 2025",
+      "3 Nights Premium Stay with coastal comfort",
+      "2 wholesome meals per day included",
+      "Up to 100 km customized local transportation",
+      "Airport & Railway Station pick-up and drop",
+      "Complete Goa guide with personalized itinerary",
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival & Coastal Unwind (Nov 28, 2025)",
+        description:
+          "Airport & Railway Station Pick-up: Welcome to Goa! Our team greets you with ease and warmth. Check-in to your premium stay with soft linens, coastal breeze, and a space to breathe. Sunset Walk at nearby beach (like Candolim or Colva) for golden hour magic. Enjoy a comforting local meal with Goan curry, rice, and coconut-infused warmth. Optional add-on: Bonfire or storytelling circle by the beach.",
+      },
+      {
+        day: 2,
+        title: "Culture, Color & Connection (Nov 29, 2025)",
+        description:
+          "Start with fresh fruits, local breads, and chai. Explore Old Goa including Basilica of Bom Jesus, Fontainhas Latin Quarter, and vibrant markets. Savor a thali at a heritage café or beach shack for lunch. Custom Ride (within 100 km): Choose your vibe - spice plantation, flea markets, or hidden waterfalls. Evening: Attend a local music or art event (optional), or relax with journaling and quiet time.",
+      },
+      {
+        day: 3,
+        title: "Soulful Farewell (Nov 30, 2025)",
+        description:
+          "Morning Beach Time for swimming, meditation, or wave watching. Light, nourishing brunch before checkout. Local Shopping or Café Stop to pick up souvenirs or sip one last coconut water. Drop to Airport & Railway Station with heart full and mind clear.",
+      },
+    ],
+    included: [
+      "3 Nights Premium Stay",
+      "2 wholesome meals per day",
+      "Customized local transportation (up to 100 km)",
+      "Airport & Railway Station pick-up & drop",
+      "Complete Goa guide with tailored itinerary",
+      "Registration fees (₹599 included in package)",
+    ],
+    excluded: [
+      "Travel from your city to Goa (package begins after arrival)",
+      "Additional meals beyond included breakfast and dinner",
+      "Water sports and adventure activities",
+      "Shopping and personal expenses",
+      "Optional activities and add-ons",
+    ],
+    mapLink: "https://maps.google.com/?q=Goa,India",
+    faqs: [
+      {
+        question: "When is this package available?",
+        answer: "This is an exclusive limited batch available ONLY for November 28, 2025. The trip starts on November 28th and concludes on November 30th, 2025. Book early as spots are limited!",
+      },
+      {
+        question: "What are the pricing options for this package?",
+        answer: "₹6,599 for Single Person | ₹10,999 for Couples | ₹15,599 for Three Person. Registration fees of ₹599 is included in the full price.",
+      },
+      {
+        question: "When does the package begin?",
+        answer: "This package begins after your arrival in Goa on November 28, 2025. Transportation from your city to Goa is not included. Transportation is provided only on arrival at airport or railway station.",
+      },
+      {
+        question: "Can the itinerary be customized?",
+        answer: "Absolutely! Packages can be modified according to your requests. We offer personalized local transportation up to 100 km to explore your preferred destinations.",
+      },
+      {
+        question: "What happens in case of weather issues?",
+        answer: "Itinerary and activities are subject to weather and local availability. Travo Tedunu may adjust plans for safety or operational reasons. Your safety and satisfaction is our main priority.",
+      },
+      {
+        question: "What meals are included?",
+        answer: "The package includes 2 wholesome meals per day, curated to energize your mornings and soothe your evenings. Additional meals and dining experiences can be arranged at your preference.",
+      },
+      {
+        question: "Is transportation included?",
+        answer: "Yes, the transportation is included for all sightseeing activities.",
+      },
+    ],
+  },
+  {
     id: "1",
     name: "Delhi",
     slug: "delhi",
@@ -261,97 +357,6 @@ export const destinations: DestinationDetail[] = [
       {
         question: "Can I customize the itinerary?",
         answer: "Yes! We can adjust activities based on your preferences and fitness level.",
-      },
-    ],
-  },
-  {
-    id: "4",
-    name: "Goa",
-    slug: "goa",
-    tagline: "🌴 Goa Bliss: 3 Days, 3 Nights of Coastal Comfort",
-    image: goaImage,
-    gallery: [
-      { image: goa1, caption: "Baga Beach - Vibrant beach life with water sports" },
-      { image: goa2, caption: "Basilica of Bom Jesus - UNESCO World Heritage Site" },
-      { image: goa3, caption: "Dudhsagar Waterfall - Majestic four-tiered falls" },
-      { image: goa4, caption: "Anjuna Flea Market - Colorful shopping paradise" },
-      { image: goa5, caption: "Fort Aguada - Historic Portuguese fort at sunset" },
-      { image: goa6, caption: "Goan Cuisine - Fresh seafood and local delicacies" },
-      { image: goa7, caption: "Palolem Beach - Peaceful crescent beach paradise" },
-      { image: goa8, caption: "Beach Nightlife - Vibrant parties under the stars" },
-    ],
-    priceFrom: 6599,
-    duration: "3 days",
-    tags: ["Beach", "Culture", "Wellness", "Comfort"],
-    overview:
-      "Step into serenity with our handcrafted 3-day Goa escape — designed for soulful travelers who crave comfort, clarity, and connection. Experience coastal comfort with premium stays, wholesome meals, and personalized exploration of Goa's hidden gems and vibrant culture.",
-    highlights: [
-      "3 Nights Premium Stay with coastal comfort",
-      "2 wholesome meals per day included",
-      "Up to 100 km customized local transportation",
-      "Airport & Railway Station pick-up and drop",
-      "Complete Goa guide with personalized itinerary",
-    ],
-    itinerary: [
-      {
-        day: 1,
-        title: "Arrival & Coastal Unwind",
-        description:
-          "Airport & Railway Station Pick-up: Welcome to Goa! Our team greets you with ease and warmth. Check-in to your premium stay with soft linens, coastal breeze, and a space to breathe. Sunset Walk at nearby beach (like Candolim or Colva) for golden hour magic. Enjoy a comforting local meal with Goan curry, rice, and coconut-infused warmth. Optional add-on: Bonfire or storytelling circle by the beach.",
-      },
-      {
-        day: 2,
-        title: "Culture, Color & Connection",
-        description:
-          "Start with fresh fruits, local breads, and chai. Explore Old Goa including Basilica of Bom Jesus, Fontainhas Latin Quarter, and vibrant markets. Savor a thali at a heritage café or beach shack for lunch. Custom Ride (within 100 km): Choose your vibe - spice plantation, flea markets, or hidden waterfalls. Evening: Attend a local music or art event (optional), or relax with journaling and quiet time.",
-      },
-      {
-        day: 3,
-        title: "Soulful Farewell",
-        description:
-          "Morning Beach Time for swimming, meditation, or wave watching. Light, nourishing brunch before checkout. Local Shopping or Café Stop to pick up souvenirs or sip one last coconut water. Drop to Airport & Railway Station with heart full and mind clear.",
-      },
-    ],
-    included: [
-      "3 Nights Premium Stay",
-      "2 wholesome meals per day",
-      "Customized local transportation (up to 100 km)",
-      "Airport & Railway Station pick-up & drop",
-      "Complete Goa guide with tailored itinerary",
-      "Registration fees (₹599 included in package)",
-    ],
-    excluded: [
-      "Travel from your city to Goa (package begins after arrival)",
-      "Additional meals beyond included breakfast and dinner",
-      "Water sports and adventure activities",
-      "Shopping and personal expenses",
-      "Optional activities and add-ons",
-    ],
-    mapLink: "https://maps.google.com/?q=Goa,India",
-    faqs: [
-      {
-        question: "What are the pricing options for this package?",
-        answer: "₹6,599 for Single Person | ₹10,999 for Couples | ₹15,599 for Three Person. Registration fees of ₹599 is included in the full price.",
-      },
-      {
-        question: "When does the package begin?",
-        answer: "This package begins after your arrival in Goa. Transportation from your city to Goa is not included. Transportation is provided only on arrival at airport or railway station.",
-      },
-      {
-        question: "Can the itinerary be customized?",
-        answer: "Absolutely! Packages can be modified according to your requests. We offer personalized local transportation up to 100 km to explore your preferred destinations.",
-      },
-      {
-        question: "What happens in case of weather issues?",
-        answer: "Itinerary and activities are subject to weather and local availability. Travo Tedunu may adjust plans for safety or operational reasons. Your safety and satisfaction is our main priority.",
-      },
-      {
-        question: "What meals are included?",
-        answer: "The package includes 2 wholesome meals per day, curated to energize your mornings and soothe your evenings. Additional meals and dining experiences can be arranged at your preference.",
-      },
-      {
-        question: "Is transportation included?",
-        answer: "Yes, the transportation is included for all sightseeing activities.",
       },
     ],
   },
