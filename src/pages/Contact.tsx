@@ -253,10 +253,10 @@ const Contact = () => {
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1">Phone</h3>
                       <a 
-                        href="tel:+919876543210" 
+                        href="tel:+916363150891" 
                         className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
-                        +91 98765 43210
+                        +91 63631 50891
                       </a>
                       <p className="text-xs text-muted-foreground mt-1">
                         Mon-Sat, 9 AM - 7 PM
