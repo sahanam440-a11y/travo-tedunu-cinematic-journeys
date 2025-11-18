@@ -9,7 +9,7 @@ export const organizationSchema = {
   url: "https://travotedunu.com",
   logo: "https://lovable.dev/opengraph-image-p98pqg.png",
   image: "https://lovable.dev/opengraph-image-p98pqg.png",
-  telephone: "+91-9876543210",
+  telephone: "+91-6363150891",
   email: "info@travotedunu.com",
   priceRange: "₹₹",
   foundingDate: "2024",
@@ -69,7 +69,7 @@ export const organizationSchema = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+91-9876543210",
+      telephone: "+91-6363150891",
       contactType: "customer service",
       email: "info@travotedunu.com",
       areaServed: "IN",
