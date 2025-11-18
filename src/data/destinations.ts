@@ -280,7 +280,7 @@ export const destinations: DestinationDetail[] = [
       { image: goa7, caption: "Palolem Beach - Peaceful crescent beach paradise" },
       { image: goa8, caption: "Beach Nightlife - Vibrant parties under the stars" },
     ],
-    priceFrom: 4999,
+    priceFrom: 6599,
     duration: "4 days",
     tags: ["Beach", "Adventure", "Nightlife", "Food"],
     overview:
