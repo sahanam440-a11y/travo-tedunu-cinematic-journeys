@@ -67,7 +67,7 @@ export const destinations: DestinationDetail[] = [
     id: "4",
     name: "Goa",
     slug: "goa",
-    tagline: "🌴 Goa Bliss: 3 Days, 3 Nights - Limited Batch for Nov 28, 2025",
+    tagline: "🌴 Goa Bliss: 3 Days, 3 Nights - Limited Slots for Nov 28, 2025",
     image: goaImage,
     gallery: [
       { image: goa1, caption: "Baga Beach - Vibrant beach life with water sports" },
@@ -83,9 +83,9 @@ export const destinations: DestinationDetail[] = [
     duration: "3 days",
     tags: ["Beach", "Culture", "Wellness", "Comfort", "Limited Offer"],
     overview:
-      "🗓️ EXCLUSIVE BATCH: November 28, 2025 Only\n\nStep into serenity with our handcrafted 3-day Goa escape — designed for soulful travelers who crave comfort, clarity, and connection. Experience coastal comfort with premium stays, wholesome meals, and personalized exploration of Goa's hidden gems and vibrant culture. This special limited batch offers an intimate group experience with personalized attention.",
+      "🗓️ EXCLUSIVE SLOTS: November 28, 2025 Only\n\nStep into serenity with our handcrafted 3-day Goa escape — designed for soulful travelers who crave comfort, clarity, and connection. Experience coastal comfort with premium stays, wholesome meals, and personalized exploration of Goa's hidden gems and vibrant culture. This special limited slots offer provides an intimate group experience with personalized attention.",
     highlights: [
-      "⭐ Exclusive batch starting November 28, 2025",
+      "⭐ Exclusive slots starting November 28, 2025",
       "3 Nights Premium Stay with coastal comfort",
       "2 wholesome meals per day included",
       "Up to 100 km customized local transportation",
@@ -131,7 +131,7 @@ export const destinations: DestinationDetail[] = [
     faqs: [
       {
         question: "When is this package available?",
-        answer: "This is an exclusive limited batch available ONLY for November 28, 2025. The trip starts on November 28th and concludes on November 30th, 2025. Book early as spots are limited!",
+        answer: "This is an exclusive limited slots offer available ONLY for November 28, 2025. The trip starts on November 28th and concludes on November 30th, 2025. Book early as spots are limited!",
       },
       {
         question: "What are the pricing options for this package?",
