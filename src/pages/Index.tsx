@@ -1,25 +1,52 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import BottomNav from "@/components/BottomNav";
 import { SEO } from "@/components/SEO";
 import { destinations } from "@/data/destinations";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
-import { lazy, Suspense } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/seoHelpers";
 
-// Lazy load below-the-fold components
 const DestinationCard = lazy(() => import("@/components/DestinationCard"));
 const Footer = lazy(() => import("@/components/Footer"));
 const WalkingTraveler = lazy(() => import("@/components/animations/WalkingTraveler"));
 
 const Index = () => {
+  useSEO();
+
+  const breadcrumbs = generateBreadcrumbSchema([
+    { name: "Home", url: "/" }
+  ]);
+
+  const faqs = generateFAQSchema([
+    {
+      question: "What destinations does Travo Tedunu cover?",
+      answer: "We offer premium tour packages to Delhi, Goa, Mathura, and Dehradun. Each destination is carefully curated with expert local guides and authentic experiences."
+    },
+    {
+      question: "What is included in the tour packages?",
+      answer: "Our packages include accommodation, guided tours, transportation, and select meals. Specific inclusions vary by destination and package type."
+    },
+    {
+      question: "How do I book a tour with Travo Tedunu?",
+      answer: "You can book directly through our website by visiting the booking page or any destination page. We offer instant confirmation and flexible payment options."
+    },
+    {
+      question: "What makes Travo Tedunu different from other travel agencies?",
+      answer: "We focus on authentic, tailored experiences with expert local guides. Our 98% satisfaction rate and 500+ happy travelers speak to our commitment to quality and personalized service."
+    }
+  ]);
+
   return (
     <>
       <SEO 
-        title="Travo Tedunu - India Tour Packages | Delhi, Goa, Mathura & Dehradun Tours"
-        description="Book best India tour packages with Travo Tedunu. Explore Delhi heritage tours (₹2,499), Goa beaches (₹4,999), Mathura pilgrimage (₹1,199), Dehradun adventures (₹3,999). Expert local guides, authentic experiences. #1 travel agency for Indian destinations."
-        keywords="India tour packages, Delhi tour package, Goa package, Mathura tour, Dehradun package, India travel, Travo Tedunu, best travel agency India, cultural tours, pilgrimage tours, beach holidays, mountain treks, heritage tours, spiritual travel"
+        title="Travo Tedunu - Best India Tour Packages 2025 | Delhi, Goa, Mathura & Dehradun Tours"
+        description="India's #1 rated travel agency ⭐ Book premium tour packages: Delhi heritage from ₹2,499, Goa beaches ₹4,999+, Mathura spiritual ₹1,199+, Dehradun adventure ₹3,999+. 500+ happy travelers • 98% satisfaction rate • Expert local guides • Instant booking • Best prices guaranteed 2025."
+        keywords="Travo Tedunu, India tour packages 2025, Delhi tour package, Goa beach package, Mathura pilgrimage tour, Dehradun adventure, best travel agency India, heritage tours Delhi, spiritual travel Mathura, beach holidays Goa, India tourism, customized tours, budget travel India, luxury tours, family vacation India, honeymoon packages, group tours India, solo travel India"
         url="/"
-        schema={[organizationSchema, websiteSchema]}
+        schema={[organizationSchema, websiteSchema, breadcrumbs, faqs]}
+        image="https://travotedunu.com/assets/hero/delhi-1.jpg"
       />
       <div className="min-h-screen pb-16 md:pb-0">
         <Navbar />

@@ -6,12 +6,15 @@ import { SEO } from "@/components/SEO";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import DestinationCard from "@/components/DestinationCard";
 import { destinations } from "@/data/destinations";
-import { breadcrumbSchema } from "@/lib/schema";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { organizationSchema } from "@/lib/schema";
 import { Search } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/seoHelpers";
 
 const Destinations = () => {
+  useSEO();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
@@ -27,19 +30,35 @@ const Destinations = () => {
     return matchesSearch && matchesTag;
   });
 
-  const breadcrumbs = breadcrumbSchema([
+  const breadcrumbs = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Destinations", url: "/destinations" },
+  ]);
+
+  const faqs = generateFAQSchema([
+    {
+      question: "Which destinations are available for booking?",
+      answer: "We offer tours to Delhi (heritage), Goa (beaches), Mathura (spiritual), and Dehradun (adventure). Each destination has multiple package options."
+    },
+    {
+      question: "How long are the tour packages?",
+      answer: "Tours range from 2 to 4 days depending on the destination. Delhi and Mathura are 2-day packages, Dehradun is 3 days, and Goa is 4 days."
+    },
+    {
+      question: "What's included in the package price?",
+      answer: "All packages include accommodation, guided tours, transportation, and select meals. Specific inclusions are listed on each destination page."
+    }
   ]);
 
   return (
     <>
       <SEO
-        title="India Tour Packages 2025 - Delhi, Goa, Mathura, Dehradun | Travo Tedunu"
-        description="Discover best tour packages for India destinations. Delhi heritage tours ₹2,499+, Goa beach packages ₹4,999+, Mathura spiritual journeys ₹1,199+, Dehradun adventures ₹3,999+. Book now with Travo Tedunu - India's trusted travel agency."
-        keywords="India tour packages 2025, Delhi package, Goa tour, Mathura package, Dehradun tour, India travel deals, best tour packages India, heritage tours, beach packages, pilgrimage tours, adventure tours, cultural tourism India, Travo Tedunu packages"
+        title="All Destinations - India Tour Packages 2025 | Explore Delhi, Goa, Mathura & Dehradun"
+        description="Browse India's best tour packages ⭐ Delhi heritage tours ₹2,499+, Goa beach holidays ₹4,999+, Mathura spiritual journeys ₹1,199+, Dehradun mountain adventures ₹3,999+. Compare packages • Read reviews • Book instantly • Expert local guides • 500+ happy travelers."
+        keywords="India tour destinations, all tour packages, Delhi heritage tours, Goa beach packages, Mathura pilgrimage tours, Dehradun adventure trips, India vacation packages, explore India, best destinations India, travel packages 2025, budget tours India, luxury India tours, family vacation packages"
         url="/destinations"
-        schema={breadcrumbs}
+        schema={[breadcrumbs, organizationSchema, faqs]}
+        image="https://travotedunu.com/assets/hero/delhi-1.jpg"
       />
       <div className="min-h-screen pb-16 md:pb-0 relative">
       <div className="fixed inset-0 gradient-pearl-elegance -z-10"></div>
