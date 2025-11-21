@@ -10,14 +10,10 @@ import natureBg1 from '@/assets/backgrounds/nature-bg-1.jpg';
 import beachBg1 from '@/assets/backgrounds/beach-bg-1.jpg';
 
 const KrishnaBackground = () => {
+  // Reduced to 4 backgrounds for better performance
   const backgrounds = [
     krishnaBg1, 
-    krishnaBg2, 
-    krishnaBg3, 
-    winterBg1, 
-    winterBg2,
     himalayaBg1,
-    himalayaBg2,
     natureBg1,
     beachBg1
   ];
@@ -26,7 +22,7 @@ const KrishnaBackground = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgrounds.length);
-    }, 10000); // Change every 10 seconds
+    }, 20000); // Change every 20 seconds for smoother performance
 
     return () => clearInterval(interval);
   }, []);
