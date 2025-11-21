@@ -1,48 +1,20 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
 
-// Import only first few images eagerly for performance
+// Single optimized image for best performance
 import delhi1 from "@/assets/hero/delhi-1.jpg";
-import delhi2 from "@/assets/hero/delhi-2.jpg";
-import delhi3 from "@/assets/hero/delhi-3.jpg";
-import mathura1 from "@/assets/hero/mathura-1.jpg";
-import dehradun1 from "@/assets/hero/dehradun-1.jpg";
-
-// Lazy load remaining images
-const heroImages = [
-  { src: delhi1, alt: "India Gate at sunset - Delhi heritage tour", priority: true },
-  { src: delhi2, alt: "Red Fort - Historic Mughal architecture in Delhi", priority: false },
-  { src: delhi3, alt: "Chandni Chowk market - Old Delhi street food experience", priority: false },
-  { src: mathura1, alt: "Krishna Janmabhoomi Temple - Sacred pilgrimage site", priority: false },
-  { src: dehradun1, alt: "Robber's Cave - Natural wonder in Dehradun", priority: false },
-];
 
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentImage = heroImages[currentImageIndex];
-  const nextIndex = (currentImageIndex + 1) % heroImages.length;
-  const nextImage = heroImages[nextIndex];
-
   return (
     <section className="relative min-h-[85vh] md:min-h-screen overflow-hidden pb-40 md:pb-48">
-      {/* Background Image Slideshow - Only render current image */}
+      {/* Static Background Image */}
       <div className="absolute inset-0">
         <div className="absolute inset-0">
           <img
-            src={currentImage.src}
-            alt={currentImage.alt}
+            src={delhi1}
+            alt="India Gate at sunset - Delhi heritage tour"
             className="w-full h-full object-cover object-center"
             loading="eager"
             fetchPriority="high"
@@ -52,9 +24,6 @@ const Hero = () => {
             sizes="100vw"
           />
         </div>
-        
-        {/* Preload next image invisibly */}
-        <link rel="preload" as="image" href={nextImage.src} />
         
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
@@ -70,7 +39,7 @@ const Hero = () => {
               <div aria-hidden className="absolute -inset-6 pointer-events-none z-0 rounded-full" style={{ background: 'radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%)' }} />
 
               {/* Color aura - crisp, semantic tokens */}
-              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/30 via-accent/25 to-primary/30 rounded-full blur-md scale-105 animate-pulse-slow" />
+              <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/30 via-accent/25 to-primary/30 rounded-full blur-md scale-105" />
 
               {/* Logo with maximum clarity and emphasis */}
               <img 
@@ -91,7 +60,7 @@ const Hero = () => {
           </div>
           
           <div className="animate-fade-up space-y-2">
-            <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-1 animate-bounce-subtle shadow-lg">
+            <div className="inline-block px-6 py-2 rounded-full glass text-foreground font-medium mb-1 shadow-lg">
               ✨ Discover Your Next Adventure
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-white text-balance leading-tight px-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">

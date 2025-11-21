@@ -10,7 +10,6 @@ import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/seoHelpers"
 
 const DestinationCard = lazy(() => import("@/components/DestinationCard"));
 const Footer = lazy(() => import("@/components/Footer"));
-const WalkingTraveler = lazy(() => import("@/components/animations/WalkingTraveler"));
 
 const Index = () => {
   useSEO();
@@ -75,9 +74,6 @@ const Index = () => {
 
       <Suspense fallback={<div />}>
         <Footer />
-      </Suspense>
-      <Suspense fallback={<div />}>
-        <WalkingTraveler />
       </Suspense>
       <BottomNav />
       </div>
