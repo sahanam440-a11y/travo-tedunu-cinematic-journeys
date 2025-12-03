@@ -2,6 +2,7 @@ import delhiImage from "@/assets/delhi.jpg";
 import mathuraImage from "@/assets/mathura.jpg";
 import dehradunImage from "@/assets/dehradun.jpg";
 import goaImage from "@/assets/goa.jpg";
+import manaliImage from "@/assets/manali.jpg";
 
 // Gallery images
 import delhi1 from "@/assets/hero/delhi-1.jpg";
@@ -35,6 +36,13 @@ import goa5 from "@/assets/hero/goa-5.jpg";
 import goa6 from "@/assets/hero/goa-6.jpg";
 import goa7 from "@/assets/hero/goa-7.jpg";
 import goa8 from "@/assets/hero/goa-8.jpg";
+
+import manali1 from "@/assets/hero/manali-1.jpg";
+import manali2 from "@/assets/hero/manali-2.jpg";
+import manali3 from "@/assets/hero/manali-3.jpg";
+import manali4 from "@/assets/hero/manali-4.jpg";
+import manali5 from "@/assets/hero/manali-5.jpg";
+import manali6 from "@/assets/hero/manali-6.jpg";
 
 export interface DestinationDetail {
   id: string;
@@ -178,6 +186,134 @@ export const destinations: DestinationDetail[] = [
       {
         question: "What about weather or schedule changes?",
         answer: "Itinerary may change due to weather/local conditions. Travo Tedunu may adjust plans for safety or operational reasons. Your safety and satisfaction is our priority. Rooms and sightseeing depend on festive availability.",
+      },
+    ],
+  },
+  {
+    id: "5",
+    name: "Manali",
+    slug: "manali",
+    tagline: "🌄 Premium Budget Package - Snow, Mountains & Adventure",
+    image: manaliImage,
+    gallery: [
+      { image: manali1, caption: "Hadimba Temple - Ancient wooden temple in cedar forest" },
+      { image: manali2, caption: "Solang Valley - Snow adventures and winter sports" },
+      { image: manali3, caption: "Atal Tunnel - World's longest highway tunnel" },
+      { image: manali4, caption: "Mall Road - Bustling shopping street with mountain views" },
+      { image: manali5, caption: "Sissu Lake - Serene glacial lake surrounded by mountains" },
+      { image: manali6, caption: "Naggar Castle - Historic heritage castle with panoramic views" },
+    ],
+    priceFrom: 9999,
+    duration: "7 days",
+    tags: ["Adventure", "Snow", "Mountains", "Premium"],
+    overview:
+      "🌄 MANALI PREMIUM BUDGET PACKAGE\n\n7 Days / 6 Nights • ₹9,999 Per Person\n\nExperience the magic of Manali with our all-inclusive premium budget package. From snow-capped mountains to ancient temples, adventure activities to scenic valleys - this package covers it all!\n\n✨ All Inclusive • No Hidden Charges • Premium Experience",
+    highlights: [
+      "🚌 Delhi → Manali → Delhi AC Travel included",
+      "🏨 Premium Stay for 6 Nights with daily breakfast & dinner",
+      "🍿 Unlimited Evening Snacks throughout the trip",
+      "🚗 Local Sightseeing Transportation included",
+      "📸 7 Days Complete Sightseeing coverage",
+      "❄️ 3 Snow Games Included (Tube Sliding, Snow Scooter, Snow Play Zone)",
+      "🔙 Return Drop to Delhi + 24/7 Trip Assistance",
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Delhi → Manali (Overnight Journey)",
+        description:
+          "Overnight AC Volvo/Traveller journey from Delhi. Morning arrival in Manali. Hotel check-in and relaxation time. Evening visit to Mall Road for shopping and local food exploration.",
+      },
+      {
+        day: 2,
+        title: "Manali Local Tour",
+        description:
+          "Visit iconic Hadimba Temple surrounded by cedar forest. Experience Vashisht Hot Spring's therapeutic waters. Enjoy Club House Activities and Van Vihar park. Explore Tibetan Monastery and end with evening Mall Road shopping.",
+      },
+      {
+        day: 3,
+        title: "Solang Valley Adventure Day",
+        description:
+          "Full day at Solang Valley with 3 included snow games: Snow Tube Sliding, Snow Scooter Ride, and Snow Play Zone. Optional activities available: Zorbing, Ropeway View, Valley Photo Points. Return with memories of snow-filled adventures!",
+      },
+      {
+        day: 4,
+        title: "Atal Tunnel & Sissu Exploration",
+        description:
+          "Drive through the engineering marvel - Atal Tunnel (world's longest highway tunnel). Visit serene Sissu Lake and majestic Sissu Waterfall. Enjoy breathtaking Glacier Viewpoints throughout the journey.",
+      },
+      {
+        day: 5,
+        title: "Naggar & Jana Waterfall",
+        description:
+          "Explore historic Naggar Castle with panoramic valley views. Visit Roerich Art Gallery showcasing Russian artist's work. Mini trek to beautiful Jana Waterfall. Scenic drive through Apple Orchard Route.",
+      },
+      {
+        day: 6,
+        title: "Kullu Valley Day",
+        description:
+          "Visit River Rafting Point for adventure seekers. Optional Paragliding experience at Paragliding Valley. Shop for authentic Kullu Shawls at local factory. Evening at leisure to explore local markets.",
+      },
+      {
+        day: 7,
+        title: "Manali → Delhi (Return Journey)",
+        description:
+          "Enjoy final breakfast in the mountains. Hotel check-out with fond memories. Return journey to Delhi by AC Volvo/Traveller. Depart with unforgettable Himalayan experiences!",
+      },
+    ],
+    included: [
+      "✅ Delhi → Manali → Delhi AC Volvo/Traveller Travel",
+      "✅ Premium Stay for 6 Nights",
+      "✅ Daily Breakfast & Dinner (12 meals)",
+      "✅ Unlimited Evening Snacks",
+      "✅ Local Sightseeing Transportation",
+      "✅ 7 Days Complete Sightseeing",
+      "✅ 3 Snow Games (Tube Sliding, Snow Scooter, Snow Play Zone)",
+      "✅ Return Drop to Delhi",
+      "✅ 24/7 Trip Assistance",
+      "✅ All Inclusive • No Hidden Charges",
+    ],
+    excluded: [
+      "❌ Lunch meals",
+      "❌ Personal expenses & shopping",
+      "❌ Optional adventure activities (Paragliding, River Rafting)",
+      "❌ Ropeway tickets",
+      "❌ Any activity not mentioned in inclusions",
+      "❌ Travel insurance",
+    ],
+    mapLink: "https://maps.google.com/?q=Manali,Himachal+Pradesh,India",
+    faqs: [
+      {
+        question: "What is the package price?",
+        answer: "₹9,999 Per Person - All Inclusive with no hidden charges. This is a premium budget package offering excellent value.",
+      },
+      {
+        question: "What travel is included?",
+        answer: "Delhi to Manali and return journey by AC Volvo/Traveller bus is included. The overnight journey takes approximately 12-14 hours each way.",
+      },
+      {
+        question: "What meals are included?",
+        answer: "Daily Breakfast & Dinner for all 6 nights (12 meals total) plus unlimited evening snacks. Lunch is not included.",
+      },
+      {
+        question: "What snow activities are included?",
+        answer: "3 Snow Games are included: Snow Tube Sliding, Snow Scooter Ride, and Snow Play Zone at Solang Valley. Other activities like Zorbing and Ropeway are optional.",
+      },
+      {
+        question: "What should I pack for Manali?",
+        answer: "Warm clothing (jackets, thermals, gloves, caps), comfortable walking shoes, sunscreen, sunglasses, and personal medications. We recommend layered clothing.",
+      },
+      {
+        question: "What's the best time to visit Manali?",
+        answer: "December to February for snow activities, March to June for pleasant weather and adventure sports, September to November for clear mountain views.",
+      },
+      {
+        question: "Are adventure activities like paragliding included?",
+        answer: "Paragliding and River Rafting are optional activities at additional cost. The package includes visits to these points but activities are not included.",
+      },
+      {
+        question: "What documents are required?",
+        answer: "Valid Government ID proof is required for all travelers. Keep it handy during travel and hotel check-ins.",
       },
     ],
   },
