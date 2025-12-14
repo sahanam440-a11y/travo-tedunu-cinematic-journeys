@@ -30,60 +30,26 @@ Allow: /
 User-agent: PinterestBot
 Allow: /
 
-# Priority Crawlers - Full Access
-User-agent: Googlebot
-User-agent: Googlebot-Image
-User-agent: Bingbot
-User-agent: Slurp
-User-agent: DuckDuckBot
-User-agent: Baiduspider
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 0
-
-# Social Media Crawlers - Full Access
-User-agent: facebookexternalhit
-User-agent: Twitterbot
-User-agent: LinkedInBot
-User-agent: PinterestBot
-User-agent: WhatsApp
-Allow: /
-
-# All Other Crawlers
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Block Private/Admin Areas
+# Disallow admin and checkout pages from indexing
 Disallow: /checkout
 Disallow: /confirmation
 Disallow: /profile
 Disallow: /auth
-Disallow: /admin
-Disallow: /api/
-Disallow: /*.json$
-Disallow: /supabase/
 
-# Allow Important Public Pages
+# Important pages (for emphasis)
 Allow: /
 Allow: /destinations
 Allow: /destination/*
 Allow: /booking
 Allow: /about
 Allow: /contact
-Allow: /terms-and-conditions
-Allow: /privacy-policy
-Allow: /cancellation-policy
-Allow: /shipping-policy
-Allow: /*.jpg$
-Allow: /*.png$
-Allow: /*.webp$
-Allow: /*.svg$
 
-# Sitemap Location (PRIMARY)
+# Sitemap location
 Sitemap: https://travotedunu.com/sitemap.xml
 
-# Performance Settings
+# Crawl delay (0 for priority bots)
 Crawl-delay: 0
-
-# Host Declaration (Preferred Domain)
-Host: https://travotedunu.com

@@ -5,13 +5,9 @@ import { SEO } from "@/components/SEO";
 import { PageBreadcrumb } from "@/components/PageBreadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Users, Award, Heart } from "lucide-react";
-import { organizationSchema } from "@/lib/schema";
-import { useSEO } from "@/hooks/useSEO";
-import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/seoHelpers";
+import { organizationSchema, breadcrumbSchema } from "@/lib/schema";
 
 const About = () => {
-  useSEO();
-  
   const values = [
     {
       icon: Heart,
@@ -35,36 +31,19 @@ const About = () => {
     },
   ];
 
-  const breadcrumbs = generateBreadcrumbSchema([
+  const breadcrumbs = breadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "About Us", url: "/about" },
-  ]);
-
-  const faqs = generateFAQSchema([
-    {
-      question: "When was Travo Tedunu founded?",
-      answer: "Travo Tedunu was founded in 2024 with a vision to make travel more meaningful, accessible, and authentic across India."
-    },
-    {
-      question: "What does 'Travo Tedunu' mean?",
-      answer: "Our name combines 'Travo' (travel) with 'Tedunu' (bringing together in Sanskrit), symbolizing our mission to unite curious souls with incredible experiences."
-    },
-    {
-      question: "Where is Travo Tedunu located?",
-      answer: "We are based in Bengaluru, Karnataka, India, and operate tours across multiple destinations including Delhi, Goa, Mathura, and Dehradun."
-    }
   ]);
 
   return (
     <>
       <SEO
-        title="About Travo Tedunu - India's Premier Travel Agency Since 2024"
-        description="Founded in 2024, Travo Tedunu is India's premier travel agency offering authentic, curated journeys across India. Meet our team of expert local guides committed to sustainable tourism and personalized experiences. 500+ happy travelers • 98% satisfaction • Award-winning service."
-        keywords="about Travo Tedunu, travel agency India, sustainable tourism, local guides India, authentic travel experiences, Indian tours company, travel agency Bengaluru, expert tour guides, heritage tours, spiritual travel company, adventure tourism India"
+        title="About Travo Tedunu - Your Travel Partner in India"
+        description="Learn about Travo Tedunu, India's premier travel agency. We craft authentic, tailored journeys across India with expert local guides and sustainable tourism practices since 2024."
+        keywords="about Travo Tedunu, travel agency India, sustainable tourism, local guides, authentic travel experiences, Indian tours company"
         url="/about"
-        schema={[organizationSchema, breadcrumbs, faqs]}
-        image="https://travotedunu.com/assets/logo.png"
-        ogType="website"
+        schema={[organizationSchema, breadcrumbs]}
       />
       <div className="min-h-screen pb-16 md:pb-0 relative">
       <div className="fixed inset-0 gradient-ethereal-dream -z-10"></div>

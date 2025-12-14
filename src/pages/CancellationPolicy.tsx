@@ -119,7 +119,7 @@ const CancellationPolicy = () => {
                   <p>To request a cancellation or refund, please contact our customer service team:</p>
                   <ul className="list-disc list-inside space-y-1 ml-4">
                     <li>Email: <a href="mailto:hello@travotedunu.com" className="text-primary hover:underline">hello@travotedunu.com</a></li>
-                    <li>Phone: <a href="tel:+916363150891" className="text-primary hover:underline">+91 63631 50891</a></li>
+                    <li>Phone: <a href="tel:+919876543210" className="text-primary hover:underline">+91 98765 43210</a></li>
                     <li>Visit our <a href="/contact" className="text-primary hover:underline">Contact Page</a></li>
                   </ul>
                 </div>

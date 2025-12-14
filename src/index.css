@@ -118,7 +118,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 30% 16%;
-    --muted-foreground: 210 25% 85%;
+    --muted-foreground: 210 20% 70%;
 
     --accent: 165 80% 52%;
     --accent-foreground: 0 0% 100%;
@@ -153,14 +153,6 @@ All colors MUST be HSL.
     --gradient-golden-night: linear-gradient(135deg, hsl(35 50% 18% / 0.6) 0%, hsl(28 48% 22% / 0.6) 50%, hsl(20 45% 26% / 0.6) 100%);
     --gradient-adventure-night: linear-gradient(135deg, hsl(202 65% 16% / 0.7) 0%, hsl(195 62% 20% / 0.7) 50%, hsl(188 60% 24% / 0.7) 100%);
     --gradient-tropical-dark: linear-gradient(135deg, hsl(165 58% 16% / 0.7) 0%, hsl(175 55% 20% / 0.7) 50%, hsl(185 52% 24% / 0.7) 100%);
-
-    /* Dark Mode Additional Page Backgrounds */
-    --gradient-champagne-glow: linear-gradient(135deg, hsl(35 45% 18% / 0.6) 0%, hsl(32 42% 22% / 0.6) 50%, hsl(28 45% 16% / 0.6) 100%);
-    --gradient-lavender-mist: linear-gradient(135deg, hsl(250 35% 18% / 0.6) 0%, hsl(240 32% 22% / 0.6) 50%, hsl(230 35% 16% / 0.6) 100%);
-    --gradient-rose-gold-dust: linear-gradient(135deg, hsl(15 40% 18% / 0.6) 0%, hsl(25 38% 22% / 0.6) 50%, hsl(35 40% 16% / 0.6) 100%);
-    --gradient-mint-breeze: linear-gradient(135deg, hsl(155 35% 18% / 0.6) 0%, hsl(165 38% 22% / 0.6) 50%, hsl(175 35% 16% / 0.6) 100%);
-    --gradient-pearl-elegance: linear-gradient(135deg, hsl(200 25% 18% / 0.6) 0%, hsl(210 22% 22% / 0.6) 50%, hsl(220 25% 16% / 0.6) 100%);
-    --gradient-ethereal-dream: linear-gradient(135deg, hsl(270 30% 18% / 0.6) 0%, hsl(260 28% 22% / 0.6) 50%, hsl(250 30% 16% / 0.6) 100%);
 
     /* Dark Mode Travel-Enhanced Shadows */
     --shadow-soft: 0 4px 20px hsl(202 80% 60% / 0.18);

@@ -1,13 +1,45 @@
+import { useState, useEffect } from 'react';
+import krishnaBg1 from '@/assets/backgrounds/krishna-bg-1.jpg';
+import krishnaBg2 from '@/assets/backgrounds/krishna-bg-2.jpg';
+import krishnaBg3 from '@/assets/backgrounds/krishna-bg-3.jpg';
+import winterBg1 from '@/assets/backgrounds/winter-bg-1.jpg';
+import winterBg2 from '@/assets/backgrounds/winter-bg-2.jpg';
+import himalayaBg1 from '@/assets/backgrounds/himalaya-bg-1.jpg';
+import himalayaBg2 from '@/assets/backgrounds/himalaya-bg-2.jpg';
 import natureBg1 from '@/assets/backgrounds/nature-bg-1.jpg';
+import beachBg1 from '@/assets/backgrounds/beach-bg-1.jpg';
 
 const KrishnaBackground = () => {
-  // Single static background for optimal performance
+  const backgrounds = [
+    krishnaBg1, 
+    krishnaBg2, 
+    krishnaBg3, 
+    winterBg1, 
+    winterBg2,
+    himalayaBg1,
+    himalayaBg2,
+    natureBg1,
+    beachBg1
+  ];
+  const [currentBg, setCurrentBg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+    }, 10000); // Change every 10 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="krishna-background-container">
-      <div
-        className="krishna-background active"
-        style={{ backgroundImage: `url(${natureBg1})` }}
-      />
+      {backgrounds.map((bg, index) => (
+        <div
+          key={index}
+          className={`krishna-background ${index === currentBg ? 'active' : ''}`}
+          style={{ backgroundImage: `url(${bg})` }}
+        />
+      ))}
     </div>
   );
 };
