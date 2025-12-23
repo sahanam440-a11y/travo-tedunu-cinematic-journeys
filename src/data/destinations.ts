@@ -44,6 +44,14 @@ import manali4 from "@/assets/hero/manali-4.jpg";
 import manali5 from "@/assets/hero/manali-5.jpg";
 import manali6 from "@/assets/hero/manali-6.jpg";
 
+import shimlaImage from "@/assets/shimla.jpg";
+import shimla1 from "@/assets/hero/shimla-1.jpg";
+import shimla2 from "@/assets/hero/shimla-2.jpg";
+import shimla3 from "@/assets/hero/shimla-3.jpg";
+import shimla4 from "@/assets/hero/shimla-4.jpg";
+import shimla5 from "@/assets/hero/shimla-5.jpg";
+import shimla6 from "@/assets/hero/shimla-6.jpg";
+
 export interface DestinationDetail {
   id: string;
   name: string;
@@ -310,6 +318,122 @@ export const destinations: DestinationDetail[] = [
       {
         question: "Are adventure activities like paragliding included?",
         answer: "Paragliding and River Rafting are optional activities at additional cost. The package includes visits to these points but activities are not included.",
+      },
+      {
+        question: "What documents are required?",
+        answer: "Valid Government ID proof is required for all travelers. Keep it handy during travel and hotel check-ins.",
+      },
+    ],
+  },
+  {
+    id: "6",
+    name: "Shimla",
+    slug: "shimla",
+    tagline: "🏔️ Queen of Hills - Colonial Charm & Himalayan Beauty",
+    image: shimlaImage,
+    gallery: [
+      { image: shimla1, caption: "The Ridge & Christ Church - Heart of Shimla" },
+      { image: shimla2, caption: "Kufri - Snow activities and horse riding" },
+      { image: shimla3, caption: "Jakhu Temple - Ancient Hanuman temple on hilltop" },
+      { image: shimla4, caption: "Toy Train - UNESCO Heritage Kalka-Shimla Railway" },
+      { image: shimla5, caption: "Mall Road - Bustling evening shopping street" },
+      { image: shimla6, caption: "Scandal Point - Panoramic mountain viewpoint" },
+    ],
+    priceFrom: 8499,
+    duration: "5 days",
+    tags: ["Hill Station", "Colonial", "Heritage", "Nature"],
+    overview:
+      "🏔️ SHIMLA PREMIUM HILL STATION PACKAGE\n\n5 Days / 4 Nights • ₹8,499 Per Person\n\nDiscover the 'Queen of Hills' with our all-inclusive Shimla package. Experience colonial charm, breathtaking Himalayan views, toy train rides, and snow-capped adventures in this beautiful hill station!\n\n✨ All Inclusive • No Hidden Charges • Premium Experience",
+    highlights: [
+      "🚌 Delhi → Shimla → Delhi AC Travel included",
+      "🏨 Premium Stay for 4 Nights with daily breakfast & dinner",
+      "🚂 Toy Train Ride Experience (Kalka-Shimla Heritage Railway)",
+      "🚗 Complete Local Sightseeing Transportation",
+      "📸 5 Days Extensive Sightseeing coverage",
+      "🐴 Kufri Horse Riding & Snow Activities included",
+      "🔙 Return Drop to Delhi + 24/7 Trip Assistance",
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Delhi → Shimla (Overnight Journey)",
+        description:
+          "Overnight AC Volvo/Traveller journey from Delhi. Morning arrival in Shimla. Hotel check-in and relaxation. Evening visit to The Mall Road for shopping, local food, and city exploration.",
+      },
+      {
+        day: 2,
+        title: "Shimla Local Sightseeing",
+        description:
+          "Visit the iconic Ridge with panoramic views. Explore Christ Church - second oldest church in North India. Walk to Scandal Point for Himalayan panorama. Visit Lakkar Bazaar for wooden crafts. Evening Mall Road stroll with local delicacies.",
+      },
+      {
+        day: 3,
+        title: "Kufri Adventure Day",
+        description:
+          "Full day excursion to Kufri hill station. Enjoy horse riding through snow trails (included). Snow activities and photography at Kufri slopes. Visit Himalayan Nature Park for wildlife. Return via scenic apple orchards.",
+      },
+      {
+        day: 4,
+        title: "Jakhu Temple & Toy Train Experience",
+        description:
+          "Morning trek or ropeway to Jakhu Temple with 108ft Hanuman statue. Enjoy breathtaking valley views. Afternoon: Heritage Toy Train ride on UNESCO Kalka-Shimla Railway. Experience 102 tunnels and 800+ bridges. Return to hotel.",
+      },
+      {
+        day: 5,
+        title: "Shimla → Delhi (Return Journey)",
+        description:
+          "Enjoy final breakfast with mountain views. Optional visit to Chadwick Falls or Prospect Hill. Hotel check-out with fond memories. Return journey to Delhi by AC Volvo/Traveller.",
+      },
+    ],
+    included: [
+      "✅ Delhi → Shimla → Delhi AC Volvo/Traveller Travel",
+      "✅ Premium Stay for 4 Nights",
+      "✅ Daily Breakfast & Dinner (8 meals)",
+      "✅ Local Sightseeing Transportation",
+      "✅ 5 Days Complete Sightseeing",
+      "✅ Kufri Horse Riding included",
+      "✅ Toy Train Heritage Ride",
+      "✅ Return Drop to Delhi",
+      "✅ 24/7 Trip Assistance",
+      "✅ All Inclusive • No Hidden Charges",
+    ],
+    excluded: [
+      "❌ Lunch meals",
+      "❌ Personal expenses & shopping",
+      "❌ Jakhu Temple Ropeway (optional)",
+      "❌ Adventure sports at Kufri (skiing, etc.)",
+      "❌ Any activity not mentioned in inclusions",
+      "❌ Travel insurance",
+    ],
+    mapLink: "https://maps.google.com/?q=Shimla,Himachal+Pradesh,India",
+    faqs: [
+      {
+        question: "What is the package price?",
+        answer: "₹8,499 Per Person - All Inclusive with no hidden charges. This is a premium hill station package offering excellent value.",
+      },
+      {
+        question: "What travel is included?",
+        answer: "Delhi to Shimla and return journey by AC Volvo/Traveller bus is included. The overnight journey takes approximately 8-10 hours each way.",
+      },
+      {
+        question: "What meals are included?",
+        answer: "Daily Breakfast & Dinner for all 4 nights (8 meals total). Lunch is not included but you can explore local cafes and restaurants.",
+      },
+      {
+        question: "Is Toy Train ride included?",
+        answer: "Yes! The heritage Toy Train ride on the UNESCO World Heritage Kalka-Shimla Railway is included. Experience 102 tunnels and 800+ bridges on this scenic journey.",
+      },
+      {
+        question: "What should I pack for Shimla?",
+        answer: "Warm clothing (jackets, sweaters, thermals), comfortable walking shoes, sunscreen, sunglasses, and personal medications. Layered clothing is recommended.",
+      },
+      {
+        question: "What's the best time to visit Shimla?",
+        answer: "December to February for snowfall experience, March to June for pleasant weather, September to November for clear views and autumn colors.",
+      },
+      {
+        question: "Are Kufri activities included?",
+        answer: "Horse riding at Kufri is included. Other activities like skiing, yak rides are optional at additional cost.",
       },
       {
         question: "What documents are required?",
