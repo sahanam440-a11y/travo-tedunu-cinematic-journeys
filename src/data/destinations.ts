@@ -2,6 +2,7 @@ import delhiImage from "@/assets/delhi.jpg";
 import mathuraImage from "@/assets/mathura.jpg";
 import dehradunImage from "@/assets/dehradun.jpg";
 import goaImage from "@/assets/goa.jpg";
+import manaliImage from "@/assets/manali.jpg";
 
 // Gallery images
 import delhi1 from "@/assets/hero/delhi-1.jpg";
@@ -36,6 +37,13 @@ import goa6 from "@/assets/hero/goa-6.jpg";
 import goa7 from "@/assets/hero/goa-7.jpg";
 import goa8 from "@/assets/hero/goa-8.jpg";
 
+import manali1 from "@/assets/hero/manali-1.jpg";
+import manali2 from "@/assets/hero/manali-2.jpg";
+import manali3 from "@/assets/hero/manali-3.jpg";
+import manali4 from "@/assets/hero/manali-4.jpg";
+import manali5 from "@/assets/hero/manali-5.jpg";
+import manali6 from "@/assets/hero/manali-6.jpg";
+
 export interface DestinationDetail {
   id: string;
   name: string;
@@ -63,6 +71,252 @@ export interface DestinationDetail {
 }
 
 export const destinations: DestinationDetail[] = [
+  {
+    id: "4",
+    name: "Goa",
+    slug: "goa",
+    tagline: "🎄✨ GOA CHRISTMAS & NEW YEAR SPECIAL PACKAGE 2025–26",
+    image: goaImage,
+    gallery: [
+      { image: goa1, caption: "Baga Beach - Vibrant beach life with water sports" },
+      { image: goa2, caption: "Basilica of Bom Jesus - UNESCO World Heritage Site" },
+      { image: goa3, caption: "Dudhsagar Waterfall - Majestic four-tiered falls" },
+      { image: goa4, caption: "Anjuna Flea Market - Colorful shopping paradise" },
+      { image: goa5, caption: "Fort Aguada - Historic Portuguese fort at sunset" },
+      { image: goa6, caption: "Goan Cuisine - Fresh seafood and local delicacies" },
+      { image: goa7, caption: "Palolem Beach - Peaceful crescent beach paradise" },
+      { image: goa8, caption: "Beach Nightlife - Vibrant parties under the stars" },
+    ],
+    priceFrom: 6099,
+    duration: "3 days",
+    tags: ["Beach", "Festive", "Christmas", "New Year", "Premium"],
+    overview:
+      "🎄✨ Celebrate the most magical days of the year in Goa! A perfect blend of premium stay, delicious food, warm experiences, and flexible travel options—designed specially for solo travellers, couples, and friend groups. ❤🌴✨\n\n✨ IT'S AN ON ARRIVAL PACKAGE - Package starts after reaching Goa on December 24, 2025\n\n💸 PACKAGE PRICES (ONE ROOM FOR ALL)\n🎁 Solo Traveller: ₹6,099\n🎁 Couple Package: ₹11,149\n🎁 3 Friends Group: ₹15,199",
+    highlights: [
+      "🎄 Festive Christmas & New Year celebration starting December 24",
+      "🏨 Premium AC Room (3 nights) - One room for entire group",
+      "🍽️ 6 Meals Included (Breakfast + Dinner daily)",
+      "✈️🚆 Full Flight & Train Booking Support (fare not included)",
+      "🚗 Airport/Railway pickup & drop + Light sightseeing",
+      "🎁 Welcome Kit + Beach Bonfire OR Guided Market Walk",
+      "📍 Calangute, Baga, Aguada, Candolim, Miramar visits",
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival Day - December 24 (Christmas Eve)",
+        description:
+          "📍 Airport OR Railway pickup by our team. Check-in to Premium AC Room with festive ambience. 🎄 Welcome Kit: Tote bag, water bottle, snack, itinerary card. Evening: Beach walk at Calangute/Baga OR relax at property. 🍛 Dinner included - festive meal with veg & non-veg options.",
+      },
+      {
+        day: 2,
+        title: "Christmas Day - December 25 (Sightseeing & Celebration)",
+        description:
+          "🍛 Breakfast included. 🚙 Sightseeing: Visit Calangute/Baga Beach, Aguada View Point, Candolim, Miramar. 🛍️ Local market walk for shopping and exploration. Evening: 🔥 Beach Bonfire OR Guided Market Walk (special festive experience). 🍛 Dinner included with festive vibes.",
+      },
+      {
+        day: 3,
+        title: "December 26 - Relaxation & Beach Time",
+        description:
+          "🍛 Breakfast included. Free time for beach activities, swimming, or personal exploration. Optional: Shopping, café hopping, or relaxing at property. 🍛 Dinner included - enjoy your last festive evening in Goa.",
+      },
+      {
+        day: 4,
+        title: "Departure Day - December 27 (Check-out)",
+        description:
+          "Final breakfast (if time permits). Check-out from property. 📍 Drop to Airport OR Railway Station. Depart with memories, new friends, and festive joy! ✨",
+      },
+    ],
+    included: [
+      "✅ Premium AC Room for 3 nights (One room for solo/couple/group)",
+      "✅ 6 Meals per person (Breakfast + Dinner × 3 days)",
+      "✅ Airport/Railway pickup & drop",
+      "✅ Short sightseeing (Calangute, Baga, Aguada, Candolim, Miramar)",
+      "✅ Welcome Kit (Tote bag, water bottle, snack, itinerary)",
+      "✅ Beach Bonfire OR Guided Market Walk",
+      "✅ Personalized itinerary & 24/7 support",
+      "✅ No hidden charges",
+    ],
+    excluded: [
+      "❌ Train/Flight tickets (only booking support provided - must book 5+ days before)",
+      "❌ Lunch meals",
+      "❌ Alcohol & beverages",
+      "❌ Adventure sports & water activities",
+      "❌ Shopping & personal expenses",
+      "❌ Extra kilometers beyond included sightseeing",
+    ],
+    mapLink: "https://maps.google.com/?q=Goa,India",
+    faqs: [
+      {
+        question: "When does this festive package start?",
+        answer: "The package starts on December 24, 2025 (Christmas Eve) and continues through December 27, 2025. It's an ON ARRIVAL package, meaning it begins after you reach Goa.",
+      },
+      {
+        question: "What are the package prices?",
+        answer: "Solo Traveller: ₹6,099 | Couple Package: ₹11,149 | 3 Friends Group: ₹15,199. Each price includes ONE premium AC room for the entire group, with room setup adjusted for group size (private for solo, double-bed for couples, triple-sharing for 3 friends).",
+      },
+      {
+        question: "Is train/flight booking included?",
+        answer: "We provide FULL BOOKING SUPPORT for both flights and trains, but the ticket fare is NOT included in the package price. Fares vary by city and dates. You must book at least 5 days before the event. We ensure best available fare and timing.",
+      },
+      {
+        question: "What meals are included?",
+        answer: "6 meals total: Breakfast + Dinner for 3 days. Meals are homely, tasty, hygienic with both veg and non-veg options. Lunch is not included.",
+      },
+      {
+        question: "What's included in sightseeing?",
+        answer: "Short-distance sightseeing includes: Calangute/Baga Beach, Aguada View Point, Candolim, Miramar, and local market walk. Plus one special evening experience: Beach Bonfire OR Guided Market Walk.",
+      },
+      {
+        question: "What is the room arrangement?",
+        answer: "ONE premium AC room provided for all: Solo → Entire room private | Couple → Double-bed setup in same room | 3 Friends → Triple-sharing/extra mattress in same room. Super clean, safe & festive ambience near market, cafés & beach areas.",
+      },
+      {
+        question: "What's NOT included in the package?",
+        answer: "Not included: Train/flight tickets (only booking support), lunch meals, alcohol, adventure sports, extra kilometers, shopping expenses. Always confirm taxi prices before starting and be aware of common Goa scams.",
+      },
+      {
+        question: "What documents do I need?",
+        answer: "Valid Government ID is required at check-in. For flight/train booking support, you need to book at least 5 days before December 24th.",
+      },
+      {
+        question: "Can I customize the itinerary?",
+        answer: "The festive package has a set itinerary optimized for Christmas & New Year celebration. However, you have free time on Day 3 for personal exploration. Sightseeing is subject to festive-season availability and weather conditions.",
+      },
+      {
+        question: "What about weather or schedule changes?",
+        answer: "Itinerary may change due to weather/local conditions. Travo Tedunu may adjust plans for safety or operational reasons. Your safety and satisfaction is our priority. Rooms and sightseeing depend on festive availability.",
+      },
+    ],
+  },
+  {
+    id: "5",
+    name: "Manali",
+    slug: "manali",
+    tagline: "🌄 Premium Budget Package - Snow, Mountains & Adventure",
+    image: manaliImage,
+    gallery: [
+      { image: manali1, caption: "Hadimba Temple - Ancient wooden temple in cedar forest" },
+      { image: manali2, caption: "Solang Valley - Snow adventures and winter sports" },
+      { image: manali3, caption: "Atal Tunnel - World's longest highway tunnel" },
+      { image: manali4, caption: "Mall Road - Bustling shopping street with mountain views" },
+      { image: manali5, caption: "Sissu Lake - Serene glacial lake surrounded by mountains" },
+      { image: manali6, caption: "Naggar Castle - Historic heritage castle with panoramic views" },
+    ],
+    priceFrom: 9999,
+    duration: "7 days",
+    tags: ["Adventure", "Snow", "Mountains", "Premium"],
+    overview:
+      "🌄 MANALI PREMIUM BUDGET PACKAGE\n\n7 Days / 6 Nights • ₹9,999 Per Person\n\nExperience the magic of Manali with our all-inclusive premium budget package. From snow-capped mountains to ancient temples, adventure activities to scenic valleys - this package covers it all!\n\n✨ All Inclusive • No Hidden Charges • Premium Experience",
+    highlights: [
+      "🚌 Delhi → Manali → Delhi AC Travel included",
+      "🏨 Premium Stay for 6 Nights with daily breakfast & dinner",
+      "🍿 Unlimited Evening Snacks throughout the trip",
+      "🚗 Local Sightseeing Transportation included",
+      "📸 7 Days Complete Sightseeing coverage",
+      "❄️ 3 Snow Games Included (Tube Sliding, Snow Scooter, Snow Play Zone)",
+      "🔙 Return Drop to Delhi + 24/7 Trip Assistance",
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Delhi → Manali (Overnight Journey)",
+        description:
+          "Overnight AC Volvo/Traveller journey from Delhi. Morning arrival in Manali. Hotel check-in and relaxation time. Evening visit to Mall Road for shopping and local food exploration.",
+      },
+      {
+        day: 2,
+        title: "Manali Local Tour",
+        description:
+          "Visit iconic Hadimba Temple surrounded by cedar forest. Experience Vashisht Hot Spring's therapeutic waters. Enjoy Club House Activities and Van Vihar park. Explore Tibetan Monastery and end with evening Mall Road shopping.",
+      },
+      {
+        day: 3,
+        title: "Solang Valley Adventure Day",
+        description:
+          "Full day at Solang Valley with 3 included snow games: Snow Tube Sliding, Snow Scooter Ride, and Snow Play Zone. Optional activities available: Zorbing, Ropeway View, Valley Photo Points. Return with memories of snow-filled adventures!",
+      },
+      {
+        day: 4,
+        title: "Atal Tunnel & Sissu Exploration",
+        description:
+          "Drive through the engineering marvel - Atal Tunnel (world's longest highway tunnel). Visit serene Sissu Lake and majestic Sissu Waterfall. Enjoy breathtaking Glacier Viewpoints throughout the journey.",
+      },
+      {
+        day: 5,
+        title: "Naggar & Jana Waterfall",
+        description:
+          "Explore historic Naggar Castle with panoramic valley views. Visit Roerich Art Gallery showcasing Russian artist's work. Mini trek to beautiful Jana Waterfall. Scenic drive through Apple Orchard Route.",
+      },
+      {
+        day: 6,
+        title: "Kullu Valley Day",
+        description:
+          "Visit River Rafting Point for adventure seekers. Optional Paragliding experience at Paragliding Valley. Shop for authentic Kullu Shawls at local factory. Evening at leisure to explore local markets.",
+      },
+      {
+        day: 7,
+        title: "Manali → Delhi (Return Journey)",
+        description:
+          "Enjoy final breakfast in the mountains. Hotel check-out with fond memories. Return journey to Delhi by AC Volvo/Traveller. Depart with unforgettable Himalayan experiences!",
+      },
+    ],
+    included: [
+      "✅ Delhi → Manali → Delhi AC Volvo/Traveller Travel",
+      "✅ Premium Stay for 6 Nights",
+      "✅ Daily Breakfast & Dinner (12 meals)",
+      "✅ Unlimited Evening Snacks",
+      "✅ Local Sightseeing Transportation",
+      "✅ 7 Days Complete Sightseeing",
+      "✅ 3 Snow Games (Tube Sliding, Snow Scooter, Snow Play Zone)",
+      "✅ Return Drop to Delhi",
+      "✅ 24/7 Trip Assistance",
+      "✅ All Inclusive • No Hidden Charges",
+    ],
+    excluded: [
+      "❌ Lunch meals",
+      "❌ Personal expenses & shopping",
+      "❌ Optional adventure activities (Paragliding, River Rafting)",
+      "❌ Ropeway tickets",
+      "❌ Any activity not mentioned in inclusions",
+      "❌ Travel insurance",
+    ],
+    mapLink: "https://maps.google.com/?q=Manali,Himachal+Pradesh,India",
+    faqs: [
+      {
+        question: "What is the package price?",
+        answer: "₹9,999 Per Person - All Inclusive with no hidden charges. This is a premium budget package offering excellent value.",
+      },
+      {
+        question: "What travel is included?",
+        answer: "Delhi to Manali and return journey by AC Volvo/Traveller bus is included. The overnight journey takes approximately 12-14 hours each way.",
+      },
+      {
+        question: "What meals are included?",
+        answer: "Daily Breakfast & Dinner for all 6 nights (12 meals total) plus unlimited evening snacks. Lunch is not included.",
+      },
+      {
+        question: "What snow activities are included?",
+        answer: "3 Snow Games are included: Snow Tube Sliding, Snow Scooter Ride, and Snow Play Zone at Solang Valley. Other activities like Zorbing and Ropeway are optional.",
+      },
+      {
+        question: "What should I pack for Manali?",
+        answer: "Warm clothing (jackets, thermals, gloves, caps), comfortable walking shoes, sunscreen, sunglasses, and personal medications. We recommend layered clothing.",
+      },
+      {
+        question: "What's the best time to visit Manali?",
+        answer: "December to February for snow activities, March to June for pleasant weather and adventure sports, September to November for clear mountain views.",
+      },
+      {
+        question: "Are adventure activities like paragliding included?",
+        answer: "Paragliding and River Rafting are optional activities at additional cost. The package includes visits to these points but activities are not included.",
+      },
+      {
+        question: "What documents are required?",
+        answer: "Valid Government ID proof is required for all travelers. Keep it handy during travel and hotel check-ins.",
+      },
+    ],
+  },
   {
     id: "1",
     name: "Delhi",
@@ -108,7 +362,7 @@ export const destinations: DestinationDetail[] = [
       "Daily breakfast",
       "All entry fees",
       "Local guide",
-      "Private transport",
+      "Transportation included",
     ],
     excluded: ["Flights", "Lunch & Dinner", "Personal expenses", "Tips"],
     mapLink: "https://maps.google.com/?q=Delhi,India",
@@ -119,7 +373,7 @@ export const destinations: DestinationDetail[] = [
       },
       {
         question: "Is transportation included?",
-        answer: "Yes, private AC transport is included for all sightseeing activities.",
+        answer: "Yes, the transportation is included for all sightseeing activities.",
       },
       {
         question: "Are meals included?",
@@ -261,96 +515,6 @@ export const destinations: DestinationDetail[] = [
       {
         question: "Can I customize the itinerary?",
         answer: "Yes! We can adjust activities based on your preferences and fitness level.",
-      },
-    ],
-  },
-  {
-    id: "4",
-    name: "Goa",
-    slug: "goa",
-    tagline: "Sun, sand, sea, and endless serenity",
-    image: goaImage,
-    gallery: [
-      { image: goa1, caption: "Baga Beach - Vibrant beach life with water sports" },
-      { image: goa2, caption: "Basilica of Bom Jesus - UNESCO World Heritage Site" },
-      { image: goa3, caption: "Dudhsagar Waterfall - Majestic four-tiered falls" },
-      { image: goa4, caption: "Anjuna Flea Market - Colorful shopping paradise" },
-      { image: goa5, caption: "Fort Aguada - Historic Portuguese fort at sunset" },
-      { image: goa6, caption: "Goan Cuisine - Fresh seafood and local delicacies" },
-      { image: goa7, caption: "Palolem Beach - Peaceful crescent beach paradise" },
-      { image: goa8, caption: "Beach Nightlife - Vibrant parties under the stars" },
-    ],
-    priceFrom: 4999,
-    duration: "4 days",
-    tags: ["Beach", "Adventure", "Nightlife", "Food"],
-    overview:
-      "Discover India's tropical paradise where golden beaches meet Portuguese heritage. Goa offers the perfect blend of relaxation, adventure, culture, and vibrant nightlife amidst swaying palms and turquoise waters.",
-    highlights: [
-      "Beach hopping from North to South Goa",
-      "UNESCO heritage churches in Old Goa",
-      "Dudhsagar Waterfall trekking",
-      "Water sports and boat cruises",
-      "Beach shack dining and nightlife",
-    ],
-    itinerary: [
-      {
-        day: 1,
-        title: "North Goa Beach Explorer",
-        description:
-          "Arrive and check into your beach resort. Explore famous Baga Beach with water sports activities. Visit the vibrant Calangute Beach and enjoy sunset at Anjuna Beach. Evening at your leisure to explore beach shacks and local cuisine.",
-      },
-      {
-        day: 2,
-        title: "Heritage & Culture Trail",
-        description:
-          "Visit the historic Old Goa with its magnificent Portuguese churches including Basilica of Bom Jesus and Se Cathedral. Explore Fort Aguada and its lighthouse. Evening visit to Anjuna Flea Market for shopping. Sunset dinner cruise on the Mandovi River.",
-      },
-      {
-        day: 3,
-        title: "Adventure & Nature",
-        description:
-          "Full day trip to Dudhsagar Waterfall with jungle jeep safari. Experience spice plantation tour with traditional Goan lunch. Visit butterfly conservatory. Return to beach for relaxation and water sports at Palolem or Agonda Beach.",
-      },
-      {
-        day: 4,
-        title: "South Goa Serenity",
-        description:
-          "Explore peaceful South Goa beaches - Palolem, Agonda, and Cabo de Rama Fort. Visit local markets and try authentic Goan seafood. Optional: Dolphin spotting tour or yoga session. Evening beach party experience before departure.",
-      },
-    ],
-    included: [
-      "4 nights beachside resort stay",
-      "Daily breakfast buffet",
-      "Waterfall jeep safari",
-      "Sunset river cruise",
-      "Spice plantation tour with lunch",
-      "All transfers and sightseeing",
-      "Professional guide",
-    ],
-    excluded: [
-      "Flights",
-      "Lunches & Dinners (except plantation lunch)",
-      "Water sports activities",
-      "Nightclub entry fees",
-      "Shopping and personal expenses",
-    ],
-    mapLink: "https://maps.google.com/?q=Goa,India",
-    faqs: [
-      {
-        question: "What's the best time to visit Goa?",
-        answer: "November to February offers perfect beach weather with pleasant temperatures. October and March are also good for fewer crowds.",
-      },
-      {
-        question: "Are water sports included in the package?",
-        answer: "Basic beach activities are included, but premium water sports like parasailing, jet skiing, and scuba diving can be arranged at additional cost.",
-      },
-      {
-        question: "Is this tour suitable for families?",
-        answer: "Absolutely! Goa offers something for everyone - peaceful beaches for relaxation, adventure activities for thrill-seekers, and cultural sites for history buffs.",
-      },
-      {
-        question: "What should I pack for Goa?",
-        answer: "Light cotton clothes, swimwear, sunscreen, hat, sunglasses, comfortable sandals, and a light jacket for evenings. Don't forget your camera!",
       },
     ],
   },

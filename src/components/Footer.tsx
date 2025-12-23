@@ -193,6 +193,14 @@ const Footer = () => {
                   Dehradun
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/destination/goa"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Goa
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -206,7 +214,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+91 98765 43210</span>
+                <span>+91 63631 50891</span>
               </div>
             </div>
             <div className="space-y-2">

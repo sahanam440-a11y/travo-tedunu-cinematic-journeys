@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import KrishnaBackground from "./components/KrishnaBackground";
-import WaveBackground from "./components/WaveBackground";
 import Index from "./pages/Index";
 import Destinations from "./pages/Destinations";
 import DestinationDetail from "./pages/DestinationDetail";
@@ -31,7 +30,6 @@ const App = () => (
         <Toaster />
         <Sonner />
         <KrishnaBackground />
-        <WaveBackground />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

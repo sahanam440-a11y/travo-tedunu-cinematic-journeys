@@ -1,15 +1,22 @@
 import { DestinationDetail } from "@/data/destinations";
 
+// Enhanced Organization Schema with LocalBusiness
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "TravelAgency",
+  "@type": ["TravelAgency", "LocalBusiness", "Organization"],
   name: "Travo Tedunu",
+  legalName: "Travo Tedunu Travel Services",
   alternateName: ["Travo Tedunu Travel", "Travo Tedunu Tours", "TED UNU Travel"],
   description: "India's premier travel agency specializing in curated tour packages across Delhi, Goa, Mathura, Dehradun and beyond. Expert local guides, authentic experiences, and sustainable tourism since 2024.",
   url: "https://travotedunu.com",
-  logo: "https://lovable.dev/opengraph-image-p98pqg.png",
-  image: "https://lovable.dev/opengraph-image-p98pqg.png",
-  telephone: "+91-9876543210",
+  logo: "https://travotedunu.com/assets/logo.png",
+  image: [
+    "https://travotedunu.com/assets/hero/delhi-1.jpg",
+    "https://travotedunu.com/assets/hero/goa-1.jpg",
+    "https://travotedunu.com/assets/hero/mathura-1.jpg",
+    "https://travotedunu.com/assets/hero/dehradun-1.jpg"
+  ],
+  telephone: "+91-63631-50891",
   email: "info@travotedunu.com",
   priceRange: "₹₹",
   foundingDate: "2024",
@@ -24,21 +31,30 @@ export const organizationSchema = {
     "Spiritual Travel",
     "Heritage Tours",
     "Beach Holidays",
-    "Mountain Treks"
+    "Mountain Treks",
+    "Adventure Tourism"
   ],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Travel Street",
-    addressLocality: "New Delhi",
-    addressRegion: "Delhi",
-    postalCode: "110001",
+    streetAddress: "Indiranagar, Bluwells apartment",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    postalCode: "560078",
     addressCountry: "IN",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "28.6139",
-    longitude: "77.2090"
+    latitude: "12.9716",
+    longitude: "77.5946"
   },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00"
+    }
+  ],
   areaServed: [
     {
       "@type": "Country",
@@ -65,11 +81,12 @@ export const organizationSchema = {
     "https://twitter.com/TravoTedunu",
     "https://facebook.com/travotedunu",
     "https://instagram.com/travotedunu",
+    "https://www.linkedin.com/company/travotedunu"
   ],
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+91-9876543210",
+      telephone: "+91-63631-50891",
       contactType: "customer service",
       email: "info@travotedunu.com",
       areaServed: "IN",
@@ -79,10 +96,48 @@ export const organizationSchema = {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         opens: "09:00",
-        closes: "19:00"
+        closes: "18:00"
       }
     }
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Travel Packages",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TouristTrip",
+          name: "Delhi Heritage Tour",
+          description: "Explore India's capital with guided tours of iconic monuments"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TouristTrip",
+          name: "Goa Beach Package",
+          description: "Pristine beaches and Portuguese heritage experience"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TouristTrip",
+          name: "Mathura Spiritual Journey",
+          description: "Sacred pilgrimage to Lord Krishna's birthplace"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "TouristTrip",
+          name: "Dehradun Adventure",
+          description: "Himalayan foothills exploration and nature experiences"
+        }
+      }
+    ]
+  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.8",

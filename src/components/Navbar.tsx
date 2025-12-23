@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, User } from "lucide-react";
+import { User, Home, MapPin, Info, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -20,47 +20,44 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Destinations", path: "/destinations" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", icon: Home },
+    { name: "Destinations", path: "/destinations", icon: MapPin },
+    { name: "About", path: "/about", icon: Info },
+    { name: "Contact", path: "/contact", icon: Mail },
   ];
 
   return (
-    <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 shadow-elevated border-b border-nav-border backdrop-blur-md rounded-b-xl transition-transform duration-300 bg-nav-background">
-      <div className="container mx-auto px-3 py-2 md:px-4 md:py-3">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-1.5 text-base md:text-2xl font-serif font-bold hover:scale-105 transition-transform duration-300">
-            <MapPin className="h-4 w-4 md:h-7 md:w-7 text-secondary drop-shadow-[0_0_8px_rgba(217,119,6,0.6)] animate-bounce-subtle" />
-            <span className="text-nav-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]">
-              Travo Tedunu
-            </span>
-          </Link>
-
+    <nav className="hidden md:block fixed bottom-0 left-0 right-0 z-50 shadow-elevated border-t border-nav-border backdrop-blur-md transition-transform duration-300 bg-nav-background/95 rounded-t-xl">
+      <div className="container mx-auto px-5 py-2 md:px-6 md:py-2.5">
+        <div className="flex items-center justify-center">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-nav-foreground/90 hover:text-nav-foreground transition-all duration-300 font-semibold text-base relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-nav-foreground after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center gap-12">
+            {navLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="flex items-center gap-2 text-nav-foreground/90 hover:text-nav-foreground transition-all duration-300 font-semibold text-base relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-nav-foreground after:transition-all after:duration-300 hover:after:w-full px-2 py-1"
+                >
+                  <Icon className="h-4 w-4" />
+                  {link.name}
+                </Link>
+              );
+            })}
             {user ? (
-              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-amber-light/50 border-nav-border text-amber-text hover:bg-amber-light/70" asChild>
+              <Button size="default" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-amber-light/50 border-nav-border text-amber-text hover:bg-amber-light/70" asChild>
                 <Link to="/profile">
                   <User className="h-4 w-4 mr-2" />
                   Profile
                 </Link>
               </Button>
             ) : (
-              <Button size="sm" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-amber-light/50 border-nav-border text-amber-text hover:bg-amber-light/70" asChild>
+              <Button size="default" variant="outline" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 bg-amber-light/50 border-nav-border text-amber-text hover:bg-amber-light/70" asChild>
                 <Link to="/auth">Login</Link>
               </Button>
             )}
-            <Button size="sm" className="shadow-soft hover:shadow-elevated hover:scale-105 transition-all duration-300 font-semibold bg-action text-action-foreground hover:bg-action-hover" asChild>
+            <Button size="default" className="shadow-soft hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:from-amber-600 hover:to-orange-700" asChild>
               <Link to="/booking">Book Now</Link>
             </Button>
           </div>
