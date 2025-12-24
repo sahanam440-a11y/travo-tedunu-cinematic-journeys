@@ -13,9 +13,9 @@ const BottomNav = () => {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-4 left-4 right-4 z-50 pb-safe">
-      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-gray-100 dark:border-gray-800">
-        <div className="flex items-center justify-around px-2 py-3">
+    <nav className="md:hidden fixed bottom-3 left-3 right-3 z-50 pb-safe">
+      <div className="bg-white dark:bg-gray-900 rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.1)] border border-gray-100 dark:border-gray-800">
+        <div className="flex items-center justify-around px-1 py-2">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
@@ -24,18 +24,18 @@ const BottomNav = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex flex-col items-center gap-1 min-w-[56px] justify-center px-3 py-1 transition-all duration-200 ${
+                className={`flex flex-col items-center gap-0.5 min-w-[48px] justify-center px-2 py-0.5 transition-all duration-200 ${
                   isActive
                     ? "text-primary"
                     : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                 }`}
               >
                 <Icon 
-                  className={`h-5 w-5 transition-all ${
+                  className={`h-4 w-4 transition-all ${
                     isActive ? "stroke-[2.5] fill-primary/10" : "stroke-[1.5]"
                   }`} 
                 />
-                <span className={`text-[10px] ${isActive ? "font-semibold" : "font-medium"}`}>
+                <span className={`text-[9px] ${isActive ? "font-semibold" : "font-medium"}`}>
                   {item.name}
                 </span>
               </Link>
