@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Mail, Phone, Facebook, Instagram, Youtube } from "lucide-react";
+import { MapPin, Mail, Phone, Facebook, Instagram, Youtube, Download, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -8,10 +8,50 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { usePWAInstall } from "@/hooks/usePWAInstall";
+import { useState } from "react";
 
 const Footer = () => {
+  const { isInstallable, isInstalled, isIOS, promptInstall } = usePWAInstall();
+  const [showIOSModal, setShowIOSModal] = useState(false);
+
+  const handleDownloadClick = async () => {
+    if (isIOS) {
+      setShowIOSModal(true);
+    } else if (isInstallable) {
+      await promptInstall();
+    }
+  };
+
   return (
     <footer className="glass-card border-t-2 border-primary/20 shadow-elevated">
+      {/* App Download Section - Both Mobile & Desktop */}
+      {!isInstalled && (
+        <div className="bg-gradient-to-r from-primary to-accent py-6 px-4">
+          <div className="container mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4 text-white">
+                <div className="bg-white/20 p-3 rounded-xl">
+                  <Smartphone className="h-8 w-8" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Download Our App</h3>
+                  <p className="text-white/80 text-sm">Book faster, access offline, get exclusive deals!</p>
+                </div>
+              </div>
+              <Button
+                size="lg"
+                onClick={handleDownloadClick}
+                className="bg-white text-primary hover:bg-white/90 font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              >
+                <Download className="h-5 w-5 mr-2" />
+                Install Free App
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Mobile Compact Footer */}
       <div className="md:hidden px-4 py-4">
         <Accordion type="single" collapsible className="w-full">
@@ -171,10 +211,10 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  to="/destination/delhi"
+                  to="/destination/goa"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Delhi
+                  🎄 Goa Christmas Special
                 </Link>
               </li>
               <li>
@@ -195,10 +235,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/destination/goa"
+                  to="/destination/manali"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Goa
+                  Manali
                 </Link>
               </li>
             </ul>
@@ -210,7 +250,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>hello@travotedunu.com</span>
+                <span>sahanam440@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
@@ -233,6 +273,45 @@ const Footer = () => {
           <p>© 2025 Travo Tedunu · Crafted for Curious Souls</p>
         </div>
       </div>
+
+      {/* iOS Instructions Modal */}
+      {showIOSModal && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center p-4">
+          <div className="bg-background rounded-t-2xl sm:rounded-2xl p-6 w-full max-w-sm animate-fade-in">
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="font-semibold text-lg">Install on iPhone/iPad</h3>
+              <Button
+                size="icon"
+                variant="ghost"
+                className="h-8 w-8"
+                onClick={() => setShowIOSModal(false)}
+              >
+                ✕
+              </Button>
+            </div>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <div className="bg-primary/10 text-primary w-6 h-6 rounded-full flex items-center justify-center font-semibold text-xs flex-shrink-0">1</div>
+                <p>Tap the <strong>Share</strong> button in Safari</p>
+              </div>
+              <div className="flex gap-3">
+                <div className="bg-primary/10 text-primary w-6 h-6 rounded-full flex items-center justify-center font-semibold text-xs flex-shrink-0">2</div>
+                <p>Scroll and tap <strong>"Add to Home Screen"</strong></p>
+              </div>
+              <div className="flex gap-3">
+                <div className="bg-primary/10 text-primary w-6 h-6 rounded-full flex items-center justify-center font-semibold text-xs flex-shrink-0">3</div>
+                <p>Tap <strong>"Add"</strong> to install</p>
+              </div>
+            </div>
+            <Button 
+              className="w-full mt-6 bg-action text-action-foreground hover:bg-action-hover"
+              onClick={() => setShowIOSModal(false)}
+            >
+              Got it!
+            </Button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };
