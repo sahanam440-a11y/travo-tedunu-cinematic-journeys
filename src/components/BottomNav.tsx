@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, MapPin, Info, Mail, User } from "lucide-react";
+import { Home, MapPin, Star, MessageSquare, User } from "lucide-react";
 
 const BottomNav = () => {
   const location = useLocation();
@@ -7,14 +7,15 @@ const BottomNav = () => {
   const navItems = [
     { name: "Home", path: "/", icon: Home },
     { name: "Destinations", path: "/destinations", icon: MapPin },
-    { name: "About", path: "/about", icon: Info },
-    { name: "Contact", path: "/contact", icon: Mail },
+    { name: "About", path: "/about", icon: Star },
+    { name: "Contact", path: "/contact", icon: MessageSquare },
     { name: "Profile", path: "/profile", icon: User },
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe shadow-elevated backdrop-blur-md border-t border-nav-border rounded-t-xl bg-nav-background">
-        <div className="flex items-center justify-around px-2 py-2">
+    <nav className="md:hidden fixed bottom-4 left-4 right-4 z-50 pb-safe">
+      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-gray-100 dark:border-gray-800">
+        <div className="flex items-center justify-around px-2 py-3">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
@@ -23,18 +24,25 @@ const BottomNav = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex flex-col items-center gap-0.5 min-w-[56px] min-h-[48px] justify-center px-2 py-1.5 transition-all ${
+                className={`flex flex-col items-center gap-1 min-w-[56px] justify-center px-3 py-1 transition-all duration-200 ${
                   isActive
-                    ? "text-nav-foreground font-semibold scale-105 drop-shadow-[0_0_8px_rgba(217,119,6,0.6)]"
-                    : "text-nav-foreground/80 hover:text-nav-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]"
+                    ? "text-primary"
+                    : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
                 }`}
               >
-                <Icon className={`h-4.5 w-4.5 ${isActive ? "stroke-[2.5]" : ""}`} />
-                <span className="text-[9px] font-semibold">{item.name}</span>
+                <Icon 
+                  className={`h-5 w-5 transition-all ${
+                    isActive ? "stroke-[2.5] fill-primary/10" : "stroke-[1.5]"
+                  }`} 
+                />
+                <span className={`text-[10px] ${isActive ? "font-semibold" : "font-medium"}`}>
+                  {item.name}
+                </span>
               </Link>
             );
           })}
         </div>
+      </div>
     </nav>
   );
 };
