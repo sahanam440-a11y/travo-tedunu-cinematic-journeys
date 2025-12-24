@@ -210,11 +210,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:sahanam440@gmail.com" className="hover:text-primary transition-colors">sahanam440@gmail.com</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                <a href="mailto:pranabhay3@gmail.com" className="hover:text-primary transition-colors">pranabhay3@gmail.com</a>
+                <span>hello@travotedunu.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
