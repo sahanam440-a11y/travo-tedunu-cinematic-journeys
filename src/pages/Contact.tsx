@@ -254,16 +254,10 @@ const Contact = () => {
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1">Email</h3>
                       <a 
-                        href="mailto:sahanam440@gmail.com" 
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
+                        href="mailto:hello@travotedunu.com" 
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
-                        sahanam440@gmail.com
-                      </a>
-                      <a 
-                        href="mailto:pranabhay3@gmail.com" 
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
-                      >
-                        pranabhay3@gmail.com
+                        hello@travotedunu.com
                       </a>
                     </div>
                   </div>
