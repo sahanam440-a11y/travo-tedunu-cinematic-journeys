@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 // Single optimized image for best performance
-import delhi1 from "@/assets/hero/delhi-1.jpg";
-
+import goa1 from "@/assets/hero/goa-1.jpg";
 const Hero = () => {
   return (
     <section className="relative min-h-[85vh] md:min-h-screen overflow-hidden pb-40 md:pb-48">
@@ -13,8 +12,8 @@ const Hero = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0">
           <img
-            src={delhi1}
-            alt="India Gate at sunset - Delhi heritage tour"
+            src={goa1}
+            alt="Beautiful Goa beach sunset - Christmas New Year Special"
             className="w-full h-full object-cover object-center"
             loading="eager"
             fetchPriority="high"
