@@ -14,7 +14,7 @@ const BottomNav = () => {
 
   return (
     <nav className="md:hidden fixed bottom-3 left-3 right-3 z-50 pb-safe">
-      <div className="bg-white dark:bg-gray-900 rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.1)] border border-gray-100 dark:border-gray-800">
+      <div className="bg-amber-50 dark:bg-amber-950/90 rounded-xl shadow-[0_2px_12px_rgba(217,119,6,0.15)] border border-amber-200 dark:border-amber-800">
         <div className="flex items-center justify-around px-1 py-2">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -26,13 +26,13 @@ const BottomNav = () => {
                 to={item.path}
                 className={`flex flex-col items-center gap-0.5 min-w-[48px] justify-center px-2 py-0.5 transition-all duration-200 ${
                   isActive
-                    ? "text-primary"
-                    : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
+                    ? "text-amber-600 dark:text-amber-400 drop-shadow-[0_0_6px_rgba(217,119,6,0.5)]"
+                    : "text-amber-700/70 dark:text-amber-300/70 hover:text-amber-600 dark:hover:text-amber-400"
                 }`}
               >
                 <Icon 
                   className={`h-4 w-4 transition-all ${
-                    isActive ? "stroke-[2.5] fill-primary/10" : "stroke-[1.5]"
+                    isActive ? "stroke-[2.5]" : "stroke-[1.5]"
                   }`} 
                 />
                 <span className={`text-[9px] ${isActive ? "font-semibold" : "font-medium"}`}>
