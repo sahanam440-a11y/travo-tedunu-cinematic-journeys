@@ -111,7 +111,6 @@ const Hero = () => {
               alt={image.alt}
               className="w-full h-full object-cover object-center"
               loading={index === 0 ? "eager" : "lazy"}
-              fetchPriority={index === 0 ? "high" : "low"}
               decoding="async"
               width="1920"
               height="1080"
