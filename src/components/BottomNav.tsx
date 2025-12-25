@@ -15,7 +15,7 @@ const BottomNav = () => {
   return (
     <nav className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 pb-safe">
       <div className="bg-white dark:bg-gray-900 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.15)] border border-gray-100 dark:border-gray-800">
-        <div className="flex items-center justify-center gap-1 md:gap-6 px-3 md:px-6 py-2">
+        <div className="flex items-center justify-center gap-1 md:gap-6 px-4 md:px-8 py-3 md:py-4">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path;
