@@ -31,14 +31,19 @@ export const WhatsAppButton = ({
   };
 
   return (
-    <Button
-      onClick={handleClick}
-      size="lg"
-      className="fixed bottom-24 md:bottom-24 right-4 md:right-8 z-[60] h-14 w-14 md:h-16 md:w-16 rounded-full shadow-2xl hover:shadow-glow transition-all duration-300 hover:scale-110 bg-[#25D366] hover:bg-[#20BA5A] text-white border-0"
-      aria-label="Contact us on WhatsApp"
-    >
-      <WhatsAppIcon className="h-7 w-7 md:h-8 md:w-8" />
-      <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 rounded-full animate-pulse" />
-    </Button>
+    <div className="fixed bottom-24 md:bottom-24 right-4 md:right-8 z-[60]">
+      {/* Pulsing ring animation */}
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-pulse opacity-20" style={{ animationDelay: '0.5s' }} />
+      
+      <Button
+        onClick={handleClick}
+        size="lg"
+        className="relative h-14 w-14 md:h-16 md:w-16 rounded-full shadow-2xl hover:shadow-glow transition-all duration-300 hover:scale-110 bg-[#25D366] hover:bg-[#20BA5A] text-white border-0"
+        aria-label="Contact us on WhatsApp"
+      >
+        <WhatsAppIcon className="h-7 w-7 md:h-8 md:w-8" />
+      </Button>
+    </div>
   );
 };
