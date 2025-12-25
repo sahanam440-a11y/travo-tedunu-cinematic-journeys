@@ -27,7 +27,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="hidden md:block fixed bottom-0 left-0 right-0 z-50 shadow-elevated border-t border-nav-border backdrop-blur-md transition-transform duration-300 bg-nav-background/95 rounded-t-xl">
+    <nav className="hidden fixed bottom-0 left-0 right-0 z-50 shadow-elevated border-t border-nav-border backdrop-blur-md transition-transform duration-300 bg-nav-background/95 rounded-t-xl">
       <div className="container mx-auto px-5 py-2 md:px-6 md:py-2.5">
         <div className="flex items-center justify-center">
           {/* Desktop Navigation */}
