@@ -3,13 +3,18 @@ Travel Agency: Travo Tedunu
 Site: https://travotedunu.com
 Location: Bengaluru, Karnataka, India
 
+/* DEVELOPMENT */
+Developer: Pranabhay Tech Solutions
+Site: https://www.pranabhaytechsolutions.com
+Role: Full-Stack Development & Design
+
 /* THANKS */
 India Tourism
 Local Guides Network
 Our Amazing Travelers
 
 /* SITE */
-Last update: 2025-01-18
+Last update: 2025-12-25
 Standards: HTML5, CSS3, ES6+, React, TypeScript
 Components: React, Tailwind CSS, Vite
 Software: VS Code, Git
