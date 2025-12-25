@@ -102,7 +102,20 @@ const Footer = () => {
               <Youtube className="h-3.5 w-3.5" />
             </Button>
           </div>
-          <p className="text-xs text-muted-foreground">© 2025 Travo Tedunu</p>
+          <div className="text-right">
+            <p className="text-xs text-muted-foreground">© 2025 Travo Tedunu</p>
+            <p className="text-[10px] text-muted-foreground/70">
+              Developed by{" "}
+              <a 
+                href="https://www.pranabhaytechsolutions.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                Pranabhay Tech Solutions
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -269,8 +282,19 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground space-y-1">
           <p>© 2025 Travo Tedunu · Crafted for Curious Souls</p>
+          <p className="text-xs text-muted-foreground/70">
+            Developed by{" "}
+            <a 
+              href="https://www.pranabhaytechsolutions.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Pranabhay Tech Solutions
+            </a>
+          </p>
         </div>
       </div>
 
