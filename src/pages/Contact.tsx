@@ -13,93 +13,79 @@ import { useToast } from "@/hooks/use-toast";
 import { organizationSchema } from "@/lib/schema";
 import { useSEO } from "@/hooks/useSEO";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/utils/seoHelpers";
-
 const Contact = () => {
   useSEO();
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
-
-  const breadcrumbs = generateBreadcrumbSchema([
-    { name: "Home", url: "/" },
-    { name: "Contact", url: "/contact" },
-  ]);
-
-  const faqs = generateFAQSchema([
-    {
-      question: "How can I contact Travo Tedunu?",
-      answer: "You can reach us by phone at +91-63631-50891, email at info@travotedunu.com, or through our contact form. We respond within 24 hours."
-    },
-    {
-      question: "What are your business hours?",
-      answer: "We are open Monday to Saturday, 9:00 AM to 6:00 PM IST. We are closed on Sundays and public holidays."
-    },
-    {
-      question: "Where is your office located?",
-      answer: "Our office is located in Indiranagar, Bluwells apartment, Bengaluru, Karnataka 560078, India."
-    }
-  ]);
-
+  const breadcrumbs = generateBreadcrumbSchema([{
+    name: "Home",
+    url: "/"
+  }, {
+    name: "Contact",
+    url: "/contact"
+  }]);
+  const faqs = generateFAQSchema([{
+    question: "How can I contact Travo Tedunu?",
+    answer: "You can reach us by phone at +91-63631-50891, email at info@travotedunu.com, or through our contact form. We respond within 24 hours."
+  }, {
+    question: "What are your business hours?",
+    answer: "We are open Monday to Saturday, 9:00 AM to 6:00 PM IST. We are closed on Sundays and public holidays."
+  }, {
+    question: "Where is your office located?",
+    answer: "Our office is located in Indiranagar, Bluwells apartment, Bengaluru, Karnataka 560078, India."
+  }]);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
       if (!response.ok) {
         throw new Error("Failed to send message");
       }
-
       toast({
         title: "Message Sent Successfully! ✨",
-        description: "We'll get back to you within 24 hours.",
+        description: "We'll get back to you within 24 hours."
       });
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
     } catch (error) {
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
       console.error("Error sending message:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
-
-  return (
-    <>
-      <SEO
-        title="Contact Travo Tedunu - Get in Touch for India Tour Bookings"
-        description="Contact Travo Tedunu for personalized India tour planning and bookings ☎️ +91-63631-50891 ✉️ info@travotedunu.com • Quick response within 24 hours • Open Mon-Sat 9 AM-6 PM • Office in Bengaluru • Expert travel consultants ready to help plan your perfect India journey."
-        keywords="contact Travo Tedunu, travel inquiry India, book India tour, travel consultation, trip planning India, customer support travel agency, tour booking assistance, travel agent Bengaluru, India tour inquiry"
-        url="/contact"
-        schema={[breadcrumbs, organizationSchema, faqs]}
-        image="https://travotedunu.com/assets/logo.png"
-        ogType="website"
-      />
+  return <>
+      <SEO title="Contact Travo Tedunu - Get in Touch for India Tour Bookings" description="Contact Travo Tedunu for personalized India tour planning and bookings ☎️ +91-63631-50891 ✉️ info@travotedunu.com • Quick response within 24 hours • Open Mon-Sat 9 AM-6 PM • Office in Bengaluru • Expert travel consultants ready to help plan your perfect India journey." keywords="contact Travo Tedunu, travel inquiry India, book India tour, travel consultation, trip planning India, customer support travel agency, tour booking assistance, travel agent Bengaluru, India tour inquiry" url="/contact" schema={[breadcrumbs, organizationSchema, faqs]} image="https://travotedunu.com/assets/logo.png" ogType="website" />
       <div className="min-h-screen pb-16 md:pb-0 relative">
         <div className="fixed inset-0 gradient-champagne-glow -z-10"></div>
         <Navbar />
@@ -108,10 +94,9 @@ const Contact = () => {
         <section className="pt-8 md:pt-32 pb-16 relative">
           <div className="absolute inset-0 gradient-golden-hour -z-10 opacity-30"></div>
           <div className="container mx-auto px-4 space-y-6 relative">
-            <PageBreadcrumb 
-              items={[{ label: "Contact" }]}
-              className="animate-fade-up"
-            />
+            <PageBreadcrumb items={[{
+            label: "Contact"
+          }]} className="animate-fade-up" />
             <div className="text-center space-y-6 max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-action/20 border border-action/30 backdrop-blur-sm animate-fade-up">
                 <CheckCircle2 className="h-4 w-4 text-action-foreground" />
@@ -145,94 +130,27 @@ const Contact = () => {
                     
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          onFocus={() => setFocusedField("name")}
-                          onBlur={() => setFocusedField(null)}
-                          placeholder="Your Name"
-                          className={`h-12 transition-all duration-200 ${
-                            focusedField === "name" 
-                              ? "border-action ring-2 ring-action/20" 
-                              : "border-border hover:border-action/50"
-                          }`}
-                          required
-                        />
+                        <Input id="name" name="name" value={formData.name} onChange={handleChange} onFocus={() => setFocusedField("name")} onBlur={() => setFocusedField(null)} placeholder="Your Name" className={`h-12 transition-all duration-200 ${focusedField === "name" ? "border-action ring-2 ring-action/20" : "border-border hover:border-action/50"}`} required />
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          onFocus={() => setFocusedField("email")}
-                          onBlur={() => setFocusedField(null)}
-                          placeholder="Email Address"
-                          className={`h-12 transition-all duration-200 ${
-                            focusedField === "email" 
-                              ? "border-action ring-2 ring-action/20" 
-                              : "border-border hover:border-action/50"
-                          }`}
-                          required
-                        />
+                        <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} onFocus={() => setFocusedField("email")} onBlur={() => setFocusedField(null)} placeholder="Email Address" className={`h-12 transition-all duration-200 ${focusedField === "email" ? "border-action ring-2 ring-action/20" : "border-border hover:border-action/50"}`} required />
 
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          onFocus={() => setFocusedField("phone")}
-                          onBlur={() => setFocusedField(null)}
-                          placeholder="Phone Number (Optional)"
-                          className={`h-12 transition-all duration-200 ${
-                            focusedField === "phone" 
-                              ? "border-action ring-2 ring-action/20" 
-                              : "border-border hover:border-action/50"
-                          }`}
-                        />
+                        <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} onFocus={() => setFocusedField("phone")} onBlur={() => setFocusedField(null)} placeholder="Phone Number (Optional)" className={`h-12 transition-all duration-200 ${focusedField === "phone" ? "border-action ring-2 ring-action/20" : "border-border hover:border-action/50"}`} />
                       </div>
 
                       <div>
-                        <Textarea
-                          id="message"
-                          name="message"
-                          value={formData.message}
-                          onChange={handleChange}
-                          onFocus={() => setFocusedField("message")}
-                          onBlur={() => setFocusedField(null)}
-                          placeholder="Tell us about your travel plans..."
-                          rows={5}
-                          className={`resize-none transition-all duration-200 ${
-                            focusedField === "message" 
-                              ? "border-action ring-2 ring-action/20" 
-                              : "border-border hover:border-action/50"
-                          }`}
-                          required
-                        />
+                        <Textarea id="message" name="message" value={formData.message} onChange={handleChange} onFocus={() => setFocusedField("message")} onBlur={() => setFocusedField(null)} placeholder="Tell us about your travel plans..." rows={5} className={`resize-none transition-all duration-200 ${focusedField === "message" ? "border-action ring-2 ring-action/20" : "border-border hover:border-action/50"}`} required />
                       </div>
 
-                      <Button 
-                        type="submit" 
-                        disabled={isSubmitting}
-                        size="lg" 
-                        className="w-full bg-action text-action-foreground hover:bg-action-hover shadow-soft hover:shadow-elevated transition-all duration-300"
-                      >
-                        {isSubmitting ? (
-                          <>
+                      <Button type="submit" disabled={isSubmitting} size="lg" className="w-full bg-action text-action-foreground hover:bg-action-hover shadow-soft hover:shadow-elevated transition-all duration-300">
+                        {isSubmitting ? <>
                             <div className="h-5 w-5 border-2 border-current/30 border-t-current rounded-full animate-spin mr-2" />
                             Sending Message...
-                          </>
-                        ) : (
-                          <>
+                          </> : <>
                             <Send className="mr-2 h-5 w-5" />
                             Send Message
-                          </>
-                        )}
+                          </>}
                       </Button>
 
                       <p className="text-xs text-center text-muted-foreground">
@@ -244,7 +162,9 @@ const Contact = () => {
               </div>
 
             {/* Contact Info */}
-            <div className="space-y-4 animate-fade-up lg:sticky lg:top-24 lg:self-start" style={{ animationDelay: '100ms' }}>
+            <div className="space-y-4 animate-fade-up lg:sticky lg:top-24 lg:self-start" style={{
+            animationDelay: '100ms'
+          }}>
               <Card className="glass-card border border-border/50 hover:shadow-soft transition-all duration-300 group">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -253,16 +173,10 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                      <a 
-                        href="mailto:sahanam440@gmail.com" 
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
-                      >
+                      <a href="mailto:sahanam440@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors block">
                         sahanam440@gmail.com
                       </a>
-                      <a 
-                        href="mailto:pranabhay3@gmail.com" 
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
-                      >
+                      <a href="mailto:pranabhay3@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors block">
                         pranabhay3@gmail.com
                       </a>
                     </div>
@@ -278,10 +192,7 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                      <a 
-                        href="tel:+916363150891" 
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                      >
+                      <a href="tel:+916363150891" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                         +91 63631 50891
                       </a>
                       <p className="text-xs text-muted-foreground mt-1">
@@ -301,8 +212,8 @@ const Contact = () => {
                     <div className="flex-1">
                       <h3 className="font-semibold text-foreground mb-1">Location</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        123 Travel Street<br />
-                        New Delhi, India 110001
+                        ​Indiranagar, Benagluru             <br />
+                        Karnataka, India 560078 
                       </p>
                     </div>
                   </div>
@@ -342,8 +253,6 @@ const Contact = () => {
         <Footer />
         <BottomNav />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Contact;
