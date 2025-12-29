@@ -85,6 +85,9 @@ const Footer = () => {
                 <Link to="/shipping-policy" className="text-sm text-muted-foreground hover:text-primary">
                   Shipping
                 </Link>
+                <Link to="/credits" className="text-sm text-muted-foreground hover:text-primary">
+                  Credits
+                </Link>
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -213,6 +216,14 @@ const Footer = () => {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Shipping & Delivery
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/credits"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Credits & Partners
                 </Link>
               </li>
             </ul>
