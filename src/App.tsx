@@ -18,6 +18,7 @@ import Profile from "./pages/Profile";
 import Auth from "./pages/Auth";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import CancellationPolicy from "./pages/CancellationPolicy";
+import RefundPolicy from "./pages/RefundPolicy";
 import ShippingPolicy from "./pages/ShippingPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Credits from "./pages/Credits";
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
             <Route path="/shipping-policy" element={<ShippingPolicy />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/credits" element={<Credits />} />

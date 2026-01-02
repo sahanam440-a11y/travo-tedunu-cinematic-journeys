@@ -80,6 +80,9 @@ const Footer = () => {
                   Terms
                 </Link>
                 <Link to="/cancellation-policy" className="text-sm text-muted-foreground hover:text-primary">
+                  Cancellation
+                </Link>
+                <Link to="/refund-policy" className="text-sm text-muted-foreground hover:text-primary">
                   Refunds
                 </Link>
                 <Link to="/shipping-policy" className="text-sm text-muted-foreground hover:text-primary">
@@ -207,7 +210,15 @@ const Footer = () => {
                   to="/cancellation-policy"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Cancellation & Refund
+                  Cancellation Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/refund-policy"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Refund Policy
                 </Link>
               </li>
               <li>
